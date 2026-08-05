@@ -1,41 +1,26 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Vazirmatn } from 'next/font/google';
+import './globals.css';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const vazirmatn = Vazirmatn({
+  variable: '--font-vazirmatn',
+  subsets: ['arabic'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: "شرکت هوش‌افزار | راهکارهای هوشمند امنیت سایبری",
-  description: "محصولات و خدمات تخصصی هوش‌افزار در حوزه مدیریت دارایی‌های سایبری، سنجش وضعیت امنیت و عملیات امنیت.",
-  other: {
-    "codex-preview": "development",
-  },
+  title: 'هوش‌افزار | محصول و خدمات امنیت سایبری سازمانی',
+  description: 'محصول MonoSuite Asset Intelligence و خدمات تخصصی هوش‌افزار برای شناخت دارایی، کاهش ریسک، کشف تهدید و پاسخ‌گویی به رخداد.',
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fa" dir="rtl">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html lang="fa-IR" dir="rtl">
+      <body className={vazirmatn.variable}>{children}</body>
     </html>
   );
 }
