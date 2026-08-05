@@ -1,6 +1,15 @@
 import content from './content.json';
 
-export type Entry = { slug:string; path:string; kind:'page'|'post'; date:string; title:string; excerpt:string; body:string };
+export type Entry = {
+  slug: string;
+  path: string;
+  kind: 'page' | 'post';
+  date: string;
+  title: string;
+  excerpt: string;
+  body: string;
+};
+
 export const entries = content as Entry[];
 export const posts = entries.filter((entry) => entry.kind === 'post');
 export const pages = entries.filter((entry) => entry.kind === 'page');
@@ -13,10 +22,10 @@ export const contact = {
 };
 
 export const nav = [
-  { href: '/', label: 'خانه' },
-  { href: '/monosuit/', label: 'مونوسوئیت' },
+  { href: '/', label: 'صفحه اصلی' },
+  { href: '/monosuit/', label: 'محصول' },
   { href: '/services/', label: 'خدمات' },
+  { href: '/solutions/', label: 'راهکارها' },
   { href: '/blog/', label: 'دانش و بینش' },
   { href: '/about/', label: 'درباره ما' },
-  { href: '/contcat/', label: 'تماس' },
 ];
