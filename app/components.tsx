@@ -3,13 +3,13 @@ import { contact, nav } from './site-data';
 
 export function Brand() {
   return (
-    <Link href="/" className="brand" aria-label="هوش‌افزار، صفحه نخست">
+    <Link href="/" className="brand" aria-label="هوش‌افزار نسل پویا، صفحه نخست">
       <span className="brand-symbol" aria-hidden="true">
         <i /><i /><i /><i />
       </span>
       <span className="brand-copy">
-        <b>هوش‌افزار</b>
-        <small>امنیت سایبری سازمانی</small>
+        <span className="brand-title"><b>هوش‌افزار</b><em>نسل پویا</em></span>
+        <small>راهکارهای هوشمند امنیت سایبری</small>
       </span>
     </Link>
   );
