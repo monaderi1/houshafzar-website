@@ -21,14 +21,14 @@ const challenges = [
     title: 'داده‌های پراکنده میان ابزارها',
     text: 'اطلاعات شبکه، نقاط پایانی، آسیب‌پذیری و سایر ابزارهای امنیتی بدون یک نمای مشترک، تصویر ناقصی از وضعیت واقعی سازمان ایجاد می‌کنند.',
     solution: 'تجمیع و تطبیق داده‌ها در یک نمای مشترک',
-    href: '#integration',
+    href: '#capabilities',
   },
   {
     number: '۰۴',
     title: 'کندی تصمیم در زمان رخداد',
     text: 'نبود اطلاعات زمینه‌ای یکپارچه، زمان تحلیل و تصمیم‌گیری را در لحظاتی که سرعت برای مهار تهدید اهمیت دارد افزایش می‌دهد.',
     solution: 'غنی‌سازی اطلاعات و خدمات تخصصی پاسخ‌گویی',
-    href: '#services',
+    href: '#capabilities',
   },
 ];
 
@@ -38,15 +38,6 @@ const flow = [
   ['غنی‌سازی زمینه', 'افزودن اطلاعات فنی، امنیتی و سازمانی برای شناخت بهتر هر دارایی'],
   ['تحلیل وضعیت و ریسک', 'ارزیابی ریسک، وضعیت حفاظتی، هاردنینگ و انطباق بر اساس داده واقعی محیط'],
   ['اقدام و پیگیری', 'تبدیل یافته‌ها به اولویت‌های عملیاتی، گزارش و اقدامات اصلاحی قابل پیگیری'],
-];
-
-const services = [
-  { title: 'شناخت دارایی و سطح حمله', text: 'ایجاد دید دقیق‌تر از دارایی‌ها، نقاط ناشناخته و سطح مواجهه سازمان با تهدیدات.' },
-  { title: 'کشف تهدید و Threat Hunting', text: 'جست‌وجوی هدفمند نشانه‌های تهدید با تکیه بر داده‌های موجود، فرضیه‌های فنی و تجربه عملیاتی.' },
-  { title: 'پاسخ‌گویی به رخداد', text: 'تحلیل، هماهنگی و پشتیبانی از تصمیم‌گیری در رخدادهای پیچیده سایبری با تمرکز بر کاهش زمان پاسخ.' },
-  { title: 'پایش و راهبری مرکز عملیات امنیت', text: 'تأمین نیروی متخصص، راهبری، ارزیابی و ارتقای اثربخشی عملیات مرکز امنیت.' },
-  { title: 'امنیت هویت و دسترسی', text: 'تأمین مجوز، نصب، راه‌اندازی و پشتیبانی راهکارهای کنترل دسترسی مانند Cisco ISE.' },
-  { title: 'پایش فعالیت پایگاه داده', text: 'تأمین مجوز و ارائه خدمات تخصصی Imperva DAM برای پایش فعالیت‌های حساس پایگاه داده.' },
 ];
 
 const trustPoints = [
@@ -120,24 +111,39 @@ export default function HomePage() {
         </div>
       </div></section>
 
-      <section className="section cis-section" id="cis"><div className="shell cis-grid">
-        <div className="cis-copy"><span className="eyebrow">CIS Controls v8.1</span><h2>کنترل‌های ۱ و ۲ CIS از یک فهرست معتبر دارایی شروع می‌شوند.</h2><p>مونوسوئیت لایه پایه شناخت دارایی را برای پوشش کنترل «فهرست و کنترل دارایی‌های سازمانی» و کنترل «فهرست و کنترل دارایی‌های نرم‌افزاری» فراهم می‌کند؛ با کشف، ثبت، تطبیق، تشخیص تغییر و نگهداشت مستمر اطلاعات دارایی.</p><Link className="text-link" href="/monosuit/">بررسی قابلیت‌های مونوسوئیت برای CIS</Link></div>
-        <div className="cis-visual" aria-label="پوشش کنترل‌های یک و دو CIS توسط مونوسوئیت">
-          <div className="cis-control"><b>01</b><span>CIS Control 1</span><strong>Inventory and Control of Enterprise Assets</strong></div>
-          <div className="cis-bridge"><small>سامانه بومی هوش دارایی</small><strong>مونوسوئیت</strong><i /></div>
-          <div className="cis-control"><b>02</b><span>CIS Control 2</span><strong>Inventory and Control of Software Assets</strong></div>
+      <section className="section capabilities-section" id="capabilities"><div className="shell">
+        <div className="section-heading section-heading-wide">
+          <span className="eyebrow">حوزه‌های کاری هوش‌افزار</span>
+          <h2>از شناخت دارایی تا پاسخ به رخداد؛ خدمات ما لایه‌های اصلی امنیت سازمان را پوشش می‌دهند.</h2>
+          <p>هوش‌افزار خدمات و راهکارهای خود را در قالب یک معماری منسجم ارائه می‌کند. شناخت و دارایی لایه پایه است و حوزه‌های هویت، حفاظت، آسیب‌پذیری، پایش، پاسخ و حاکمیت بر این پایه شکل می‌گیرند.</p>
         </div>
+        <div className="capability-architecture">
+          <div className="arch-web">
+            <div className="arch-web-stack">
+              <Link href="/services/" className="arch-web-layer response">پاسخ، خودکارسازی و بازیابی</Link>
+              <Link href="/services/" className="arch-web-layer detect">پایش، تشخیص و اطلاعات تهدید</Link>
+              <Link href="/services/" className="arch-web-layer risk">مدیریت آسیب‌پذیری و سطح حمله</Link>
+              <div className="arch-web-split"><Link href="/services/">هویت و دسترسی</Link><Link href="/services/">محافظت زیرساخت و داده</Link></div>
+              <Link href="/monosuit/" className="arch-web-layer foundation"><strong>شناخت و دارایی — لایه پایه</strong><small>چه چیزی داریم، کجاست، متعلق به کیست و چه تغییری کرده</small></Link>
+            </div>
+            <Link href="/services/" className="arch-web-govern"><strong>حاکمیت، انطباق و سنجش</strong><small>اشراف بر همه لایه‌ها و سنجش وضعیت آن‌ها</small></Link>
+          </div>
+          <div className="capability-note"><strong>منطق ارائه خدمات:</strong><span>هر لایه از داده و شناخت لایه زیرین استفاده می‌کند؛ به همین دلیل خدمات امنیتی را جزیره‌ای طراحی نمی‌کنیم.</span></div>
+        </div>
+        <div className="actions capability-actions"><Link className="button" href="/services/">مشاهده خدمات هوش‌افزار</Link><Link className="text-link" href="/solutions/">بررسی راهکارها</Link></div>
       </div></section>
 
-      <section className="section architecture-section" id="integration"><div className="shell">
-        <div className="section-heading section-heading-wide"><span className="eyebrow">معماری امنیت یکپارچه</span><h2>شناخت دارایی، لایه پایه‌ای است که بقیه کنترل‌ها روی آن قابل اتکا می‌شوند.</h2><p>دو نمای زیر نشان می‌دهند اطلاعات دارایی چگونه به لایه‌های بالاتر امنیتی داده می‌دهد و چرا کیفیت این لایه پایه تعیین‌کننده است.</p></div>
-        <div className="architecture-grid">
-          <article className="architecture-card"><div className="architecture-card-head"><span>معماری هدف</span><small>Target Architecture</small></div>
-            <div className="arch-web"><div className="arch-web-stack"><div className="arch-web-layer response">پاسخ، خودکارسازی و بازیابی</div><div className="arch-web-layer detect">پایش، تشخیص و اطلاعات تهدید</div><div className="arch-web-layer risk">مدیریت آسیب‌پذیری و سطح حمله</div><div className="arch-web-split"><div>هویت و دسترسی</div><div>محافظت زیرساخت و داده</div></div><div className="arch-web-layer foundation"><strong>شناخت و دارایی — لایه پایه</strong><small>چه چیزی داریم، کجاست، متعلق به کیست و چه تغییری کرده</small></div></div><div className="arch-web-govern"><strong>حاکمیت، انطباق و سنجش</strong><small>اشراف بر همه لایه‌ها</small></div></div>
-          </article>
-          <article className="architecture-card integration-card"><div className="architecture-card-head"><span>نقشه یکپارچگی</span><small>Integration Map</small></div>
-            <div className="integration-web"><div className="integration-sources"><span>شبکه و مجازی‌سازی</span><span>سرورها و نقاط پایانی</span><span>سامانه‌ها و پایگاه داده</span><span>هویت سازمانی</span></div><div className="integration-arrow">↓</div><div className="integration-foundation"><strong>مونوسوئیت — فهرست یکپارچه دارایی و زمینه آن</strong><small>شناسه · مالک · مکان · اهمیت · پیکربندی · رابطه با سرویس · تاریخچه تغییر</small></div><div className="integration-arrow">↓</div><div className="integration-outputs"><span>آسیب‌پذیری و سطح حمله</span><span>پایش و تشخیص</span><span>هویت و دسترسی</span></div><div className="integration-arrow">↓</div><div className="integration-response">پاسخ و اقدام روی دارایی مشخص و شناخته‌شده</div></div>
-          </article>
+      <section className="section cis-section" id="cis"><div className="shell cis-grid">
+        <div className="cis-copy">
+          <span className="eyebrow">CIS Controls v8.1</span>
+          <h2>اجرای CIS Controls از شناخت دارایی آغاز می‌شود؛ مونوسوئیت نقطه شروع این مسیر است.</h2>
+          <p>در CIS Controls، کنترل ۱ بر فهرست و کنترل دارایی‌های سازمانی و کنترل ۲ بر فهرست و کنترل دارایی‌های نرم‌افزاری تمرکز دارد. مونوسوئیت با کشف، ثبت، تطبیق، تشخیص تغییر و نگهداشت مستمر اطلاعات دارایی، لایه پایه موردنیاز برای اجرای این دو کنترل را فراهم می‌کند.</p>
+          <Link className="text-link" href="/monosuit/">بررسی قابلیت‌های مونوسوئیت برای CIS</Link>
+        </div>
+        <div className="cis-visual" aria-label="کنترل‌های یک و دو CIS و سامانه بومی هوش دارایی مونوسوئیت">
+          <div className="cis-control"><b>01</b><span>CIS Control 1</span><strong>Inventory and Control of Enterprise Assets</strong></div>
+          <div className="cis-bridge"><small>نقطه شروع</small><strong>مونوسوئیت</strong><i /></div>
+          <div className="cis-control"><b>02</b><span>CIS Control 2</span><strong>Inventory and Control of Software Assets</strong></div>
         </div>
       </div></section>
 
@@ -145,8 +151,6 @@ export default function HomePage() {
         <div className="product-flow-copy"><span className="eyebrow eyebrow-light">منطق مونوسوئیت</span><h2>از داده خام تا تصمیم امنیتی قابل اقدام.</h2><p>مونوسوئیت اطلاعات پراکنده دارایی‌ها و ابزارهای امنیتی را جمع‌آوری، تطبیق و غنی‌سازی می‌کند تا تیم‌های فنی بتوانند وضعیت واقعی زیرساخت را ببینند، ریسک‌ها را بهتر اولویت‌بندی کنند و اقدامات اصلاحی را هدفمند پیش ببرند.</p><Link className="button button-light" href="/monosuit/">آشنایی بیشتر با محصول</Link></div>
         <ol className="flow-list">{flow.map(([title, text], index) => (<li key={title}><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{title}</strong><p>{text}</p></div></li>))}</ol>
       </div></section>
-
-      <section className="section services-section"><div className="shell"><div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>تمرکز بر مسئله عملیاتی سازمان؛ از کشف تهدید تا کنترل و پاسخ.</h2></div><div className="services-grid">{services.map((service, index) => (<article className="service-card" key={service.title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{service.title}</h3><p>{service.text}</p><Link href="/services/" aria-label={`اطلاعات بیشتر درباره ${service.title}`}>اطلاعات بیشتر</Link></article>))}</div></div></section>
 
       <section className="section trust-section"><div className="shell trust-grid"><div className="trust-copy"><span className="eyebrow">آماده برای محیط‌های سازمانی</span><h2>طراحی‌شده برای الزامات واقعی زیرساخت‌های سازمانی.</h2><p>معماری و شیوه اجرای هوش‌افزار با محدودیت‌های امنیتی، شبکه‌های ایزوله، حاکمیت داده و پیچیدگی عملیاتی سازمان‌های بزرگ سازگار است.</p></div><div className="trust-points">{trustPoints.map(([title, text]) => (<div key={title}><strong>{title}</strong><p>{text}</p></div>))}</div></div></section>
 
