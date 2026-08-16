@@ -47,6 +47,14 @@ const trustPoints = [
   ['کنترل کامل داده و عملیات', 'معماری متناسب با الزامات امنیتی، حاکمیت داده و فرآیندهای سازمان‌های بزرگ.'],
 ];
 
+const serviceDomains = [
+  ['پاسخ، خودکارسازی و بازیابی', 'مدیریت رخداد، اجرای سیاست و پشتیبانی از بازیابی سرویس'],
+  ['پایش، تشخیص و اطلاعات تهدید', 'پایش رویداد، تحلیل هشدار و غنی‌سازی اطلاعات امنیتی'],
+  ['مدیریت آسیب‌پذیری و سطح حمله', 'شناسایی شکاف، اولویت‌بندی ریسک و کاهش سطح حمله'],
+  ['هویت و دسترسی', 'کنترل دسترسی شبکه و سیاست‌های هویت‌محور'],
+  ['محافظت زیرساخت و داده', 'هاردنینگ، حفاظت داده و پایش فعالیت‌های حساس'],
+];
+
 export default function HomePage() {
   return (
     <PageShell>
@@ -104,7 +112,7 @@ export default function HomePage() {
           </article>
           <article className="offering-card offering-services project-service-card" id="services">
             <div className="offering-label">خدمت پروژه‌ای</div><span className="offering-name">خروجی مونوسوئیت به‌صورت پروژه</span><h3>همان خروجی‌های مونوسوئیت، بدون خرید لایسنس و نگهداشت سامانه</h3>
-            <p>برای سازمان‌هایی که محدودیت خرید دارند یا ترجیح می‌دهند کار را پروژه‌ای پیش ببرند، هوش‌افزار مونوسوئیت را در محیط سازمان مستقر می‌کند، داده‌ها را جمع‌آوری و تحلیل می‌کند و خروجی‌های مورد انتظار را تحویل می‌دهد. پس از پایان پروژه، سامانه جمع‌آوری می‌شود.</p>
+            <p>در مدل اجرایی پروژه‌ای، مونوسوئیت جهت استخراج شناسه دارایی‌ها و تحلیل سطح حمله در زیرساخت مشتری پیاده‌سازی می‌شود. پس از تکمیل تحلیل‌ها و ارائه شناسه جامع ریسک به سازمان، ابزار جمع‌آوری شده اما تمامی خروجی‌ها و نتایج عملیاتی در اختیار تیم امنیت قرار می‌گیرد.</p>
             <ul><li>استقرار موقت مونوسوئیت در زیرساخت سازمان</li><li>تولید موجودی دارایی، ریسک، هاردنینگ و گزارش تغییرات</li><li>تحویل گزارش‌ها، یافته‌ها و اقدامات پیشنهادی به سازمان</li><li>بدون هزینه دائمی لایسنس، نگهداشت و راهبری سامانه</li></ul>
             <Link href="/services/" className="text-link">بررسی مدل خدمت پروژه‌ای</Link>
           </article>
@@ -113,23 +121,33 @@ export default function HomePage() {
 
       <section className="section capabilities-section" id="capabilities"><div className="shell">
         <div className="section-heading section-heading-wide">
-          <span className="eyebrow">حوزه‌های کاری هوش‌افزار</span>
-          <h2>از شناخت دارایی تا پاسخ به رخداد؛ خدمات ما لایه‌های اصلی امنیت سازمان را پوشش می‌دهند.</h2>
-          <p>هوش‌افزار خدمات و راهکارهای خود را در قالب یک معماری منسجم ارائه می‌کند. شناخت و دارایی لایه پایه است و حوزه‌های هویت، حفاظت، آسیب‌پذیری، پایش، پاسخ و حاکمیت بر این پایه شکل می‌گیرند.</p>
+          <span className="eyebrow">خدمات و حوزه‌های کاری هوش‌افزار</span>
+          <h2>هوش‌افزار چه کاری انجام می‌دهد؟</h2>
+          <p>سبد خدمات ما از شناخت دارایی آغاز می‌شود و تا حفاظت، پایش، مدیریت ریسک، کنترل دسترسی، پاسخ به رخداد و سنجش وضعیت امنیت ادامه پیدا می‌کند.</p>
         </div>
-        <div className="capability-architecture">
-          <div className="arch-web">
-            <div className="arch-web-stack">
-              <Link href="/services/" className="arch-web-layer response">پاسخ، خودکارسازی و بازیابی</Link>
-              <Link href="/services/" className="arch-web-layer detect">پایش، تشخیص و اطلاعات تهدید</Link>
-              <Link href="/services/" className="arch-web-layer risk">مدیریت آسیب‌پذیری و سطح حمله</Link>
-              <div className="arch-web-split"><Link href="/services/">هویت و دسترسی</Link><Link href="/services/">محافظت زیرساخت و داده</Link></div>
-              <Link href="/monosuit/" className="arch-web-layer foundation"><strong>شناخت و دارایی — لایه پایه</strong><small>چه چیزی داریم، کجاست، متعلق به کیست و چه تغییری کرده</small></Link>
-            </div>
-            <Link href="/services/" className="arch-web-govern"><strong>حاکمیت، انطباق و سنجش</strong><small>اشراف بر همه لایه‌ها و سنجش وضعیت آن‌ها</small></Link>
+
+        <div style={{maxWidth:'1080px',margin:'0 auto',padding:'26px',border:'1px solid #dbe3ee',borderRadius:'24px',background:'#f8fafc',boxShadow:'0 14px 42px rgba(13,46,65,.07)'}}>
+          <Link href="/services/" style={{display:'flex',justifyContent:'space-between',alignItems:'center',gap:'18px',padding:'20px 24px',borderRadius:'14px',background:'#071a38',color:'#fff',marginBottom:'16px'}}>
+            <div><strong style={{display:'block',fontSize:'18px',color:'#fff'}}>حاکمیت، انطباق و سنجش</strong><span style={{display:'block',marginTop:'6px',fontSize:'12px',color:'#9fb6cc'}}>ارزیابی وضعیت، انطباق با چارچوب‌ها و سنجش مستمر امنیت</span></div>
+            <span style={{fontSize:'22px'}}>←</span>
+          </Link>
+
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))',gap:'12px'}}>
+            {serviceDomains.map(([title, text], index) => (
+              <Link href="/services/" key={title} style={{minHeight:'150px',padding:'20px',border:'1px solid #dbe3ee',borderRadius:'14px',background:'#fff',display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
+                <span style={{fontSize:'12px',fontWeight:900,color:['#2f7d5b','#a57c14','#b0413a','#2e6b99','#6a4e86'][index]}}>۰{index + ۱}</span>
+                <div><strong style={{display:'block',fontSize:'15px',lineHeight:1.8,color:'#14243b'}}>{title}</strong><small style={{display:'block',marginTop:'8px',fontSize:'11px',lineHeight:1.9,color:'#66758a'}}>{text}</small></div>
+              </Link>
+            ))}
           </div>
-          <div className="capability-note"><strong>منطق ارائه خدمات:</strong><span>هر لایه از داده و شناخت لایه زیرین استفاده می‌کند؛ به همین دلیل خدمات امنیتی را جزیره‌ای طراحی نمی‌کنیم.</span></div>
+
+          <Link href="/monosuit/" style={{display:'grid',gridTemplateColumns:'auto 1fr auto',alignItems:'center',gap:'18px',marginTop:'16px',padding:'22px 24px',borderRadius:'14px',background:'#15757a',color:'#fff'}}>
+            <span style={{padding:'7px 10px',borderRadius:'999px',background:'rgba(255,255,255,.14)',fontSize:'10px',fontWeight:800}}>لایه پایه</span>
+            <div><strong style={{display:'block',fontSize:'18px',color:'#fff'}}>شناخت و دارایی — سامانه بومی هوش دارایی مونوسوئیت</strong><small style={{display:'block',marginTop:'6px',fontSize:'11px',lineHeight:1.8,color:'rgba(255,255,255,.82)'}}>کشف و یکپارچه‌سازی دارایی‌ها، تشخیص تغییر، تحلیل زمینه و ایجاد منبع حقیقت مشترک</small></div>
+            <span style={{fontSize:'22px'}}>←</span>
+          </Link>
         </div>
+
         <div className="actions capability-actions"><Link className="button" href="/services/">مشاهده خدمات هوش‌افزار</Link><Link className="text-link" href="/solutions/">بررسی راهکارها</Link></div>
       </div></section>
 
