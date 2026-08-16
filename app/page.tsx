@@ -6,28 +6,28 @@ const challenges = [
     number: '۰۱',
     title: 'دارایی‌های خارج از دید',
     text: 'دارایی‌های ناشناخته، ثبت‌نشده یا تغییرکرده می‌توانند بدون آنکه در کنترل‌های امنیتی دیده شوند، وارد سطح حمله سازمان شوند.',
-    solution: 'ایجاد فهرست یکپارچه و به‌روز از دارایی‌ها با MonoSuite',
+    solution: 'ایجاد فهرست یکپارچه و به‌روز دارایی‌ها با مونوسوئیت',
     href: '#monosuite',
   },
   {
     number: '۰۲',
     title: 'ریسک بدون زمینه کافی',
     text: 'امتیاز آسیب‌پذیری به‌تنهایی اولویت واقعی را مشخص نمی‌کند؛ اهمیت دارایی، سرویس مرتبط و شرایط محیط باید در تصمیم‌گیری لحاظ شود.',
-    solution: 'اولویت‌بندی ریسک با تکیه بر زمینه فنی و سازمانی دارایی',
+    solution: 'اولویت‌بندی ریسک بر پایه زمینه فنی و سازمانی دارایی',
     href: '#monosuite',
   },
   {
     number: '۰۳',
     title: 'داده‌های پراکنده میان ابزارها',
     text: 'اطلاعات شبکه، نقاط پایانی، آسیب‌پذیری و سایر ابزارهای امنیتی بدون یک نمای مشترک، تصویر ناقصی از وضعیت واقعی سازمان ایجاد می‌کنند.',
-    solution: 'تجمیع، تطبیق و غنی‌سازی داده‌های پراکنده در یک لایه مشترک',
+    solution: 'تجمیع و تطبیق داده‌ها در یک نمای مشترک',
     href: '#integration',
   },
   {
     number: '۰۴',
     title: 'کندی تصمیم در زمان رخداد',
     text: 'نبود اطلاعات زمینه‌ای یکپارچه، زمان تحلیل و تصمیم‌گیری را در لحظاتی که سرعت برای مهار تهدید اهمیت دارد افزایش می‌دهد.',
-    solution: 'غنی‌سازی اطلاعات امنیتی و اجرای خدمات پاسخ‌گویی تخصصی',
+    solution: 'غنی‌سازی اطلاعات و خدمات تخصصی پاسخ‌گویی',
     href: '#services',
   },
 ];
@@ -41,30 +41,12 @@ const flow = [
 ];
 
 const services = [
-  {
-    title: 'شناخت دارایی و سطح حمله',
-    text: 'ایجاد دید دقیق‌تر از دارایی‌ها، نقاط ناشناخته و سطح مواجهه سازمان با تهدیدات.',
-  },
-  {
-    title: 'کشف تهدید و Threat Hunting',
-    text: 'جست‌وجوی هدفمند نشانه‌های تهدید با تکیه بر داده‌های موجود، فرضیه‌های فنی و تجربه عملیاتی.',
-  },
-  {
-    title: 'پاسخ‌گویی به رخداد',
-    text: 'تحلیل، هماهنگی و پشتیبانی از تصمیم‌گیری در رخدادهای پیچیده سایبری با تمرکز بر کاهش زمان پاسخ.',
-  },
-  {
-    title: 'پایش و راهبری مرکز عملیات امنیت',
-    text: 'تأمین نیروی متخصص، راهبری، ارزیابی و ارتقای اثربخشی عملیات مرکز امنیت.',
-  },
-  {
-    title: 'امنیت هویت و دسترسی',
-    text: 'تأمین مجوز، نصب، راه‌اندازی و پشتیبانی راهکارهای کنترل دسترسی مانند Cisco ISE.',
-  },
-  {
-    title: 'پایش فعالیت پایگاه داده',
-    text: 'تأمین مجوز و ارائه خدمات تخصصی Imperva DAM برای پایش فعالیت‌های حساس پایگاه داده.',
-  },
+  { title: 'شناخت دارایی و سطح حمله', text: 'ایجاد دید دقیق‌تر از دارایی‌ها، نقاط ناشناخته و سطح مواجهه سازمان با تهدیدات.' },
+  { title: 'کشف تهدید و Threat Hunting', text: 'جست‌وجوی هدفمند نشانه‌های تهدید با تکیه بر داده‌های موجود، فرضیه‌های فنی و تجربه عملیاتی.' },
+  { title: 'پاسخ‌گویی به رخداد', text: 'تحلیل، هماهنگی و پشتیبانی از تصمیم‌گیری در رخدادهای پیچیده سایبری با تمرکز بر کاهش زمان پاسخ.' },
+  { title: 'پایش و راهبری مرکز عملیات امنیت', text: 'تأمین نیروی متخصص، راهبری، ارزیابی و ارتقای اثربخشی عملیات مرکز امنیت.' },
+  { title: 'امنیت هویت و دسترسی', text: 'تأمین مجوز، نصب، راه‌اندازی و پشتیبانی راهکارهای کنترل دسترسی مانند Cisco ISE.' },
+  { title: 'پایش فعالیت پایگاه داده', text: 'تأمین مجوز و ارائه خدمات تخصصی Imperva DAM برای پایش فعالیت‌های حساس پایگاه داده.' },
 ];
 
 const trustPoints = [
@@ -81,250 +63,94 @@ export default function HomePage() {
         <div className="shell hero-grid hero-grid-redesign">
           <div className="hero-copy">
             <span className="eyebrow">امنیت سایبری سازمانی، مبتنی بر دید و اقدام</span>
-            <h1>
-              ریسک واقعی را ببینید؛
-              <em> دقیق‌تر و سریع‌تر تصمیم بگیرید.</em>
-            </h1>
-            <p>
-              هوش‌افزار با تلفیق سامانه بومی «هوش دارایی مونوسوئیت» و خدمات تخصصی امنیت، داده‌های پراکنده زیرساخت را به شناختی شفاف، اولویت‌بندی‌شده و قابل اقدام برای تیم‌های فناوری اطلاعات و امنیت تبدیل می‌کند.
-            </p>
+            <h1>ریسک واقعی را ببینید؛<em> دقیق‌تر و سریع‌تر تصمیم بگیرید.</em></h1>
+            <p>هوش‌افزار با تلفیق سامانه بومی «هوش دارایی مونوسوئیت» و خدمات تخصصی امنیت، داده‌های پراکنده زیرساخت را به شناختی شفاف، اولویت‌بندی‌شده و قابل اقدام برای تیم‌های فناوری اطلاعات و امنیت تبدیل می‌کند.</p>
             <div className="actions">
               <Link className="button" href="/contcat/">درخواست جلسه معرفی</Link>
               <a className="text-link" href="#offerings">بررسی محصول و خدمات</a>
             </div>
             <div className="hero-notes" aria-label="ویژگی‌های کلیدی ارائه">
-              <span>استقرار درون‌سازمانی</span>
-              <span>مناسب محیط‌های ایزوله</span>
+              <span>استقرار درون‌سازمانی</span><span>مناسب محیط‌های ایزوله</span>
             </div>
           </div>
 
           <div className="hero-system" aria-label="نمای مفهومی جریان داده تا تصمیم امنیتی">
-            <div className="system-title">
-              <span>نمای مفهومی</span>
-              <strong>از داده‌های پراکنده تا تصمیم قابل اقدام</strong>
-            </div>
+            <div className="system-title"><span>نمای مفهومی</span><strong>از داده‌های پراکنده تا تصمیم قابل اقدام</strong></div>
             <div className="system-board">
-              <div className="system-column system-sources">
-                <small>منابع داده</small>
-                <span>شبکه و زیرساخت</span>
-                <span>نقاط پایانی</span>
-                <span>ابزارهای امنیتی</span>
-                <span>اطلاعات سازمانی</span>
-              </div>
-              <div className="system-engine">
-                <span className="engine-kicker">MonoSuite</span>
-                <strong>Asset Intelligence</strong>
-                <i aria-hidden="true" />
-                <small>تجمیع · غنی‌سازی · تحلیل</small>
-              </div>
-              <div className="system-column system-outputs">
-                <small>خروجی تصمیم</small>
-                <span>میزان رصدپذیری دارایی‌ها</span>
-                <span>اولویت‌بندی ریسک‌ها</span>
-                <span>وضعیت هاردنینگ دارایی‌ها</span>
-                <span>تغییرات در دارایی‌ها</span>
-              </div>
-              <div className="connector connector-one" aria-hidden="true" />
-              <div className="connector connector-two" aria-hidden="true" />
+              <div className="system-column system-sources"><small>منابع داده</small><span>شبکه و زیرساخت</span><span>نقاط پایانی</span><span>ابزارهای امنیتی</span><span>اطلاعات سازمانی</span></div>
+              <div className="system-engine"><span className="engine-kicker">MonoSuite</span><strong>Asset Intelligence</strong><i aria-hidden="true" /><small>تجمیع · غنی‌سازی · تحلیل</small></div>
+              <div className="system-column system-outputs"><small>خروجی تصمیم</small><span>میزان رصدپذیری دارایی‌ها</span><span>اولویت‌بندی ریسک‌ها</span><span>وضعیت هاردنینگ دارایی‌ها</span><span>تغییرات در دارایی‌ها</span></div>
+              <div className="connector connector-one" aria-hidden="true" /><div className="connector connector-two" aria-hidden="true" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="position-strip" aria-label="مدل ارائه هوش‌افزار">
-        <div className="shell position-grid">
-          <div><b>سامانه بومی هوش دارایی</b><span dir="ltr">MonoSuite Asset Intelligence</span></div>
-          <div><b>خدمات تخصصی</b><span>دانش فنی، تجربه عملیاتی و اجرای حرفه‌ای پروژه‌های امنیت</span></div>
-          <div><b>اجرای متناسب با زیرساخت</b><span>برای محیط‌های واقعی و پیچیده سازمانی</span></div>
+      <section className="position-strip" aria-label="مدل ارائه هوش‌افزار"><div className="shell position-grid">
+        <div><b>سامانه بومی هوش دارایی</b><span dir="ltr">MonoSuite Asset Intelligence</span></div>
+        <div><b>خدمات تخصصی</b><span>دانش فنی، تجربه عملیاتی و اجرای حرفه‌ای پروژه‌های امنیت</span></div>
+        <div><b>اجرای متناسب با زیرساخت</b><span>برای محیط‌های واقعی و پیچیده سازمانی</span></div>
+      </div></section>
+
+      <section className="section section-challenges"><div className="shell">
+        <div className="section-heading"><span className="eyebrow">نقاط کور امنیتی</span><h2>پیچیدگی زیرساخت، دیدپذیری امنیت را کاهش می‌دهد.</h2><p>هر چالش باید به یک مسیر اقدام ختم شود؛ از شناخت دقیق دارایی تا اولویت‌بندی ریسک و پاسخ سریع‌تر.</p></div>
+        <div className="challenge-grid challenge-grid-linked">{challenges.map((item) => (
+          <article className="challenge-card" key={item.number}>
+            <span className="challenge-number">{item.number}</span><h3>{item.title}</h3><p>{item.text}</p>
+            <a className="challenge-solution" href={item.href}><span>راهکار</span><strong>{item.solution}</strong><i>←</i></a>
+          </article>
+        ))}</div>
+      </div></section>
+
+      <section className="section section-offerings" id="offerings"><div className="shell">
+        <div className="section-heading section-heading-wide"><span className="eyebrow">دو مدل همکاری</span><h2>مونوسوئیت را به‌عنوان سامانه مستقر کنید؛ یا خروجی‌های آن را به‌صورت پروژه دریافت کنید.</h2></div>
+        <div className="offering-grid">
+          <article className="offering-card offering-product" id="monosuite">
+            <div className="offering-label">سامانه</div><span className="offering-name">سامانه بومی هوش دارایی مونوسوئیت</span><h3>دید مستمر و یکپارچه از دارایی‌ها و وضعیت امنیت</h3>
+            <p>سامانه‌ای درون‌سازمانی برای ایجاد موجودی یکپارچه دارایی‌های سایبری، افزایش رصدپذیری، تحلیل ریسک و ارزیابی مستمر وضعیت امنیت.</p>
+            <ul><li>استقرار درون‌سازمانی و پشتیبانی از محیط‌های Air-Gapped</li><li>تجمیع اطلاعات دارایی از منابع متعدد</li><li>اولویت‌بندی ریسک با درنظرگرفتن زمینه دارایی</li><li>ارزیابی وضعیت هاردنینگ و انطباق</li></ul>
+            <Link href="/monosuit/" className="text-link">معرفی مونوسوئیت</Link>
+          </article>
+          <article className="offering-card offering-services project-service-card" id="services">
+            <div className="offering-label">خدمت پروژه‌ای</div><span className="offering-name">خروجی مونوسوئیت به‌صورت پروژه</span><h3>همان خروجی‌های مونوسوئیت، بدون خرید لایسنس و نگهداشت سامانه</h3>
+            <p>برای سازمان‌هایی که محدودیت خرید دارند یا ترجیح می‌دهند کار را پروژه‌ای پیش ببرند، هوش‌افزار مونوسوئیت را در محیط سازمان مستقر می‌کند، داده‌ها را جمع‌آوری و تحلیل می‌کند و خروجی‌های مورد انتظار را تحویل می‌دهد. پس از پایان پروژه، سامانه جمع‌آوری می‌شود.</p>
+            <ul><li>استقرار موقت مونوسوئیت در زیرساخت سازمان</li><li>تولید موجودی دارایی، ریسک، هاردنینگ و گزارش تغییرات</li><li>تحویل گزارش‌ها، یافته‌ها و اقدامات پیشنهادی به سازمان</li><li>بدون هزینه دائمی لایسنس، نگهداشت و راهبری سامانه</li></ul>
+            <Link href="/services/" className="text-link">بررسی مدل خدمت پروژه‌ای</Link>
+          </article>
         </div>
-      </section>
+      </div></section>
 
-      <section className="section section-challenges">
-        <div className="shell">
-          <div className="section-heading">
-            <span className="eyebrow">نقاط کور امنیتی</span>
-            <h2>پیچیدگی زیرساخت، دیدپذیری امنیت را کاهش می‌دهد.</h2>
-            <p>هر چالش باید به یک مسیر اقدام ختم شود؛ از شناخت دقیق دارایی تا اولویت‌بندی ریسک و پاسخ سریع‌تر.</p>
-          </div>
-          <div className="challenge-grid challenge-grid-linked">
-            {challenges.map((item) => (
-              <article className="challenge-card" key={item.number}>
-                <span className="challenge-number">{item.number}</span>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-                <a className="challenge-solution" href={item.href}>
-                  <small>راهکار مرتبط</small>
-                  <strong>{item.solution}</strong>
-                </a>
-              </article>
-            ))}
-          </div>
+      <section className="section cis-section" id="cis"><div className="shell cis-grid">
+        <div className="cis-copy"><span className="eyebrow">CIS Controls v8.1</span><h2>کنترل‌های ۱ و ۲ CIS از یک فهرست معتبر دارایی شروع می‌شوند.</h2><p>مونوسوئیت لایه پایه شناخت دارایی را برای پوشش کنترل «فهرست و کنترل دارایی‌های سازمانی» و کنترل «فهرست و کنترل دارایی‌های نرم‌افزاری» فراهم می‌کند؛ با کشف، ثبت، تطبیق، تشخیص تغییر و نگهداشت مستمر اطلاعات دارایی.</p><Link className="text-link" href="/monosuit/">بررسی قابلیت‌های مونوسوئیت برای CIS</Link></div>
+        <div className="cis-visual" aria-label="پوشش کنترل‌های یک و دو CIS توسط مونوسوئیت">
+          <div className="cis-control"><b>01</b><span>CIS Control 1</span><strong>Inventory and Control of Enterprise Assets</strong></div>
+          <div className="cis-bridge"><small>سامانه بومی هوش دارایی</small><strong>مونوسوئیت</strong><i /></div>
+          <div className="cis-control"><b>02</b><span>CIS Control 2</span><strong>Inventory and Control of Software Assets</strong></div>
         </div>
-      </section>
+      </div></section>
 
-      <section className="section section-offerings" id="offerings">
-        <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <span className="eyebrow">دو مدل همکاری</span>
-            <h2>MonoSuite را به‌عنوان سامانه مستقر کنید؛ یا خروجی‌های آن را به‌صورت پروژه دریافت کنید.</h2>
-          </div>
-          <div className="offering-grid">
-            <article className="offering-card offering-product" id="monosuite">
-              <div className="offering-label">سامانه</div>
-              <span className="offering-name">سامانه بومی هوش دارایی مونوسوئیت</span>
-              <h3>دید مستمر و یکپارچه از دارایی‌ها و وضعیت امنیت</h3>
-              <p>سامانه‌ای درون‌سازمانی برای ایجاد موجودی یکپارچه دارایی‌های سایبری، افزایش رصدپذیری، تحلیل ریسک و ارزیابی مستمر وضعیت امنیت.</p>
-              <ul>
-                <li>استقرار درون‌سازمانی و پشتیبانی از محیط‌های Air-Gapped</li>
-                <li>تجمیع اطلاعات دارایی از منابع متعدد</li>
-                <li>اولویت‌بندی ریسک با درنظرگرفتن زمینه دارایی</li>
-                <li>ارزیابی وضعیت هاردنینگ و انطباق</li>
-              </ul>
-              <Link href="/monosuit/" className="text-link">معرفی MonoSuite</Link>
-            </article>
-
-            <article className="offering-card offering-services project-service-card" id="services">
-              <div className="offering-label">خدمت پروژه‌ای</div>
-              <span className="offering-name">MonoSuite as a Project Service</span>
-              <h3>همان خروجی‌های MonoSuite، بدون خرید لایسنس و نگهداشت سامانه</h3>
-              <p>برای سازمان‌هایی که محدودیت خرید دارند یا ترجیح می‌دهند کار را پروژه‌ای پیش ببرند، هوش‌افزار MonoSuite را در محیط سازمان مستقر می‌کند، داده‌ها را جمع‌آوری و تحلیل می‌کند و خروجی‌های مورد انتظار را تحویل می‌دهد. پس از پایان پروژه، سامانه جمع‌آوری می‌شود.</p>
-              <ul>
-                <li>استقرار موقت MonoSuite در زیرساخت سازمان</li>
-                <li>تولید موجودی دارایی، ریسک، هاردنینگ و گزارش تغییرات</li>
-                <li>تحویل گزارش‌ها، یافته‌ها و اقدامات پیشنهادی به سازمان</li>
-                <li>بدون هزینه دائمی لایسنس، نگهداشت و راهبری سامانه</li>
-              </ul>
-              <Link href="/services/" className="text-link">بررسی مدل خدمت پروژه‌ای</Link>
-            </article>
-          </div>
+      <section className="section architecture-section" id="integration"><div className="shell">
+        <div className="section-heading section-heading-wide"><span className="eyebrow">معماری امنیت یکپارچه</span><h2>شناخت دارایی، لایه پایه‌ای است که بقیه کنترل‌ها روی آن قابل اتکا می‌شوند.</h2><p>دو نمای زیر نشان می‌دهند اطلاعات دارایی چگونه به لایه‌های بالاتر امنیتی داده می‌دهد و چرا کیفیت این لایه پایه تعیین‌کننده است.</p></div>
+        <div className="architecture-grid">
+          <article className="architecture-card"><div className="architecture-card-head"><span>معماری هدف</span><small>Target Architecture</small></div>
+            <div className="arch-web"><div className="arch-web-stack"><div className="arch-web-layer response">پاسخ، خودکارسازی و بازیابی</div><div className="arch-web-layer detect">پایش، تشخیص و اطلاعات تهدید</div><div className="arch-web-layer risk">مدیریت آسیب‌پذیری و سطح حمله</div><div className="arch-web-split"><div>هویت و دسترسی</div><div>محافظت زیرساخت و داده</div></div><div className="arch-web-layer foundation"><strong>شناخت و دارایی — لایه پایه</strong><small>چه چیزی داریم، کجاست، متعلق به کیست و چه تغییری کرده</small></div></div><div className="arch-web-govern"><strong>حاکمیت، انطباق و سنجش</strong><small>اشراف بر همه لایه‌ها</small></div></div>
+          </article>
+          <article className="architecture-card integration-card"><div className="architecture-card-head"><span>نقشه یکپارچگی</span><small>Integration Map</small></div>
+            <div className="integration-web"><div className="integration-sources"><span>شبکه و مجازی‌سازی</span><span>سرورها و نقاط پایانی</span><span>سامانه‌ها و پایگاه داده</span><span>هویت سازمانی</span></div><div className="integration-arrow">↓</div><div className="integration-foundation"><strong>مونوسوئیت — فهرست یکپارچه دارایی و زمینه آن</strong><small>شناسه · مالک · مکان · اهمیت · پیکربندی · رابطه با سرویس · تاریخچه تغییر</small></div><div className="integration-arrow">↓</div><div className="integration-outputs"><span>آسیب‌پذیری و سطح حمله</span><span>پایش و تشخیص</span><span>هویت و دسترسی</span></div><div className="integration-arrow">↓</div><div className="integration-response">پاسخ و اقدام روی دارایی مشخص و شناخته‌شده</div></div>
+          </article>
         </div>
-      </section>
+      </div></section>
 
-      <section className="section cis-section" id="cis">
-        <div className="shell cis-grid">
-          <div className="cis-copy">
-            <span className="eyebrow">CIS Controls v8.1</span>
-            <h2>کنترل‌های ۱ و ۲ CIS از یک فهرست معتبر دارایی شروع می‌شوند.</h2>
-            <p>MonoSuite لایه پایه شناخت دارایی را برای پوشش کنترل «فهرست و کنترل دارایی‌های سازمانی» و کنترل «فهرست و کنترل دارایی‌های نرم‌افزاری» فراهم می‌کند؛ با کشف، ثبت، تطبیق، تشخیص تغییر و نگهداشت مستمر اطلاعات دارایی.</p>
-            <Link className="text-link" href="/monosuit/">بررسی قابلیت‌های MonoSuite برای CIS</Link>
-          </div>
-          <div className="cis-visual" aria-label="پوشش کنترل‌های یک و دو CIS توسط MonoSuite">
-            <div className="cis-control">
-              <b>01</b>
-              <span>CIS Control 1</span>
-              <strong>Inventory and Control of Enterprise Assets</strong>
-            </div>
-            <div className="cis-bridge"><span>MonoSuite Asset Intelligence</span><i /></div>
-            <div className="cis-control">
-              <b>02</b>
-              <span>CIS Control 2</span>
-              <strong>Inventory and Control of Software Assets</strong>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="section product-flow-section"><div className="shell product-flow-grid">
+        <div className="product-flow-copy"><span className="eyebrow eyebrow-light">منطق مونوسوئیت</span><h2>از داده خام تا تصمیم امنیتی قابل اقدام.</h2><p>مونوسوئیت اطلاعات پراکنده دارایی‌ها و ابزارهای امنیتی را جمع‌آوری، تطبیق و غنی‌سازی می‌کند تا تیم‌های فنی بتوانند وضعیت واقعی زیرساخت را ببینند، ریسک‌ها را بهتر اولویت‌بندی کنند و اقدامات اصلاحی را هدفمند پیش ببرند.</p><Link className="button button-light" href="/monosuit/">آشنایی بیشتر با محصول</Link></div>
+        <ol className="flow-list">{flow.map(([title, text], index) => (<li key={title}><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{title}</strong><p>{text}</p></div></li>))}</ol>
+      </div></section>
 
-      <section className="section architecture-section" id="integration">
-        <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <span className="eyebrow">معماری امنیت یکپارچه</span>
-            <h2>شناخت دارایی، لایه پایه‌ای است که بقیه کنترل‌ها روی آن قابل اتکا می‌شوند.</h2>
-            <p>دو نمای زیر، نسخه وب و خلاصه‌شده معماری هدف و نقشه یکپارچگی داده هستند؛ همان منطقی که در طراحی خدمات و سامانه‌های هوش‌افزار استفاده می‌شود.</p>
-          </div>
+      <section className="section services-section"><div className="shell"><div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>تمرکز بر مسئله عملیاتی سازمان؛ از کشف تهدید تا کنترل و پاسخ.</h2></div><div className="services-grid">{services.map((service, index) => (<article className="service-card" key={service.title}><span>{String(index + 1).padStart(2, '0')}</span><h3>{service.title}</h3><p>{service.text}</p><Link href="/services/" aria-label={`اطلاعات بیشتر درباره ${service.title}`}>اطلاعات بیشتر</Link></article>))}</div></div></section>
 
-          <div className="architecture-grid">
-            <article className="architecture-card">
-              <div className="architecture-card-head"><span>معماری هدف</span><small>Target Architecture</small></div>
-              <div className="arch-web">
-                <div className="arch-web-stack">
-                  <div className="arch-web-layer response">پاسخ، خودکارسازی و بازیابی</div>
-                  <div className="arch-web-layer detect">پایش، تشخیص و اطلاعات تهدید</div>
-                  <div className="arch-web-layer risk">مدیریت آسیب‌پذیری و سطح حمله</div>
-                  <div className="arch-web-split"><div>هویت و دسترسی</div><div>محافظت زیرساخت و داده</div></div>
-                  <div className="arch-web-layer foundation"><strong>شناخت و دارایی — لایه پایه</strong><small>چه چیزی داریم، کجاست، متعلق به کیست و چه تغییری کرده</small></div>
-                </div>
-                <div className="arch-web-govern"><strong>حاکمیت، انطباق و سنجش</strong><small>اشراف بر همه لایه‌ها</small></div>
-              </div>
-            </article>
+      <section className="section trust-section"><div className="shell trust-grid"><div className="trust-copy"><span className="eyebrow">آماده برای محیط‌های سازمانی</span><h2>طراحی‌شده برای الزامات واقعی زیرساخت‌های سازمانی.</h2><p>معماری و شیوه اجرای هوش‌افزار با محدودیت‌های امنیتی، شبکه‌های ایزوله، حاکمیت داده و پیچیدگی عملیاتی سازمان‌های بزرگ سازگار است.</p></div><div className="trust-points">{trustPoints.map(([title, text]) => (<div key={title}><strong>{title}</strong><p>{text}</p></div>))}</div></div></section>
 
-            <article className="architecture-card integration-card">
-              <div className="architecture-card-head"><span>نقشه یکپارچگی</span><small>Integration Map</small></div>
-              <div className="integration-web">
-                <div className="integration-sources"><span>شبکه و مجازی‌سازی</span><span>سرورها و نقاط پایانی</span><span>سامانه‌ها و پایگاه داده</span><span>هویت سازمانی</span></div>
-                <div className="integration-arrow">↓</div>
-                <div className="integration-foundation"><strong>MonoSuite — فهرست یکپارچه دارایی و زمینه آن</strong><small>شناسه · مالک · مکان · اهمیت · پیکربندی · رابطه با سرویس · تاریخچه تغییر</small></div>
-                <div className="integration-arrow">↓</div>
-                <div className="integration-outputs"><span>آسیب‌پذیری و سطح حمله</span><span>پایش و تشخیص</span><span>هویت و دسترسی</span></div>
-                <div className="integration-arrow">↓</div>
-                <div className="integration-response">پاسخ و اقدام روی دارایی مشخص و شناخته‌شده</div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section className="section product-flow-section">
-        <div className="shell product-flow-grid">
-          <div className="product-flow-copy">
-            <span className="eyebrow eyebrow-light">منطق MonoSuite</span>
-            <h2>از داده خام تا تصمیم امنیتی قابل اقدام.</h2>
-            <p>MonoSuite اطلاعات پراکنده دارایی‌ها و ابزارهای امنیتی را جمع‌آوری، تطبیق و غنی‌سازی می‌کند تا تیم‌های فنی بتوانند وضعیت واقعی زیرساخت را ببینند، ریسک‌ها را بهتر اولویت‌بندی کنند و اقدامات اصلاحی را هدفمند پیش ببرند.</p>
-            <Link className="button button-light" href="/monosuit/">آشنایی بیشتر با محصول</Link>
-          </div>
-          <ol className="flow-list">
-            {flow.map(([title, text], index) => (
-              <li key={title}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <div><strong>{title}</strong><p>{text}</p></div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="section services-section">
-        <div className="shell">
-          <div className="section-heading section-heading-wide">
-            <span className="eyebrow">خدمات تخصصی امنیت</span>
-            <h2>تمرکز بر مسئله عملیاتی سازمان؛ از کشف تهدید تا کنترل و پاسخ.</h2>
-          </div>
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <article className="service-card" key={service.title}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-                <Link href="/services/" aria-label={`اطلاعات بیشتر درباره ${service.title}`}>اطلاعات بیشتر</Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section trust-section">
-        <div className="shell trust-grid">
-          <div className="trust-copy">
-            <span className="eyebrow">آماده برای محیط‌های سازمانی</span>
-            <h2>طراحی‌شده برای الزامات واقعی زیرساخت‌های سازمانی.</h2>
-            <p>معماری و شیوه اجرای هوش‌افزار با محدودیت‌های امنیتی، شبکه‌های ایزوله، حاکمیت داده و پیچیدگی عملیاتی سازمان‌های بزرگ سازگار است.</p>
-          </div>
-          <div className="trust-points">
-            {trustPoints.map(([title, text]) => (
-              <div key={title}><strong>{title}</strong><p>{text}</p></div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="cta cta-redesign">
-        <div className="shell cta-inner">
-          <div>
-            <span>برای تصمیم بهتر، ابتدا باید تصویر دقیق‌تری از مسئله داشت.</span>
-            <h2>برای بررسی قابلیت‌های MonoSuite یا طراحی یک خدمت تخصصی امنیت با ما گفت‌وگو کنید.</h2>
-          </div>
-          <Link className="button button-light" href="/contcat/">درخواست جلسه</Link>
-        </div>
-      </section>
+      <section className="cta cta-redesign"><div className="shell cta-inner"><div><span>برای تصمیم بهتر، ابتدا باید تصویر دقیق‌تری از مسئله داشت.</span><h2>برای بررسی قابلیت‌های مونوسوئیت یا طراحی یک خدمت تخصصی امنیت با ما گفت‌وگو کنید.</h2></div><Link className="button button-light" href="/contcat/">درخواست جلسه</Link></div></section>
     </PageShell>
   );
 }
