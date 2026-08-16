@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Vazirmatn } from 'next/font/google';
 import './globals.css';
+import './redesign-v1-overrides.css';
 
 const vazirmatn = Vazirmatn({
   variable: '--font-vazirmatn',
