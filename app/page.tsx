@@ -158,10 +158,31 @@ export default function HomePage() {
           <p>در CIS Controls، کنترل ۱ بر فهرست و کنترل دارایی‌های سازمانی و کنترل ۲ بر فهرست و کنترل دارایی‌های نرم‌افزاری تمرکز دارد. مونوسوئیت با کشف، ثبت، تطبیق، تشخیص تغییر و نگهداشت مستمر اطلاعات دارایی، لایه پایه موردنیاز برای اجرای این دو کنترل را فراهم می‌کند.</p>
           <Link className="text-link" href="/monosuit/">بررسی قابلیت‌های مونوسوئیت برای CIS</Link>
         </div>
-        <div className="cis-visual" aria-label="کنترل‌های یک و دو CIS و سامانه بومی هوش دارایی مونوسوئیت">
-          <div className="cis-control"><b>01</b><span>CIS Control 1</span><strong>Inventory and Control of Enterprise Assets</strong></div>
-          <div className="cis-bridge"><small>نقطه شروع</small><strong>مونوسوئیت</strong><i /></div>
-          <div className="cis-control"><b>02</b><span>CIS Control 2</span><strong>Inventory and Control of Software Assets</strong></div>
+        <div className="cis-visual" aria-label="مونوسوئیت به‌عنوان لایه پایه کنترل‌های یک و دو CIS" style={{direction:'rtl',display:'block',padding:'30px'}}>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(2,minmax(0,1fr))',gap:'18px'}}>
+            <div className="cis-control" style={{minHeight:'210px',textAlign:'right'}}>
+              <b style={{fontSize:'44px'}}>۰۱</b>
+              <span style={{fontSize:'11px'}}>کنترل ۱ CIS</span>
+              <strong style={{fontSize:'18px',lineHeight:1.9}}>فهرست و کنترل دارایی‌های سازمانی</strong>
+              <small dir="ltr" style={{display:'block',marginTop:'8px',color:'#7b8798',fontSize:'9px',lineHeight:1.6}}>Inventory and Control of Enterprise Assets</small>
+            </div>
+            <div className="cis-control" style={{minHeight:'210px',textAlign:'right'}}>
+              <b style={{fontSize:'44px'}}>۰۲</b>
+              <span style={{fontSize:'11px'}}>کنترل ۲ CIS</span>
+              <strong style={{fontSize:'18px',lineHeight:1.9}}>فهرست و کنترل دارایی‌های نرم‌افزاری</strong>
+              <small dir="ltr" style={{display:'block',marginTop:'8px',color:'#7b8798',fontSize:'9px',lineHeight:1.6}}>Inventory and Control of Software Assets</small>
+            </div>
+          </div>
+
+          <div aria-hidden="true" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'18px',height:'54px',alignItems:'center',textAlign:'center',color:'#15757a',fontSize:'28px',fontWeight:900}}>
+            <span>↑</span><span>↑</span>
+          </div>
+
+          <div style={{padding:'22px 26px',borderRadius:'16px',background:'linear-gradient(135deg,#0b3b88,#0d66c2)',color:'#fff',textAlign:'center',boxShadow:'0 14px 34px rgba(11,59,136,.18)'}}>
+            <span style={{display:'block',fontSize:'11px',color:'#b9dcff'}}>نقطه شروع اجرای کنترل‌ها</span>
+            <strong style={{display:'block',marginTop:'7px',fontSize:'22px',color:'#fff'}}>سامانه بومی هوش دارایی مونوسوئیت</strong>
+            <small style={{display:'block',marginTop:'8px',fontSize:'10px',lineHeight:1.8,color:'rgba(255,255,255,.82)'}}>کشف، ثبت، تطبیق و نگهداشت مستمر موجودی دارایی‌های سازمانی و نرم‌افزاری</small>
+          </div>
         </div>
       </div></section>
 
