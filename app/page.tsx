@@ -135,7 +135,7 @@ export default function HomePage() {
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(190px,1fr))',gap:'12px'}}>
             {serviceDomains.map(([title, text], index) => (
               <Link href="/services/" key={title} style={{minHeight:'150px',padding:'20px',border:'1px solid #dbe3ee',borderRadius:'14px',background:'#fff',display:'flex',flexDirection:'column',justifyContent:'space-between'}}>
-                <span style={{fontSize:'12px',fontWeight:900,color:['#2f7d5b','#a57c14','#b0413a','#2e6b99','#6a4e86'][index]}}>۰{index + ۱}</span>
+                <span style={{fontSize:'12px',fontWeight:900,color:['#2f7d5b','#a57c14','#b0413a','#2e6b99','#6a4e86'][index]}}>0{index + 1}</span>
                 <div><strong style={{display:'block',fontSize:'15px',lineHeight:1.8,color:'#14243b'}}>{title}</strong><small style={{display:'block',marginTop:'8px',fontSize:'11px',lineHeight:1.9,color:'#66758a'}}>{text}</small></div>
               </Link>
             ))}
