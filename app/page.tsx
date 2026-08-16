@@ -112,10 +112,10 @@ export default function HomePage() {
               </div>
               <div className="system-column system-outputs">
                 <small>خروجی تصمیم</small>
-                <span>دیدپذیری دارایی</span>
-                <span>اولویت ریسک</span>
-                <span>وضعیت حفاظتی</span>
-                <span>گزارش و اقدام</span>
+                <span>میزان رصدپذیری دارایی‌ها</span>
+                <span>اولویت‌بندی ریسک‌ها</span>
+                <span>وضعیت هاردنینگ دارایی‌ها</span>
+                <span>تغییرات در دارایی‌ها</span>
               </div>
               <div className="connector connector-one" aria-hidden="true" />
               <div className="connector connector-two" aria-hidden="true" />
