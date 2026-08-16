@@ -1,0 +1,135 @@
+/* Final review adjustments for redesign-v1.
+   Keep the MonoSuite conceptual graphic light, diagrammatic and clearly non-UI. */
+
+.hero-system {
+  border-color: rgba(23, 92, 211, 0.12);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 54px rgba(11, 39, 85, 0.10);
+}
+
+.hero-system::before {
+  display: none;
+}
+
+.system-board {
+  min-height: 350px;
+  border: 1px solid rgba(23, 92, 211, 0.10);
+  background:
+    linear-gradient(rgba(23, 92, 211, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 92, 211, 0.035) 1px, transparent 1px),
+    transparent;
+  background-size: 28px 28px, 28px 28px, auto;
+}
+
+.system-column small {
+  color: #66758a;
+  font-size: 9px;
+}
+
+.system-column span,
+.system-outputs span {
+  min-height: 40px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #2d3d55;
+  font-size: 10px;
+  font-weight: 650;
+  position: relative;
+}
+
+.system-column span::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #8fa4bf;
+  margin-bottom: 6px;
+}
+
+.system-outputs span::before {
+  background: var(--cyan);
+}
+
+.system-engine {
+  min-height: 164px;
+  border-color: rgba(23, 92, 211, 0.24);
+  background: #ffffff;
+  color: var(--blue-deep);
+  box-shadow: 0 14px 36px rgba(11, 39, 85, 0.10);
+}
+
+.engine-kicker {
+  color: var(--blue);
+  font-size: 10px;
+}
+
+.system-engine strong {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.system-engine i {
+  width: 34px;
+  height: 2px;
+  margin: 14px 0;
+}
+
+.system-engine small {
+  color: #687a92;
+}
+
+.connector {
+  background: repeating-linear-gradient(90deg, rgba(23, 92, 211, 0.42) 0 5px, transparent 5px 9px);
+}
+
+.connector::after {
+  width: 6px;
+  height: 6px;
+  background: var(--blue);
+  box-shadow: none;
+}
+
+@media (max-width: 760px) {
+  .hero-system {
+    padding: 18px;
+  }
+
+  .system-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .system-board {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px 16px;
+  }
+
+  .system-column {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .system-column small {
+    grid-column: 1 / -1;
+  }
+
+  .system-engine {
+    min-height: 132px;
+    order: 2;
+  }
+
+  .system-sources {
+    order: 1;
+  }
+
+  .system-outputs {
+    order: 3;
+  }
+
+  .connector {
+    display: none;
+  }
+}
