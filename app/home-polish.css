@@ -10,6 +10,13 @@
   font-weight:900;
 }
 
+/* Keep the English MonoSuite label LTR, but align its block with the Persian card content. */
+.position-grid > div:first-child span[dir="ltr"]{
+  display:block;
+  width:100%;
+  text-align:right;
+}
+
 .security-chain-row{
   grid-template-columns:1fr auto;
   padding-right:56px;
