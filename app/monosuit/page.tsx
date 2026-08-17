@@ -71,6 +71,13 @@ const compliance = [
   ['ISO/IEC 27001', 'نمای انطباق مبتنی بر شواهد', 'ارائه وضعیت کنترل‌های پشتیبانی‌شده بر پایه شواهد فنی موجود در سامانه.'],
 ];
 
+const socContext = [
+  ['مالک و سرویس', 'مالک دارایی، سرویس کسب‌وکاری و اهمیت آن برای سازمان'],
+  ['وضعیت امنیتی', 'آسیب‌پذیری‌ها، هاردنینگ، انطباق و امتیازهای حفاظتی و ریسک'],
+  ['سطح تماس', 'پورت‌های باز، سرویس‌ها، دسترسی اینترنت و ارتباطات قابل مشاهده'],
+  ['تغییرات اخیر', 'تغییرات دارایی، نرم‌افزار، پیکربندی و روابط در چرخه‌های اخیر'],
+];
+
 export default function MonoSuitePage() {
   return (
     <PageShell>
@@ -141,34 +148,50 @@ export default function MonoSuitePage() {
         <section className={styles.socSection}><div className="shell">
           <div className={styles.socHeading}>
             <span className={styles.eyebrow}>کاربرد در مرکز عملیات امنیت</span>
-            <h2>از هشدار امنیتی تا تصمیم؛ Context دارایی از قبل آماده است</h2>
-            <p>ابزارهای تشخیص رخداد را پیدا می‌کنند؛ مونوسوئیت زمینه لازم برای تصمیم را آماده می‌کند. تحلیلگر بدون جست‌وجوی دستی میان چند سامانه می‌تواند اهمیت دارایی، وضعیت امنیتی، روابط و تغییرات آن را کنار هشدار ببیند و سریع‌تر دامنه حادثه و اولویت پاسخ را مشخص کند.</p>
+            <h2>وقتی هشدار می‌رسد، مونوسوئیت Context دارایی را آماده دارد.</h2>
+            <p>سامانه تشخیص می‌گوید چه رخدادی دیده شده است؛ مونوسوئیت کمک می‌کند تیم SOC سریع‌تر بفهمد این رخداد روی چه دارایی‌ای اتفاق افتاده، آن دارایی چقدر مهم است، چه ضعف‌هایی دارد، با چه بخش‌هایی در ارتباط است و دامنه احتمالی حادثه تا کجا می‌تواند گسترش پیدا کند.</p>
           </div>
 
-          <div className={styles.integrationGrid}>
-            <article className={styles.integrationCard}>
-              <b>۰۱ — هشدار امنیتی</b>
-              <strong>ورودی از سامانه‌های تشخیص</strong>
-              <p>هشدار از منابعی مانند SIEM، EDR یا NDR همراه با شناسه دارایی، زمان رخداد و شواهد اولیه وارد فرآیند بررسی می‌شود.</p>
-            </article>
-            <article className={styles.integrationCard}>
-              <b>۰۲ — Context مونوسوئیت</b>
-              <strong>تصویر کامل دارایی درگیر</strong>
-              <p>مالک و سرویس کسب‌وکاری، اهمیت دارایی، آسیب‌پذیری، هاردنینگ و انطباق، پورت‌ها و سرویس‌ها، ارتباطات، تغییرات اخیر و سه امتیاز Identification، Protection و Risk در یک نما در دسترس قرار می‌گیرد.</p>
-            </article>
-            <article className={styles.integrationCard}>
-              <b>۰۳ — تصمیم تحلیلگر</b>
-              <strong>Scope روشن‌تر و اولویت دقیق‌تر</strong>
-              <p>تیم SOC سریع‌تر اهمیت واقعی رخداد، دارایی‌ها و سرویس‌های مرتبط و دامنه احتمالی حادثه را مشخص می‌کند و Investigation را بر اساس ریسک اولویت می‌دهد.</p>
-            </article>
+          <div className={styles.socScenario}>
+            <div className={styles.alertCard}>
+              <span>۰۱</span>
+              <small>ورودی عملیات امنیت</small>
+              <strong>هشدار از SIEM / EDR / NDR</strong>
+              <p>شناسه یا نشانی دارایی درگیر، زمان رخداد و شواهد اولیه وارد فرآیند Investigation می‌شود.</p>
+            </div>
+
+            <div className={styles.socArrow}>←</div>
+
+            <div className={styles.contextCard}>
+              <div className={styles.contextTop}><span>MonoSuite Asset Context</span><b>دارایی درگیر</b></div>
+              <div className={styles.contextAsset}><strong>APP-SRV-042</strong><span>سرویس پرداخت سازمان</span></div>
+              <div className={styles.contextGrid}>{socContext.map(([title,text]) => <div key={title}><strong>{title}</strong><p>{text}</p></div>)}</div>
+              <div className={styles.contextSignals}>
+                <span>Risk 72</span><span>Protection 61</span><span>Identification 94</span>
+              </div>
+            </div>
+
+            <div className={styles.socArrow}>←</div>
+
+            <div className={styles.decisionCard}>
+              <span>۰۳</span>
+              <small>خروجی برای تحلیلگر</small>
+              <strong>Scope و اولویت روشن‌تر</strong>
+              <ul>
+                <li>تشخیص سریع‌تر اهمیت واقعی رخداد</li>
+                <li>شناسایی دارایی‌ها و سرویس‌های مرتبط</li>
+                <li>اولویت‌بندی Investigation بر اساس ریسک</li>
+                <li>کاهش زمان جمع‌آوری Context پیش از اقدام</li>
+              </ul>
+            </div>
           </div>
 
-          <div className={styles.metrics}>
-            <div className={styles.metric}><b>Context</b><strong>Investigation سریع‌تر</strong><span>کاهش زمان جمع‌آوری اطلاعات پیش از شروع تحلیل</span></div>
-            <div className={styles.metric}><b>Scope</b><strong>دامنه رخداد دقیق‌تر</strong><span>استفاده از روابط دارایی، سرویس و شبکه برای تشخیص محدوده اثر</span></div>
-            <div className={styles.metric}><b>Risk</b><strong>اولویت پاسخ بهتر</strong><span>قرار دادن اهمیت و وضعیت ریسک دارایی در کنار خود هشدار</span></div>
+          <div className={styles.socOutcomes}>
+            <div><b>Investigation سریع‌تر</b><span>Context آماده به‌جای جست‌وجوی دستی میان چند ابزار</span></div>
+            <div><b>Incident Scoping دقیق‌تر</b><span>روابط دارایی، سرویس و شبکه برای تعیین دامنه رخداد</span></div>
+            <div><b>اولویت پاسخ بهتر</b><span>اهمیت دارایی و وضعیت ریسک در کنار خود Alert</span></div>
+            <div><b>MTTI و MTTR قابل‌کنترل‌تر</b><span>کاهش زمان صرف‌شده برای شناخت محیط پیش از تصمیم</span></div>
           </div>
-
           <div className={styles.socLinkRow}><Link href="/soc-role/">کاربردهای مونوسوئیت در مرکز عملیات امنیت ←</Link></div>
         </div></section>
 
