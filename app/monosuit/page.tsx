@@ -165,8 +165,7 @@ export default function MonoSuitePage() {
               <strong>هشدار از SIEM / EDR / NDR</strong>
               <p>شناسه یا نشانی دارایی درگیر، زمان رخداد و شواهد اولیه وارد فرآیند Investigation می‌شود.</p>
               <div className={styles.rawLog}>
-                <small>نمونه داده ورودی</small>
-                <code dir="ltr">2026-08-18T10:42:16Z host=APP-SRV-042 event=Suspicious_Process severity=high src=10.20.14.25 user=svc-pay</code>
+                <code dir="ltr">... 2026-08-18T10:42:16Z host=APP-SRV-042 event=Suspicious_Process severity=high ...</code>
               </div>
             </div>
 
@@ -176,19 +175,14 @@ export default function MonoSuitePage() {
               <div className={styles.contextTop}><span>MonoSuite Asset Context</span><b>دارایی درگیر</b></div>
               <div className={styles.contextAsset}>
                 <strong>APP-SRV-042</strong>
-                <span className={styles.serviceBadge}><i className={styles.serviceIcon} aria-hidden="true" />سرویس پرداخت سازمان</span>
+                <span className={styles.serviceBadge}><span className={styles.serviceIcon} aria-hidden="true">◆</span>سرویس پرداخت سازمان</span>
               </div>
               <div className={styles.contextGrid}>{socContext.map(([title,text]) => <div key={title}><strong>{title}</strong><p>{text}</p></div>)}</div>
               <div className={styles.contextSignals}>
                 {contextScores.map((item) => (
                   <div className={`${styles.miniScore} ${styles[item.tone]}`} key={item.label}>
-                    <div className={styles.miniGauge}>
-                      <svg viewBox="0 0 42 42" aria-hidden="true">
-                        <circle className={styles.miniGaugeTrack} cx="21" cy="21" r="16" pathLength="100" />
-                        <circle className={styles.miniGaugeProgress} cx="21" cy="21" r="16" pathLength="100" strokeDasharray={`${item.value} ${100 - item.value}`} />
-                      </svg>
-                      <b>{item.value}</b>
-                    </div>
+                    <span className={styles.scoreMark} aria-hidden="true" />
+                    <b>{item.value}<small>%</small></b>
                     <span dir="ltr">{item.label}</span>
                   </div>
                 ))}
