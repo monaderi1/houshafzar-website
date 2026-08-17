@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const metrics = [
   ['۱۰۰٬۰۰۰', 'نشانی IP در دقیقه', 'توان کشف اندازه‌گیری‌شده در شرایط عملیاتی'],
   ['۷۰+', 'آداپتور', 'اتصال به تجهیزات، سرویس‌ها و منابع داده سازمانی'],
-  ['۱۵۹۸', 'توصیه CIS Benchmark', 'ارزیابی پیکربندی امنیتی برای محصولات و انواع دارایی پشتیبانی‌شده'],
+  ['۱۵۰۰+', 'توصیه CIS Benchmark', 'ارزیابی پیکربندی امنیتی برای محصولات و انواع دارایی پشتیبانی‌شده'],
 ];
 
 const pillars = [
@@ -66,7 +66,7 @@ const integrations = [
 ];
 
 const compliance = [
-  ['CIS Benchmark', '۱٬۵۹۸ توصیه امنیتی', 'ارزیابی پیکربندی امنیتی برای محصولات و انواع دارایی پشتیبانی‌شده و نمایش نتیجه در سطح دارایی و توصیه.'],
+  ['CIS Benchmark', '۱۵۰۰+ توصیه امنیتی', 'ارزیابی پیکربندی امنیتی برای محصولات و انواع دارایی پشتیبانی‌شده و نمایش نتیجه در سطح دارایی و توصیه.'],
   ['PCI DSS', 'گزارش کنترل‌های فنی', 'بررسی کنترل‌های قابل ارزیابی بر پایه داده‌های فنی و عملیاتی جمع‌آوری‌شده در مونوسوئیت.'],
   ['ISO/IEC 27001', 'نمای انطباق مبتنی بر شواهد', 'ارائه وضعیت کنترل‌های پشتیبانی‌شده بر پایه شواهد فنی موجود در سامانه.'],
 ];
@@ -76,6 +76,12 @@ const socContext = [
   ['وضعیت امنیتی', 'آسیب‌پذیری‌ها، هاردنینگ، انطباق و امتیازهای حفاظتی و ریسک'],
   ['سطح تماس', 'پورت‌های باز، سرویس‌ها، دسترسی اینترنت و ارتباطات قابل مشاهده'],
   ['تغییرات اخیر', 'تغییرات دارایی، نرم‌افزار، پیکربندی و روابط در چرخه‌های اخیر'],
+];
+
+const contextScores = [
+  { label: 'Identification', value: 94, tone: 'identify' },
+  { label: 'Protection', value: 61, tone: 'protect' },
+  { label: 'Risk', value: 72, tone: 'riskMini' },
 ];
 
 export default function MonoSuitePage() {
@@ -148,8 +154,8 @@ export default function MonoSuitePage() {
         <section className={styles.socSection}><div className="shell">
           <div className={styles.socHeading}>
             <span className={styles.eyebrow}>کاربرد در مرکز عملیات امنیت</span>
-            <h2>وقتی هشدار می‌رسد، مونوسوئیت Context دارایی را آماده دارد.</h2>
-            <p>سامانه تشخیص می‌گوید چه رخدادی دیده شده است؛ مونوسوئیت کمک می‌کند تیم SOC سریع‌تر بفهمد این رخداد روی چه دارایی‌ای اتفاق افتاده، آن دارایی چقدر مهم است، چه ضعف‌هایی دارد، با چه بخش‌هایی در ارتباط است و دامنه احتمالی حادثه تا کجا می‌تواند گسترش پیدا کند.</p>
+            <h2>از هشدار امنیتی تا تصمیم آگاهانه؛ مونوسوئیت زمینه کامل دارایی را در اختیار تحلیلگر قرار می‌دهد.</h2>
+            <p>سامانه‌های تشخیص، وقوع رخداد و شواهد اولیه را در اختیار تیم SOC قرار می‌دهند؛ اما تصمیم‌گیری مؤثر نیازمند شناخت دقیق دارایی درگیر و جایگاه آن در سازمان است. مونوسوئیت با ارائه اطلاعات مالکیت، اهمیت کسب‌وکاری، وضعیت آسیب‌پذیری و هاردنینگ، روابط و ارتباطات، تغییرات اخیر و امتیازهای امنیتی، زمینه لازم را در کنار هشدار قرار می‌دهد تا تحلیلگر بتواند دامنه حادثه را سریع‌تر تعیین کند، ریسک واقعی را دقیق‌تر ارزیابی کند و اولویت پاسخ را بر مبنای شواهد مشخص سازد.</p>
           </div>
 
           <div className={styles.socScenario}>
@@ -158,16 +164,34 @@ export default function MonoSuitePage() {
               <small>ورودی عملیات امنیت</small>
               <strong>هشدار از SIEM / EDR / NDR</strong>
               <p>شناسه یا نشانی دارایی درگیر، زمان رخداد و شواهد اولیه وارد فرآیند Investigation می‌شود.</p>
+              <div className={styles.rawLog}>
+                <small>نمونه داده ورودی</small>
+                <code dir="ltr">2026-08-18T10:42:16Z host=APP-SRV-042 event=Suspicious_Process severity=high src=10.20.14.25 user=svc-pay</code>
+              </div>
             </div>
 
             <div className={styles.socArrow}>←</div>
 
             <div className={styles.contextCard}>
               <div className={styles.contextTop}><span>MonoSuite Asset Context</span><b>دارایی درگیر</b></div>
-              <div className={styles.contextAsset}><strong>APP-SRV-042</strong><span>سرویس پرداخت سازمان</span></div>
+              <div className={styles.contextAsset}>
+                <strong>APP-SRV-042</strong>
+                <span className={styles.serviceBadge}><i className={styles.serviceIcon} aria-hidden="true" />سرویس پرداخت سازمان</span>
+              </div>
               <div className={styles.contextGrid}>{socContext.map(([title,text]) => <div key={title}><strong>{title}</strong><p>{text}</p></div>)}</div>
               <div className={styles.contextSignals}>
-                <span>Risk 72</span><span>Protection 61</span><span>Identification 94</span>
+                {contextScores.map((item) => (
+                  <div className={`${styles.miniScore} ${styles[item.tone]}`} key={item.label}>
+                    <div className={styles.miniGauge}>
+                      <svg viewBox="0 0 42 42" aria-hidden="true">
+                        <circle className={styles.miniGaugeTrack} cx="21" cy="21" r="16" pathLength="100" />
+                        <circle className={styles.miniGaugeProgress} cx="21" cy="21" r="16" pathLength="100" strokeDasharray={`${item.value} ${100 - item.value}`} />
+                      </svg>
+                      <b>{item.value}</b>
+                    </div>
+                    <span dir="ltr">{item.label}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
