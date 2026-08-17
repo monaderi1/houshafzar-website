@@ -27,9 +27,9 @@ const pillars = [
 ];
 
 const scores = [
-  ['Visibility', 'رصدپذیری', 'میزان کامل‌بودن و قابل‌استفاده‌بودن شناخت سازمان از هر دارایی و وضعیت کلی دارایی‌ها.'],
-  ['Protection', 'حفاظت', 'نمایی از وضعیت امنیت، آسیب‌پذیری، انطباق، Exposure، احراز هویت، Certificate و سایر عوامل حفاظتی.'],
-  ['Risk', 'ریسک', 'نمای ریسک با ساختار Impact × Likelihood در سطح دارایی و تجمیع آن در سطح سازمان.'],
+  ['gauge85', '۸۵٪', 'رصدپذیری', 'Visibility Score', 'میزان کامل‌بودن شناخت دارایی؛ از کشف و شناسنامه تا روابط، طبقه‌بندی، مالکیت و تاریخچه تغییر.'],
+  ['gauge78', '۷۸٪', 'حفاظت', 'Protection Score', 'نمای وضعیت حفاظتی دارایی بر پایه آسیب‌پذیری، سطح حمله، هاردنینگ، انطباق و سایر شواهد امنیتی.'],
+  ['gauge30', '۳۰٪', 'ریسک', 'Risk Score', 'نمای ریسک باقی‌مانده هر دارایی و تجمیع آن در سطح سرویس، سایت و کل سازمان برای اولویت‌بندی اقدام.'],
 ];
 
 const integrations = [
@@ -76,10 +76,21 @@ export default function MonoSuitePage() {
           <div className={styles.capGrid}>{pillars.map(([tag,title,text]) => <article className={styles.cap} key={title}><span>{tag}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
         </div></section>
 
-        <section className={styles.sectionDark}><div className="shell"><div className={styles.scoreGrid}>
-          <div className={styles.scoreIntro}><span className={styles.eyebrowLight}>سه نمای مدیریتی و عملیاتی</span><h2>رصدپذیری، حفاظت و ریسک؛ در سطح دارایی و سازمان</h2><p>سه Score مکمل، داده فنی را به شاخص‌هایی قابل فهم برای مدیریت و قابل Drill-down برای تیم‌های عملیاتی تبدیل می‌کنند.</p></div>
-          <div className={styles.scoreCards}>{scores.map(([en,fa,text]) => <article className={styles.scoreCard} key={en}><small dir="ltr">{en} Score</small><strong>{fa}</strong><p>{text}</p></article>)}</div>
-        </div></div></section>
+        <section className={styles.sectionDark}><div className="shell">
+          <div className={styles.scoreHero}>
+            <div className={styles.scoreIntro}>
+              <span className={styles.eyebrowLight}>هوش مدیریتی از دل داده‌های فنی</span>
+              <h2>از صدها داده فنی، سه عدد برای تصمیم مدیریتی</h2>
+              <p>مونوسوئیت داده‌های کشف، موجودی، تغییرات، ارتباطات، آسیب‌پذیری، سطح حمله، هاردنینگ، انطباق و زمینه کسب‌وکار را همبسته می‌کند و نتیجه را در سه شاخص ۰ تا ۱۰۰ خلاصه می‌کند. مدیر می‌تواند وضعیت هر دارایی و کل سازمان را در یک نگاه ببیند؛ تیم عملیاتی نیز از همان عدد تا عوامل سازنده و شواهد فنی پایین برود.</p>
+              <div className={styles.scoreFlow}><span>داده‌های فنی و امنیتی</span><i>←</i><span>تحلیل و همبستگی مونوسوئیت</span><i>←</i><strong>سه شاخص مدیریتی</strong></div>
+              <small className={styles.sampleNote}>اعداد زیر نمای نمونه از داشبورد مدیریتی هستند.</small>
+            </div>
+            <div className={styles.scoreCards}>{scores.map(([gauge,value,fa,en,text]) => <article className={styles.scoreCard} key={en}>
+              <div className={`${styles.gauge} ${styles[gauge]}`}><div><b>{value}</b><small dir="ltr">{en}</small></div></div>
+              <strong>{fa}</strong><p>{text}</p><span className={styles.drilldown}>از شاخص کل تا دارایی و شواهد ←</span>
+            </article>)}</div>
+          </div>
+        </div></section>
 
         <section className={styles.sectionSoft}><div className="shell">
           <div className={styles.heading}><span className={styles.eyebrow}>یکپارچه‌سازی</span><h2>هوش دارایی در کنار ابزارهای موجود سازمان</h2><p>مونوسوئیت با آداپتورها و رابط‌های پشتیبانی‌شده، داده را از زیرساخت و ابزارهای امنیتی دریافت می‌کند و خروجی را در جریان‌های عملیاتی سازمان قابل استفاده می‌سازد.</p></div>
