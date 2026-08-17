@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 
 const metrics = [
-  ['۱۰۰٬۰۰۰', 'نشانی IP در دقیقه', 'توان کشف اندازه‌گیری‌شده در شرایط آزمون'],
+  ['۱۰۰٬۰۰۰', 'نشانی IP در دقیقه', 'توان کشف اندازه‌گیری‌شده در شرایط عملیاتی'],
   ['۷۰+', 'آداپتور', 'اتصال به تجهیزات، سرویس‌ها و منابع داده سازمانی'],
-  ['۱۵۹۸', 'توصیه CIS Benchmark', 'پوشش نگهداشت‌شده برای ارزیابی پیکربندی امنیتی'],
+  ['۱۵۹۸', 'توصیه CIS Benchmark', 'ارزیابی پیکربندی امنیتی برای محصولات و انواع دارایی پشتیبانی‌شده'],
 ];
 
 const pillars = [
@@ -27,18 +27,24 @@ const pillars = [
 ];
 
 const scores = [
-  ['gauge85', '۸۵٪', 'رصدپذیری', 'Visibility Score', 'میزان کامل‌بودن شناخت دارایی؛ از کشف و شناسنامه تا روابط، طبقه‌بندی، مالکیت و تاریخچه تغییر.'],
-  ['gauge78', '۷۸٪', 'حفاظت', 'Protection Score', 'نمای وضعیت حفاظتی دارایی بر پایه آسیب‌پذیری، سطح حمله، هاردنینگ، انطباق و سایر شواهد امنیتی.'],
-  ['gauge30', '۳۰٪', 'ریسک', 'Risk Score', 'نمای ریسک باقی‌مانده هر دارایی و تجمیع آن در سطح سرویس، سایت و کل سازمان برای اولویت‌بندی اقدام.'],
+  ['gauge85', '۸۵٪', 'رصدپذیری', 'Visibility Score', 'نشان می‌دهد سازمان تا چه اندازه دارایی را شناخته، پروفایل آن را کامل کرده و تغییرات و روابط آن را زیر نظر دارد.'],
+  ['gauge78', '۷۸٪', 'حفاظت', 'نشان می‌دهد هر دارایی بر پایه وضعیت آسیب‌پذیری، سطح حمله، هاردنینگ و انطباق تا چه اندازه در وضعیت حفاظتی مناسبی قرار دارد.'],
+  ['gauge30', '۳۰٪', 'ریسک', 'ریسک باقی‌مانده هر دارایی را نمایش می‌دهد و همان ریسک را در سطح سرویس، سایت و کل سازمان تجمیع می‌کند.'],
 ];
 
 const integrations = [
-  ['Jira', 'ایجاد تیکت و همگام‌سازی وضعیت‌های پشتیبانی‌شده'],
+  ['ITSM', 'ایجاد تیکت از طریق آداپتورهای پشتیبانی‌شده و اتصال یافته‌های امنیتی به فرآیند پیگیری'],
   ['Splunk', 'دسترسی کاربران مجاز Splunk به داده‌های ارائه‌شده MonoSuite'],
   ['Nessus', 'اتصال به چند Nessus و دریافت زمان‌بندی‌شده یافته‌ها'],
   ['REST API', 'دسترسی API همراه با مستندات Swagger / OpenAPI'],
   ['SMTP و SMS', 'ارسال اعلان از طریق ایمیل سازمانی و درگاه‌های پیامک سازگار'],
   ['SSH و SNMP', 'استفاده در آداپتورهای پشتیبانی‌شده کشف و Inventory'],
+];
+
+const compliance = [
+  ['CIS Benchmark', '۱٬۵۹۸ توصیه امنیتی', 'ارزیابی پیکربندی امنیتی برای محصولات و انواع دارایی پشتیبانی‌شده و نمایش نتیجه در سطح دارایی و توصیه.'],
+  ['PCI DSS', 'گزارش کنترل‌های فنی', 'بررسی کنترل‌های قابل ارزیابی بر پایه داده‌های فنی و عملیاتی جمع‌آوری‌شده در مونوسوئیت.'],
+  ['ISO/IEC 27001', 'نمای انطباق مبتنی بر شواهد', 'ارائه وضعیت کنترل‌های پشتیبانی‌شده بر پایه شواهد فنی موجود در سامانه.'],
 ];
 
 export default function MonoSuitePage() {
@@ -80,9 +86,9 @@ export default function MonoSuitePage() {
           <div className={styles.scoreHero}>
             <div className={styles.scoreIntro}>
               <span className={styles.eyebrowLight}>هوش مدیریتی از دل داده‌های فنی</span>
-              <h2>از صدها داده فنی، سه عدد برای تصمیم مدیریتی</h2>
-              <p>مونوسوئیت داده‌های کشف، موجودی، تغییرات، ارتباطات، آسیب‌پذیری، سطح حمله، هاردنینگ، انطباق و زمینه کسب‌وکار را همبسته می‌کند و نتیجه را در سه شاخص ۰ تا ۱۰۰ خلاصه می‌کند. مدیر می‌تواند وضعیت هر دارایی و کل سازمان را در یک نگاه ببیند؛ تیم عملیاتی نیز از همان عدد تا عوامل سازنده و شواهد فنی پایین برود.</p>
-              <div className={styles.scoreFlow}><span>داده‌های فنی و امنیتی</span><i>←</i><span>تحلیل و همبستگی مونوسوئیت</span><i>←</i><strong>سه شاخص مدیریتی</strong></div>
+              <h2>سه عدد برای پاسخ به سه سؤال مدیریتی</h2>
+              <p>مونوسوئیت اطلاعات فنی و امنیتی هر دارایی را به سه شاخص قابل سنجش تبدیل می‌کند: سازمان تا چه اندازه دارایی‌های خود را می‌شناسد، وضعیت حفاظتی آن‌ها چگونه است و ریسک واقعی در کجا متمرکز شده است. این سه شاخص هم برای هر دارایی و هم برای کل سازمان محاسبه می‌شوند و هر عدد تا عوامل سازنده و شواهد فنی قابل بررسی است.</p>
+              <div className={styles.scoreFlow}><span>چقدر محیط را می‌شناسیم؟</span><i>•</i><span>چقدر از دارایی‌ها محافظت شده؟</span><i>•</i><strong>ریسک واقعی کجاست؟</strong></div>
               <small className={styles.sampleNote}>اعداد زیر نمای نمونه از داشبورد مدیریتی هستند.</small>
             </div>
             <div className={styles.scoreCards}>{scores.map(([gauge,value,fa,en,text]) => <article className={styles.scoreCard} key={en}>
@@ -107,17 +113,9 @@ export default function MonoSuitePage() {
         </div></div></section>
 
         <section className={styles.sectionSoft}><div className="shell">
-          <div className={styles.heading}><span className={styles.eyebrow}>مدل استفاده</span><h2>خرید سامانه یا دریافت خروجی به‌صورت پروژه</h2><p>بسته به مدل بهره‌برداری سازمان، مونوسوئیت می‌تواند به‌عنوان یک سامانه دائمی یا ابزار اجرای یک پروژه تخصصی مورد استفاده قرار گیرد.</p></div>
-          <div className={styles.deployGrid}>
-            <article className={`${styles.deployCard} ${styles.dark}`}><span className={styles.label}>خرید سامانه</span><h3>دید مستمر برای مدیریت دارایی و وضعیت امنیت</h3><p>مناسب سازمان‌هایی که به یک لایه دائمی هوش دارایی برای کشف، Inventory، تحلیل ریسک، هاردنینگ و پایش تغییرات نیاز دارند.</p><ul><li>شناخت و Inventory مستمر دارایی‌ها</li><li>Visibility، Protection و Risk Score</li><li>تحلیل آسیب‌پذیری، Exposure و Compliance</li><li>استقرار و حاکمیت داده در زیرساخت سازمان</li></ul></article>
-            <article className={styles.deployCard}><span className={styles.label}>مدل اجرایی پروژه‌ای</span><h3>دریافت خروجی‌های عملیاتی، بدون نیاز به خرید سامانه</h3><p>مونوسوئیت به‌صورت موقت در زیرساخت سازمان مستقر می‌شود تا شناسنامه دارایی‌ها، وضعیت امنیت، ریسک و یافته‌های قابل اقدام استخراج و در قالب خروجی پروژه تحویل شود.</p><ul><li>استقرار موقت در زیرساخت سازمان</li><li>تولید موجودی و تحلیل وضعیت امنیت</li><li>گزارش ریسک، هاردنینگ و تغییرات</li><li>تحویل یافته‌ها و خروجی‌های عملیاتی</li></ul></article>
-          </div>
+          <div className={styles.heading}><span className={styles.eyebrow}>انطباق و هاردنینگ</span><h2>وضعیت پیکربندی امنیتی را در سطح هر دارایی ببینید</h2><p>مونوسوئیت داده‌های فنی جمع‌آوری‌شده را با توصیه‌های امنیتی و نگاشت‌های از پیش تعریف‌شده مقایسه می‌کند تا وضعیت انطباق و هاردنینگ به‌صورت قابل بررسی و قابل گزارش در اختیار تیم امنیت و ممیزی قرار گیرد.</p></div>
+          <div className={styles.integrationGrid}>{compliance.map(([name,title,text]) => <article className={styles.integrationCard} key={name}><b dir="ltr">{name}</b><strong>{title}</strong><p>{text}</p></article>)}</div>
         </div></section>
-
-        <section className={styles.section}><div className="shell"><div className={styles.cis}>
-          <div className={styles.heading}><span className={styles.eyebrow}>CIS Controls v8.1</span><h2>اجرای CIS Controls از شناخت دارایی آغاز می‌شود</h2><p>کنترل ۱ بر فهرست و کنترل دارایی‌های سازمانی و کنترل ۲ بر فهرست و کنترل دارایی‌های نرم‌افزاری تمرکز دارد. مونوسوئیت با کشف، ثبت، Inventory و نگهداشت مستمر اطلاعات دارایی، زیرساخت اطلاعاتی لازم برای اجرای این دو کنترل را فراهم می‌کند.</p></div>
-          <div className={styles.cisVisual}><div className={styles.cisControls}><div className={styles.cisCard}><b>۰۱</b><strong>فهرست و کنترل دارایی‌های سازمانی</strong><small dir="ltr">Inventory and Control of Enterprise Assets</small></div><div className={styles.cisCard}><b>۰۲</b><strong>فهرست و کنترل دارایی‌های نرم‌افزاری</strong><small dir="ltr">Inventory and Control of Software Assets</small></div></div><div className={styles.cisFoundation}><small>پایه اطلاعاتی کنترل‌ها</small><strong>MonoSuite Asset Intelligence</strong></div></div>
-        </div></div></section>
 
         <section className={styles.cta}><div className={`shell ${styles.ctaInner}`}><div><span>دید بهتر، تصمیم دقیق‌تر</span><h2>برای بررسی تناسب مونوسوئیت با معماری و نیازهای امنیتی سازمان، با هوش‌افزار گفت‌وگو کنید.</h2></div><Link href="/contact/">درخواست جلسه</Link></div></section>
       </main>
