@@ -11,6 +11,12 @@
   height: 38px;
 }
 
+/* Footer uses a dark surface; keep the full brand lockup readable there. */
+.site-footer .brand-title b { color: #ffffff !important; }
+.site-footer .brand-title em { color: #9fb6d1 !important; }
+.site-footer .brand-copy small { color: #b8c9dc !important; }
+.site-footer .footer-intro > p { color: #a9bdd6; }
+
 @media (max-width: 760px) {
   .brand-logo {
     width: 44px;
