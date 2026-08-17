@@ -5,22 +5,40 @@ import styles from './monosuit.module.css';
 
 export const metadata: Metadata = {
   title: 'مونوسوئیت | سامانه بومی هوش دارایی',
-  description: 'معرفی سامانه بومی هوش دارایی مونوسوئیت برای کشف، شناسنامه‌سازی، یکپارچه‌سازی اطلاعات دارایی، تحلیل ریسک و ارزیابی پیکربندی امنیتی.',
+  description: 'مونوسوئیت یک پلتفرم سازمانی درون‌سازمانی برای کشف، موجودی، تحلیل سطح حمله داخلی، ارزیابی آسیب‌پذیری، هاردنینگ، انطباق و اولویت‌بندی ریسک دارایی‌های فناوری است.',
 };
 
 const metrics = [
-  ['۱۰۰٬۰۰۰', 'دارایی در ۶۰ ثانیه', 'سرعت کشف و شناسنامه‌سازی دارایی‌های سازمان'],
+  ['۱۰۰٬۰۰۰', 'نشانی IP در دقیقه', 'توان کشف اندازه‌گیری‌شده در شرایط آزمون'],
   ['۷۰+', 'آداپتور', 'اتصال به تجهیزات، سرویس‌ها و منابع داده سازمانی'],
-  ['۱۵۰۰+', 'بررسی پیکربندی امنیتی', 'ارزیابی تنظیمات امنیتی و وضعیت هاردنینگ دارایی‌ها'],
+  ['۱۵۹۸', 'توصیه CIS Benchmark', 'پوشش نگهداشت‌شده برای ارزیابی پیکربندی امنیتی'],
 ];
 
-const capabilities = [
-  ['شناخت دارایی', 'کشف و شناسنامه‌سازی', 'ایجاد موجودی یکپارچه و به‌روز از دارایی‌های شبکه، نقاط پایانی و منابع شناسایی‌شده در سازمان.'],
-  ['یکپارچه‌سازی داده', 'تجمیع و تطبیق اطلاعات', 'همگراکردن داده‌های پراکنده و حذف تکرار برای ایجاد نمایی واحد و قابل اتکا از هر دارایی.'],
-  ['تغییرات', 'نگهداشت تاریخچه دارایی', 'تشخیص تغییرات و حفظ سابقه برای مشاهده وضعیت جاری و روند تغییر در طول زمان.'],
-  ['ریسک', 'اولویت‌بندی بر پایه زمینه', 'تحلیل آسیب‌پذیری با درنظرگرفتن اهمیت دارایی، شرایط محیط و زمینه فنی برای تصمیم‌گیری دقیق‌تر.'],
-  ['هاردنینگ', 'ارزیابی پیکربندی امنیتی', 'بررسی تنظیمات و وضعیت امن‌سازی دارایی‌ها برای شناسایی انحراف‌ها و نقاط نیازمند اصلاح.'],
-  ['عملیات', 'خروجی قابل اقدام', 'تبدیل شناخت دارایی و یافته‌های امنیتی به گزارش و داده قابل استفاده برای تیم‌های فناوری اطلاعات و امنیت.'],
+const pillars = [
+  ['شناخت', 'کشف و شناسنامه دارایی', 'کشف دارایی از شبکه و منابع سازمانی، تجمیع داده و ایجاد یک هویت قابل اتکا برای هر دارایی.'],
+  ['موجودی', 'Inventory عمیق و چندلایه', 'سخت‌افزار، سیستم‌عامل، نرم‌افزار، Firmware، کاربر، سرویس، Process، Patch، رابط شبکه و تاریخچه موجودی در یک نمای واحد.'],
+  ['تغییرات', 'پایش تغییرات دارایی', 'مقایسه چرخه‌های Inventory و ثبت موارد افزوده، تغییرکرده و حذف‌شده برای مشاهده روند تغییرات و بررسی انحراف‌ها.'],
+  ['سطح حمله', 'دید به سطح حمله داخلی', 'مشاهده پورت‌ها، سرویس‌ها، ارتباطات خارجی، USB، Shareها و وب‌سرویس‌های قابل مشاهده روی دارایی‌های تحت مدیریت.'],
+  ['آسیب‌پذیری', 'ارزیابی و تجمیع یافته‌ها', 'تطبیق CPE با پایگاه محلی CVE و دریافت زمان‌بندی‌شده یافته‌های Nessus برای ایجاد زمینه آسیب‌پذیری در سطح دارایی.'],
+  ['انطباق', 'هاردنینگ و Compliance', 'ارزیابی CIS Benchmark و گزارش‌دهی فنی بر پایه داده جمع‌آوری‌شده برای چارچوب‌های پشتیبانی‌شده از جمله PCI DSS و ISO/IEC 27001.'],
+  ['ریسک', 'اولویت‌بندی مبتنی بر زمینه', 'ترکیب Impact و Likelihood و ایجاد Risk Score در سطح دارایی و سازمان برای تمرکز روی موارد مهم‌تر.'],
+  ['کسب‌وکار', 'Business Service و Business Impact', 'ثبت و نمایش روابط مشاهده‌شده، تعریف سرویس‌های کسب‌وکاری و استفاده از Business Impact تأییدشده سازمان در محاسبه ریسک.'],
+  ['عملیات', 'Policy، اعلان و Ticket', 'ساخت Policy بر پایه داده دارایی، تغییر، آسیب‌پذیری، Exposure، Score و Compliance و ارسال اعلان یا ایجاد تیکت از مسیرهای پشتیبانی‌شده.'],
+];
+
+const scores = [
+  ['Visibility', 'رصدپذیری', 'میزان کامل‌بودن و قابل‌استفاده‌بودن شناخت سازمان از هر دارایی و وضعیت کلی دارایی‌ها.'],
+  ['Protection', 'حفاظت', 'نمایی از وضعیت امنیت، آسیب‌پذیری، انطباق، Exposure، احراز هویت، Certificate و سایر عوامل حفاظتی.'],
+  ['Risk', 'ریسک', 'نمای ریسک با ساختار Impact × Likelihood در سطح دارایی و تجمیع آن در سطح سازمان.'],
+];
+
+const integrations = [
+  ['Jira', 'ایجاد تیکت و همگام‌سازی وضعیت‌های پشتیبانی‌شده'],
+  ['Splunk', 'دسترسی کاربران مجاز Splunk به داده‌های ارائه‌شده MonoSuite'],
+  ['Nessus', 'اتصال به چند Nessus و دریافت زمان‌بندی‌شده یافته‌ها'],
+  ['REST API', 'دسترسی API همراه با مستندات Swagger / OpenAPI'],
+  ['SMTP و SMS', 'ارسال اعلان از طریق ایمیل سازمانی و درگاه‌های پیامک سازگار'],
+  ['SSH و SNMP', 'استفاده در آداپتورهای پشتیبانی‌شده کشف و Inventory'],
 ];
 
 export default function MonoSuitePage() {
@@ -31,21 +49,21 @@ export default function MonoSuitePage() {
           <div className="shell">
             <div className={styles.heroGrid}>
               <div>
-                <span className={styles.eyebrow}>سامانه بومی هوش دارایی</span>
-                <h1>مونوسوئیت؛<em> شناخت یکپارچه دارایی برای تصمیم امنیتی دقیق‌تر</em></h1>
-                <p>دیگر داشتن یک فهرست ساده از دارایی‌ها کافی نیست. مونوسوئیت اطلاعات پراکنده زیرساخت را به یک نمای یکپارچه، به‌روز و قابل اقدام تبدیل می‌کند تا تیم‌های فناوری اطلاعات و امنیت بتوانند وضعیت دارایی، تغییرات، ریسک و پیکربندی امنیتی را بر پایه داده واقعی تحلیل کنند.</p>
+                <span className={styles.eyebrow}>MonoSuite Asset Intelligence</span>
+                <h1>از دارایی‌های پراکنده،<em> یک تصویر قابل اتکا برای تصمیم امنیتی بسازید.</em></h1>
+                <p>مونوسوئیت یک پلتفرم سازمانی و درون‌سازمانی برای کشف، فهرست‌برداری، حاکمیت و تحلیل دارایی‌های فناوری است. داده‌های شبکه، نقاط پایانی، ابزارهای امنیتی و منابع سازمانی در یک لایه هوش دارایی تجمیع می‌شوند تا تیم‌های امنیت و فناوری اطلاعات بتوانند رصدپذیری، وضعیت حفاظتی و ریسک را بر پایه شواهد واقعی تحلیل کنند.</p>
                 <div className={styles.actions}>
                   <Link className={styles.primary} href="/contact/">درخواست جلسه معرفی</Link>
                   <a className={styles.secondary} href="#capabilities">بررسی قابلیت‌ها</a>
                 </div>
               </div>
               <div className={styles.visual}>
-                <div className={styles.visualTitle}><b>MonoSuite Asset Intelligence</b><span>لایه پایه شناخت و زمینه امنیتی</span></div>
+                <div className={styles.visualTitle}><b>لایه هوش دارایی</b><span>از داده خام تا زمینه قابل اقدام</span></div>
                 <div className={styles.stack}>
-                  <div className={styles.stackItem}><strong>داده‌های دارایی از منابع متعدد</strong><small>شبکه، نقاط پایانی، ابزارهای امنیتی و منابع سازمانی</small></div>
-                  <div className={styles.stackItem}><strong>هویت واحد و شناسنامه دارایی</strong><small>تطبیق، تجمیع، تشخیص تغییر و نگهداشت تاریخچه</small></div>
-                  <div className={styles.stackItem}><strong>تحلیل وضعیت امنیت و ریسک</strong><small>آسیب‌پذیری، پیکربندی امنیتی، زمینه دارایی و اولویت اقدام</small></div>
-                  <div className={styles.stackItem}><strong>خروجی عملیاتی برای تیم امنیت</strong><small>گزارش، اولویت‌بندی و داده قابل استفاده برای تصمیم و اقدام</small></div>
+                  <div className={styles.stackItem}><strong>کشف و ورود داده</strong><small>شبکه، Inventory مبتنی بر Agent و Agentless، فایل و آداپتورها</small></div>
+                  <div className={styles.stackItem}><strong>هویت و زمینه دارایی</strong><small>Inventory، شبکه، ارتباطات، سرویس کسب‌وکاری و تاریخچه تغییر</small></div>
+                  <div className={styles.stackItem}><strong>تحلیل امنیت</strong><small>آسیب‌پذیری، سطح حمله داخلی، CIS Benchmark، Compliance و Scoreها</small></div>
+                  <div className={styles.stackItem}><strong>تصمیم و عملیات</strong><small>اولویت‌بندی ریسک، Dashboard، گزارش، Policy، اعلان و Ticket</small></div>
                 </div>
               </div>
             </div>
@@ -54,26 +72,43 @@ export default function MonoSuitePage() {
         </section>
 
         <section className={styles.section} id="capabilities"><div className="shell">
-          <div className={styles.heading}><span className={styles.eyebrow}>قابلیت‌های اصلی</span><h2>از کشف دارایی تا تحلیل و اقدام</h2><p>مونوسوئیت زنجیره شناخت دارایی را از جمع‌آوری داده تا ایجاد زمینه امنیتی و خروجی قابل اقدام پوشش می‌دهد.</p></div>
-          <div className={styles.capGrid}>{capabilities.map(([tag,title,text]) => <article className={styles.cap} key={title}><span>{tag}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
+          <div className={styles.heading}><span className={styles.eyebrow}>قابلیت‌های منتخب</span><h2>دامنه‌ای فراتر از یک فهرست دارایی</h2><p>مونوسوئیت شناخت دارایی، وضعیت امنیت و زمینه عملیاتی را در یک مدل واحد کنار هم قرار می‌دهد تا تیم‌ها به‌جای جابه‌جایی میان ابزارهای متعدد، از یک نمای مشترک برای تحلیل و تصمیم استفاده کنند.</p></div>
+          <div className={styles.capGrid}>{pillars.map(([tag,title,text]) => <article className={styles.cap} key={title}><span>{tag}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
         </div></section>
 
+        <section className={styles.sectionDark}><div className="shell"><div className={styles.scoreGrid}>
+          <div className={styles.scoreIntro}><span className={styles.eyebrowLight}>سه نمای مدیریتی و عملیاتی</span><h2>رصدپذیری، حفاظت و ریسک؛ در سطح دارایی و سازمان</h2><p>سه Score مکمل، داده فنی را به شاخص‌هایی قابل فهم برای مدیریت و قابل Drill-down برای تیم‌های عملیاتی تبدیل می‌کنند.</p></div>
+          <div className={styles.scoreCards}>{scores.map(([en,fa,text]) => <article className={styles.scoreCard} key={en}><small dir="ltr">{en} Score</small><strong>{fa}</strong><p>{text}</p></article>)}</div>
+        </div></div></section>
+
         <section className={styles.sectionSoft}><div className="shell">
-          <div className={styles.heading}><span className={styles.eyebrow}>مدل استفاده</span><h2>خرید سامانه یا دریافت خروجی به‌صورت پروژه</h2><p>بسته به مدل تأمین و بهره‌برداری سازمان، مونوسوئیت می‌تواند به‌صورت سامانه دائمی یا به‌صورت استقرار پروژه‌ای مورد استفاده قرار گیرد.</p></div>
+          <div className={styles.heading}><span className={styles.eyebrow}>یکپارچه‌سازی</span><h2>هوش دارایی در کنار ابزارهای موجود سازمان</h2><p>مونوسوئیت با آداپتورها و رابط‌های پشتیبانی‌شده، داده را از زیرساخت و ابزارهای امنیتی دریافت می‌کند و خروجی را در جریان‌های عملیاتی سازمان قابل استفاده می‌سازد.</p></div>
+          <div className={styles.integrationGrid}>{integrations.map(([name,text]) => <article className={styles.integrationCard} key={name}><b dir="ltr">{name}</b><p>{text}</p></article>)}</div>
+        </div></section>
+
+        <section className={styles.section}><div className="shell"><div className={styles.enterpriseGrid}>
+          <div className={styles.heading}><span className={styles.eyebrow}>استقرار سازمانی</span><h2>کنترل داده و عملیات در زیرساخت سازمان</h2><p>مونوسوئیت به‌صورت On-Premises در زیرساخت مشتری مستقر می‌شود و امکان بهره‌برداری در محیط‌های Air-Gapped، به‌روزرسانی آفلاین و مدیریت روزمره از طریق رابط تحت وب را فراهم می‌کند.</p></div>
+          <div className={styles.enterpriseCards}>
+            <article><span>۰۱</span><strong>استقرار درون‌سازمانی</strong><p>ارائه Applianceهای مجازی و نگهداشت داده و خروجی‌های امنیتی در زیرساخت کنترل‌شده سازمان.</p></article>
+            <article><span>۰۲</span><strong>کار در محیط‌های ایزوله</strong><p>پشتیبانی از بهره‌برداری Air-Gapped و بسته‌های به‌روزرسانی آفلاین برای محیط‌های بدون اتصال دائمی به اینترنت.</p></article>
+            <article><span>۰۳</span><strong>کنترل دسترسی و Audit</strong><p>نقش‌های سفارشی، RBAC، محدودسازی داده مبتنی بر ویژگی و ثبت فعالیت‌های مدیریتی و عملیاتی.</p></article>
+          </div>
+        </div></div></section>
+
+        <section className={styles.sectionSoft}><div className="shell">
+          <div className={styles.heading}><span className={styles.eyebrow}>مدل استفاده</span><h2>خرید سامانه یا دریافت خروجی به‌صورت پروژه</h2><p>بسته به مدل بهره‌برداری سازمان، مونوسوئیت می‌تواند به‌عنوان یک سامانه دائمی یا ابزار اجرای یک پروژه تخصصی مورد استفاده قرار گیرد.</p></div>
           <div className={styles.deployGrid}>
-            <article className={`${styles.deployCard} ${styles.dark}`}><span className={styles.label}>خرید سامانه</span><h3>خرید مونوسوئیت؛ سرمایه‌گذاری بلندمدت</h3><p>برای سازمان‌هایی که به دید مستمر و یکپارچه از دارایی‌ها و وضعیت امنیت نیاز دارند، مونوسوئیت به‌صورت درون‌سازمانی مستقر می‌شود و در اختیار تیم سازمان قرار می‌گیرد.</p><ul><li>موجودی و شناسنامه دارایی به‌صورت مستمر</li><li>تشخیص تغییرات و نگهداشت تاریخچه</li><li>تحلیل ریسک و ارزیابی پیکربندی امنیتی</li><li>حفظ کامل داده در زیرساخت سازمان</li></ul></article>
-            <article className={styles.deployCard}><span className={styles.label}>مدل اجرایی پروژه‌ای</span><h3>دریافت خروجی‌های عملیاتی، بدون نیاز به خرید سامانه</h3><p>در مدل اجرایی پروژه‌ای، مونوسوئیت برای استخراج شناسنامه دارایی‌ها و تحلیل سطح حمله در زیرساخت مشتری مستقر می‌شود. پس از تکمیل تحلیل‌ها و ارائه گزارش جامع ریسک، استقرار موقت سامانه پایان می‌یابد و تمامی یافته‌ها، گزارش‌ها و خروجی‌های عملیاتی در اختیار تیم امنیت سازمان قرار می‌گیرد.</p><ul><li>استقرار موقت در زیرساخت سازمان</li><li>تولید موجودی، تحلیل ریسک و گزارش تغییرات</li><li>تحویل یافته‌ها و اقدامات پیشنهادی</li><li>بدون نیاز به نگهداشت و راهبری دائمی سامانه</li></ul></article>
+            <article className={`${styles.deployCard} ${styles.dark}`}><span className={styles.label}>خرید سامانه</span><h3>دید مستمر برای مدیریت دارایی و وضعیت امنیت</h3><p>مناسب سازمان‌هایی که به یک لایه دائمی هوش دارایی برای کشف، Inventory، تحلیل ریسک، هاردنینگ و پایش تغییرات نیاز دارند.</p><ul><li>شناخت و Inventory مستمر دارایی‌ها</li><li>Visibility، Protection و Risk Score</li><li>تحلیل آسیب‌پذیری، Exposure و Compliance</li><li>استقرار و حاکمیت داده در زیرساخت سازمان</li></ul></article>
+            <article className={styles.deployCard}><span className={styles.label}>مدل اجرایی پروژه‌ای</span><h3>دریافت خروجی‌های عملیاتی، بدون نیاز به خرید سامانه</h3><p>مونوسوئیت به‌صورت موقت در زیرساخت سازمان مستقر می‌شود تا شناسنامه دارایی‌ها، وضعیت امنیت، ریسک و یافته‌های قابل اقدام استخراج و در قالب خروجی پروژه تحویل شود.</p><ul><li>استقرار موقت در زیرساخت سازمان</li><li>تولید موجودی و تحلیل وضعیت امنیت</li><li>گزارش ریسک، هاردنینگ و تغییرات</li><li>تحویل یافته‌ها و خروجی‌های عملیاتی</li></ul></article>
           </div>
         </div></section>
 
         <section className={styles.section}><div className="shell"><div className={styles.cis}>
-          <div className={styles.heading}><span className={styles.eyebrow}>CIS Controls v8.1</span><h2>اجرای CIS Controls از شناخت دارایی آغاز می‌شود</h2><p>کنترل ۱ بر فهرست و کنترل دارایی‌های سازمانی و کنترل ۲ بر فهرست و کنترل دارایی‌های نرم‌افزاری تمرکز دارد. مونوسوئیت با کشف، ثبت، تطبیق، تشخیص تغییر و نگهداشت مستمر اطلاعات دارایی، لایه پایه موردنیاز برای اجرای این دو کنترل را فراهم می‌کند.</p></div>
-          <div className={styles.cisVisual}><div className={styles.cisControls}><div className={styles.cisCard}><b>۰۱</b><strong>فهرست و کنترل دارایی‌های سازمانی</strong><small dir="ltr">Inventory and Control of Enterprise Assets</small></div><div className={styles.cisCard}><b>۰۲</b><strong>فهرست و کنترل دارایی‌های نرم‌افزاری</strong><small dir="ltr">Inventory and Control of Software Assets</small></div></div><div className={styles.cisFoundation}><small>نقطه شروع اجرای کنترل‌ها</small><strong>سامانه بومی هوش دارایی مونوسوئیت</strong></div></div>
+          <div className={styles.heading}><span className={styles.eyebrow}>CIS Controls v8.1</span><h2>اجرای CIS Controls از شناخت دارایی آغاز می‌شود</h2><p>کنترل ۱ بر فهرست و کنترل دارایی‌های سازمانی و کنترل ۲ بر فهرست و کنترل دارایی‌های نرم‌افزاری تمرکز دارد. مونوسوئیت با کشف، ثبت، Inventory و نگهداشت مستمر اطلاعات دارایی، زیرساخت اطلاعاتی لازم برای اجرای این دو کنترل را فراهم می‌کند.</p></div>
+          <div className={styles.cisVisual}><div className={styles.cisControls}><div className={styles.cisCard}><b>۰۱</b><strong>فهرست و کنترل دارایی‌های سازمانی</strong><small dir="ltr">Inventory and Control of Enterprise Assets</small></div><div className={styles.cisCard}><b>۰۲</b><strong>فهرست و کنترل دارایی‌های نرم‌افزاری</strong><small dir="ltr">Inventory and Control of Software Assets</small></div></div><div className={styles.cisFoundation}><small>پایه اطلاعاتی کنترل‌ها</small><strong>MonoSuite Asset Intelligence</strong></div></div>
         </div></div></section>
 
-        <section className={styles.sectionSoft}><div className="shell"><div className={styles.heading}><span className={styles.eyebrow}>استقرار سازمانی</span><h2>طراحی‌شده برای محیط‌های حساس و محدود</h2><p>مونوسوئیت به‌صورت درون‌سازمانی مستقر می‌شود و برای محیط‌هایی که حاکمیت داده و محدودیت ارتباط بیرونی اهمیت دارد مناسب است. داده‌ها و خروجی‌های امنیتی در زیرساخت سازمان باقی می‌مانند.</p></div></div></section>
-
-        <section className={styles.cta}><div className={`shell ${styles.ctaInner}`}><h2>برای بررسی قابلیت‌های مونوسوئیت و مدل مناسب استقرار در سازمان، با هوش‌افزار گفت‌وگو کنید.</h2><Link href="/contact/">درخواست جلسه</Link></div></section>
+        <section className={styles.cta}><div className={`shell ${styles.ctaInner}`}><div><span>دید بهتر، تصمیم دقیق‌تر</span><h2>برای بررسی تناسب مونوسوئیت با معماری و نیازهای امنیتی سازمان، با هوش‌افزار گفت‌وگو کنید.</h2></div><Link href="/contact/">درخواست جلسه</Link></div></section>
       </main>
     </PageShell>
   );
