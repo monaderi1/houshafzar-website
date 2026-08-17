@@ -22,12 +22,12 @@ export function Header() {
           {nav.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
         </nav>
         <div className="header-actions">
-          <Link href="/contcat/" className="button button-small">درخواست مشاوره</Link>
+          <Link href="/contact/" className="button button-small">درخواست مشاوره</Link>
           <details className="mobile-nav">
             <summary aria-label="باز کردن منوی سایت"><span /><span /><span /></summary>
             <div className="mobile-nav-panel">
               {nav.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
-              <Link href="/contcat/" className="button">درخواست مشاوره</Link>
+              <Link href="/contact/" className="button">درخواست مشاوره</Link>
             </div>
           </details>
         </div>
