@@ -1,0 +1,19 @@
+.brand-logo {
+  width: 52px;
+  height: 42px;
+  display: block;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.site-footer .brand-logo {
+  width: 48px;
+  height: 38px;
+}
+
+@media (max-width: 760px) {
+  .brand-logo {
+    width: 44px;
+    height: 34px;
+  }
+}
