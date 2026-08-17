@@ -65,13 +65,7 @@ const trustPoints = [
 const monoMetrics = [
   ['۱۰۰٬۰۰۰', 'دارایی در ۶۰ ثانیه', 'سرعت کشف و شناسنامه‌سازی دارایی‌های سازمان'],
   ['۷۰+', 'آداپتور', 'اتصال به تجهیزات، سرویس‌ها و منابع داده سازمانی'],
-  ['۱۵۰۰+', 'بررسی امن‌سازی', 'ارزیابی تنظیمات امنیتی و وضعیت هاردنینگ دارایی‌ها'],
-];
-
-const monoScores = [
-  ['رصدپذیری', 'سنجش میزان کامل‌بودن شناخت سازمان از دارایی‌ها و نقاط کور اطلاعاتی'],
-  ['حفاظت', 'ارزیابی وضعیت امنیتی، هاردنینگ، انطباق و سطح حفاظتی هر دارایی'],
-  ['ریسک', 'اولویت‌بندی ریسک بر پایه آسیب‌پذیری، اهمیت دارایی و زمینه واقعی محیط'],
+  ['۱۵۰۰+', 'بررسی پیکربندی امنیتی', 'ارزیابی تنظیمات امنیتی و وضعیت هاردنینگ دارایی‌ها'],
 ];
 
 export default function HomePage() {
@@ -87,7 +81,11 @@ export default function HomePage() {
               <Link className="button" href="/contact/">درخواست جلسه معرفی</Link>
               <a className="text-link" href="#services">مشاهده محصول و خدمات</a>
             </div>
-            <div className="hero-notes" aria-label="ویژگی‌های کلیدی ارائه"><span>محصول بومی</span><span>خدمات تخصصی سازمانی</span><span>استقرار درون‌سازمانی</span></div>
+            <div className="hero-notes" aria-label="ویژگی‌های کلیدی ارائه">
+              <span className="hero-product-note">محصول بومی <b>دانش‌بنیان</b></span>
+              <span>خدمات تخصصی سازمانی</span>
+              <span>استقرار درون‌سازمانی</span>
+            </div>
           </div>
 
           <div className="security-chain" aria-label="زنجیره امنیت سازمانی">
@@ -104,8 +102,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <section className="credential-strip" aria-label="اعتبار محصول"><div className="shell"><span>محصول دانش‌بنیان</span><strong>سامانه بومی مونوسوئیت در حوزه مدیریت دارایی‌های سایبری</strong></div></section>
 
       <section className="position-strip" aria-label="مدل ارائه هوش‌افزار"><div className="shell position-grid">
         <div><b>سامانه بومی هوش دارایی</b><span dir="ltr">MonoSuite Asset Intelligence</span></div>
@@ -124,7 +120,7 @@ export default function HomePage() {
       </div></section>
 
       <section className="section services-portfolio-section" id="services"><div className="shell">
-        <div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>در کنار توسعه محصولات بومی، دانش استقرار، پیاده‌سازی و راهبری سامانه‌های تخصصی امنیت را نیز در اختیار سازمان‌ها قرار می‌دهیم.</h2><p>خدمات ما به‌صورت پروژه‌ای با دامنه مشخص یا به‌صورت راهبری و پشتیبانی مستمر ارائه می‌شوند و متناسب با معماری، حجم داده و محدودیت‌های هر سازمان طراحی می‌شوند.</p></div>
+        <div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>محصول بومی می‌سازیم و سامانه‌های تخصصی امنیت را نیز مستقر و راهبری می‌کنیم.</h2><p>خدمات ما به‌صورت پروژه‌ای با دامنه مشخص یا به‌صورت راهبری و پشتیبانی مستمر ارائه می‌شوند و متناسب با معماری، حجم داده و محدودیت‌های هر سازمان طراحی می‌شوند.</p></div>
         <div className="service-portfolio-grid">{services.map((service) => (
           <article className="service-portfolio-card" key={service.title}>
             <span className="service-tech" dir="ltr">{service.tag}</span>
@@ -144,7 +140,6 @@ export default function HomePage() {
         </div>
 
         <div className="mono-metrics">{monoMetrics.map(([value, title, text]) => (<div key={title}><b>{value}</b><strong>{title}</strong><span>{text}</span></div>))}</div>
-        <div className="mono-scores">{monoScores.map(([title, text]) => (<div key={title}><span>شاخص</span><strong>{title}</strong><p>{text}</p></div>))}</div>
 
         <div className="offering-grid">
           <article className="offering-card offering-product">
