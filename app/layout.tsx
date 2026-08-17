@@ -4,6 +4,7 @@ import './globals.css';
 import './redesign-v1-overrides.css';
 import './brand-logo.css';
 import './home-portfolio.css';
+import './home-polish.css';
 
 const vazirmatn = Vazirmatn({
   variable: '--font-vazirmatn',
