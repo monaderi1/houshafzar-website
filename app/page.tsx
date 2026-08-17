@@ -21,29 +21,29 @@ const services = [
   {
     tag: 'SPLUNK',
     title: 'مهندسی و راهبری اسپلانک',
-    text: 'طراحی و پیاده‌سازی معماری، ورود و نرمال‌سازی داده، توسعه قواعد تشخیص و بهینه‌سازی بهره‌برداری از Splunk.',
-    bullets: ['طراحی معماری و استقرار', 'Data Onboarding و نرمال‌سازی', 'Detection Engineering و کاهش False Positive', 'بهینه‌سازی مصرف لایسنس و انتقال دانش'],
+    text: 'طراحی و پیاده‌سازی معماری، ورود و نرمال‌سازی داده، توسعه قواعد تشخیص و بهینه‌سازی بهره‌برداری از اسپلانک.',
+    bullets: ['طراحی معماری و استقرار', 'ورود و نرمال‌سازی داده', 'مهندسی تشخیص و کاهش خطای مثبت', 'بهینه‌سازی مصرف لایسنس و انتقال دانش'],
     note: 'تأمین لایسنس و پشتیبانی تخصصی',
   },
   {
     tag: 'IMPERVA DAM',
     title: 'پایش و حفاظت فعالیت پایگاه داده',
-    text: 'استقرار و راهبری Imperva DAM برای کشف پایگاه‌های داده، پایش فعالیت حساس و ایجاد شواهد قابل استناد امنیتی.',
-    bullets: ['نصب و راه‌اندازی', 'Database Discovery و طبقه‌بندی', 'Policy Design و Tuning', 'پایش فعالیت و پشتیبانی عملیاتی'],
+    text: 'استقرار و راهبری ایمپروا برای کشف پایگاه‌های داده، پایش فعالیت حساس و ایجاد شواهد قابل استناد امنیتی.',
+    bullets: ['نصب و راه‌اندازی', 'کشف پایگاه داده و طبقه‌بندی', 'طراحی و تنظیم سیاست‌ها', 'پایش فعالیت و پشتیبانی عملیاتی'],
     note: 'تأمین لایسنس معتبر',
   },
   {
     tag: 'CISCO ISE · TACACS+',
     title: 'کنترل دسترسی شبکه و هویت',
     text: 'طراحی و پیاده‌سازی کنترل دسترسی شبکه برای تعیین اینکه چه کاربر یا تجهیزی، با چه سطحی از دسترسی، به کدام بخش شبکه متصل شود.',
-    bullets: ['طراحی معماری NAC', 'نصب و راه‌اندازی Cisco ISE', 'TACACS+ و مدیریت دسترسی تجهیزات', 'Policy، راهبری و پشتیبانی'],
+    bullets: ['طراحی معماری کنترل دسترسی', 'نصب و راه‌اندازی سیسکو ISE', 'مدیریت دسترسی تجهیزات با TACACS+', 'سیاست‌گذاری، راهبری و پشتیبانی'],
     note: 'تأمین لایسنس معتبر',
   },
   {
     tag: 'SECURITY OPERATIONS & RESPONSE',
     title: 'عملیات امنیت، شکار تهدید و پاسخ به رخداد',
-    text: 'خدمات عملیاتی برای تبدیل جریان هشدار به تصمیم و اقدام؛ از پایش و Threat Hunting تا ارزیابی SOC و Incident Response.',
-    bullets: ['پایش متمرکز یا استقرار نیرو', 'Threat Hunting هدفمند', 'ارزیابی و ارتقای بلوغ SOC', 'تحلیل رخداد و بازسازی خط زمانی'],
+    text: 'خدمات عملیاتی برای تبدیل جریان هشدار به تصمیم و اقدام؛ از پایش و شکار تهدید تا ارزیابی مرکز عملیات و پاسخ به رخداد.',
+    bullets: ['پایش متمرکز یا استقرار نیرو', 'شکار تهدید هدفمند', 'ارزیابی و ارتقای بلوغ مرکز عملیات', 'تحلیل رخداد و بازسازی خط زمانی'],
     note: 'پروژه‌ای، مستمر یا رزرو ظرفیت',
   },
 ];
@@ -57,10 +57,9 @@ const roles = [
 ];
 
 const trustPoints = [
-  ['استقرار درون‌سازمانی', 'داده‌های امنیتی و اطلاعات دارایی در محدوده زیرساخت سازمان باقی می‌مانند.'],
-  ['پشتیبانی از شبکه‌های ایزوله', 'امکان استقرار و بهره‌برداری در محیط‌های محدود یا بدون دسترسی مستقیم به اینترنت.'],
-  ['همزیستی با ابزارهای موجود', 'راهکارها برای تکمیل دید سازمان طراحی شده‌اند، نه جایگزینی اجباری ابزارهای فعلی.'],
-  ['کنترل کامل داده و عملیات', 'معماری متناسب با الزامات امنیتی، حاکمیت داده و فرآیندهای سازمان‌های بزرگ.'],
+  ['استقرار درون‌سازمانی', 'سامانه‌ها و اجزای راهکار در زیرساخت سازمان مستقر می‌شوند و وابستگی عملیاتی به سرویس‌های بیرونی ندارند.'],
+  ['همزیستی با معماری موجود', 'راهکارها برای تکمیل و یکپارچه‌سازی با تجهیزات و ابزارهای فعلی سازمان طراحی می‌شوند، نه جایگزینی اجباری آن‌ها.'],
+  ['حاکمیت کامل داده و عملیات', 'مالکیت داده، کنترل دسترسی، نگهداشت اطلاعات و فرآیندهای عملیاتی در اختیار سازمان باقی می‌ماند.'],
 ];
 
 export default function HomePage() {
@@ -86,7 +85,8 @@ export default function HomePage() {
                 <a key={n} href={own ? '#monosuite' : '#services'} className={`security-chain-row${own ? ' own' : ''}`}>
                   <span className="security-chain-number">{n}</span>
                   <span className="security-chain-copy"><strong>{title}</strong><small dir={value.includes('Cisco') || value.includes('Imperva') || value.includes('Splunk') || value.includes('Managed') || value.includes('Incident') ? 'ltr' : undefined}>{value}</small></span>
-                  {own && <span className="security-chain-badge">محصول ما</span>}
+                  {own && <span className="security-chain-badge">سامانه بومی مونوسوئیت</span>}
+                  {own && <span className="security-chain-kb">محصول دانش‌بنیان</span>}
                 </a>
               ))}
             </div>
@@ -113,30 +113,33 @@ export default function HomePage() {
 
       <section className="section services-portfolio-section" id="services"><div className="shell">
         <div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>هوش‌افزار فقط محصول نمی‌سازد؛ اجرا و عملیات را هم بر عهده می‌گیرد.</h2><p>خدمات ما به‌صورت پروژه‌ای با دامنه مشخص یا به‌صورت راهبری و پشتیبانی مستمر ارائه می‌شوند و متناسب با معماری، حجم داده و محدودیت‌های هر سازمان طراحی می‌شوند.</p></div>
-        <div className="service-portfolio-grid">
-          {services.map((service) => (
-            <article className="service-portfolio-card" key={service.tag}>
-              <span className="service-tech" dir="ltr">{service.tag}</span>
-              <h3>{service.title}</h3><p>{service.text}</p>
-              <ul>{service.bullets.map((item) => <li key={item}>{item}</li>)}</ul>
-              <small>{service.note}</small>
-              <Link href="/services/">اطلاعات بیشتر ←</Link>
-            </article>
-          ))}
-        </div>
+        <div className="service-portfolio-grid">{services.map((service) => (
+          <article className="service-portfolio-card" key={service.title}>
+            <span className="service-tech" dir="ltr">{service.tag}</span>
+            <h3>{service.title}</h3><p>{service.text}</p>
+            <ul>{service.bullets.map((item) => <li key={item}>{item}</li>)}</ul>
+            <small>{service.note}</small>
+            <Link href="/services/">اطلاعات بیشتر ←</Link>
+          </article>
+        ))}</div>
       </div></section>
 
       <section className="section section-offerings" id="monosuite"><div className="shell">
-        <div className="section-heading section-heading-wide"><span className="eyebrow">محصول شاخص هوش‌افزار</span><h2>سامانه بومی هوش دارایی مونوسوئیت</h2><p>مونوسوئیت لایه شناخت دارایی و زمینه امنیتی سازمان را ایجاد می‌کند؛ همان اطلاعات پایه‌ای که برای اولویت‌بندی ریسک، هاردنینگ، انطباق و پاسخ سریع‌تر به رخداد نیاز است.</p></div>
+        <div className="section-heading section-heading-wide monosuite-heading">
+          <span className="eyebrow">محصول شاخص هوش‌افزار</span>
+          <h2>سامانه بومی هوش دارایی مونوسوئیت</h2>
+          <div className="knowledge-badge"><strong>محصول دانش‌بنیان</strong><span>در حوزه مدیریت دارایی‌های سایبری</span></div>
+          <p>مونوسوئیت با ایجاد تصویری یکپارچه و به‌روز از دارایی‌ها و زمینه امنیتی آن‌ها، بستر اطلاعاتی لازم برای اولویت‌بندی ریسک، ارزیابی هاردنینگ و انطباق، و تسریع تصمیم‌گیری در پاسخ به رخداد را فراهم می‌سازد.</p>
+        </div>
         <div className="offering-grid">
           <article className="offering-card offering-product">
             <div className="offering-label">استقرار به‌عنوان سامانه</div><span className="offering-name">مونوسوئیت در اختیار سازمان</span><h3>دید مستمر و یکپارچه از دارایی‌ها و وضعیت امنیت</h3>
             <p>سامانه‌ای درون‌سازمانی برای ایجاد موجودی یکپارچه دارایی‌های سایبری، افزایش رصدپذیری، تحلیل ریسک و ارزیابی مستمر وضعیت امنیت.</p>
-            <ul><li>استقرار درون‌سازمانی و محیط‌های Air-Gapped</li><li>تجمیع اطلاعات دارایی از منابع متعدد</li><li>اولویت‌بندی ریسک با درنظرگرفتن زمینه دارایی</li><li>ارزیابی هاردنینگ، انطباق و تغییرات</li></ul>
+            <ul><li>استقرار درون‌سازمانی</li><li>تجمیع اطلاعات دارایی از منابع متعدد</li><li>اولویت‌بندی ریسک با درنظرگرفتن زمینه دارایی</li><li>ارزیابی هاردنینگ، انطباق و تغییرات</li></ul>
             <Link href="/monosuit/" className="text-link">معرفی کامل مونوسوئیت</Link>
           </article>
           <article className="offering-card offering-services project-service-card">
-            <div className="offering-label">مدل اجرایی پروژه‌ای</div><span className="offering-name">خروجی مونوسوئیت به‌صورت پروژه</span><h3>دریافت خروجی‌های عملیاتی، بدون نگهداشت دائمی سامانه</h3>
+            <div className="offering-label">مدل اجرایی پروژه‌ای</div><span className="offering-name">خروجی مونوسوئیت به‌صورت پروژه</span><h3>دریافت خروجی‌های عملیاتی، بدون نیاز به خرید سامانه</h3>
             <p>در مدل اجرایی پروژه‌ای، مونوسوئیت جهت استخراج شناسه دارایی‌ها و تحلیل سطح حمله در زیرساخت مشتری پیاده‌سازی می‌شود. پس از تکمیل تحلیل‌ها و ارائه شناسه جامع ریسک به سازمان، ابزار جمع‌آوری شده اما تمامی خروجی‌ها و نتایج عملیاتی در اختیار تیم امنیت قرار می‌گیرد.</p>
             <ul><li>استقرار موقت در زیرساخت سازمان</li><li>تولید موجودی، تحلیل ریسک، هاردنینگ و گزارش تغییرات</li><li>تحویل یافته‌ها، گزارش‌ها و اقدامات پیشنهادی</li><li>بدون هزینه دائمی لایسنس، نگهداشت و راهبری سامانه</li></ul>
             <Link href="/services/" className="text-link">بررسی مدل خدمت پروژه‌ای</Link>
@@ -164,11 +167,11 @@ export default function HomePage() {
       <section className="section role-solutions-section"><div className="shell">
         <div className="section-heading section-heading-wide"><span className="eyebrow">راهکارها بر اساس نقش</span><h2>هر تیم سازمانی، مسئله متفاوتی دارد.</h2><p>ارزش داده و خدمات امنیتی زمانی روشن می‌شود که آن را از زاویه تصمیمی ببینیم که هر نقش باید بگیرد.</p></div>
         <div className="role-solution-grid">{roles.map(([title, text], index) => (
-          <Link href="/solutions/" className="role-solution-card" key={title}><span>۰{index + 1}</span><strong>{title}</strong><p>{text}</p><i>←</i></Link>
+          <Link href="/solutions/" className="role-solution-card" key={title}><span>{['۰۱','۰۲','۰۳','۰۴','۰۵'][index]}</span><strong>{title}</strong><p>{text}</p><i>←</i></Link>
         ))}</div>
       </div></section>
 
-      <section className="section trust-section"><div className="shell trust-grid"><div className="trust-copy"><span className="eyebrow">آماده برای محیط‌های سازمانی</span><h2>طراحی‌شده برای الزامات واقعی زیرساخت‌های سازمانی.</h2><p>معماری و شیوه اجرای هوش‌افزار با محدودیت‌های امنیتی، شبکه‌های ایزوله، حاکمیت داده و پیچیدگی عملیاتی سازمان‌های بزرگ سازگار است.</p></div><div className="trust-points">{trustPoints.map(([title, text]) => (<div key={title}><strong>{title}</strong><p>{text}</p></div>))}</div></div></section>
+      <section className="section trust-section"><div className="shell trust-grid"><div className="trust-copy"><span className="eyebrow">آماده برای محیط‌های سازمانی</span><h2>برای استقرار در زیرساخت‌های حساس و پیچیده سازمانی آماده‌ایم.</h2><p>شیوه طراحی و اجرای راهکارهای هوش‌افزار با الزامات امنیتی، معماری‌های موجود، حاکمیت داده و محدودیت‌های عملیاتی سازمان‌ها هم‌راستا می‌شود.</p></div><div className="trust-points trust-points-three">{trustPoints.map(([title, text]) => (<div key={title}><strong>{title}</strong><p>{text}</p></div>))}</div></div></section>
 
       <section className="cta cta-redesign"><div className="shell cta-inner"><div><span>برای تصمیم بهتر، ابتدا باید تصویر دقیق‌تری از مسئله داشت.</span><h2>برای بررسی قابلیت‌های مونوسوئیت یا طراحی یک خدمت تخصصی امنیت با ما گفت‌وگو کنید.</h2></div><Link className="button button-light" href="/contcat/">درخواست جلسه</Link></div></section>
     </PageShell>
