@@ -16,20 +16,44 @@ const metrics = [
 
 const pillars = [
   ['شناخت', 'کشف و شناسنامه دارایی', 'کشف دارایی از شبکه و منابع سازمانی، تجمیع داده و ایجاد یک هویت قابل اتکا برای هر دارایی.'],
-  ['موجودی', 'Inventory عمیق و چندلایه', 'سخت‌افزار، سیستم‌عامل، نرم‌افزار، Firmware، کاربر، سرویس، Process، Patch، رابط شبکه و تاریخچه موجودی در یک نمای واحد.'],
-  ['تغییرات', 'پایش تغییرات دارایی', 'مقایسه چرخه‌های Inventory و ثبت موارد افزوده، تغییرکرده و حذف‌شده برای مشاهده روند تغییرات و بررسی انحراف‌ها.'],
+  ['موجودی', 'موجودی عمیق و چندلایه', 'سخت‌افزار، سیستم‌عامل، نرم‌افزار، Firmware، کاربر، سرویس، Process، Patch، رابط شبکه و تاریخچه موجودی در یک نمای واحد.'],
+  ['تغییرات', 'پایش تغییرات دارایی', 'مقایسه چرخه‌های موجودی و ثبت موارد افزوده، تغییرکرده و حذف‌شده برای مشاهده روند تغییرات و بررسی انحراف‌ها.'],
   ['سطح حمله', 'دید به سطح حمله داخلی', 'مشاهده پورت‌ها، سرویس‌ها، ارتباطات خارجی، USB، Shareها و وب‌سرویس‌های قابل مشاهده روی دارایی‌های تحت مدیریت.'],
   ['آسیب‌پذیری', 'ارزیابی و تجمیع یافته‌ها', 'تطبیق CPE با پایگاه محلی CVE و دریافت زمان‌بندی‌شده یافته‌های Nessus برای ایجاد زمینه آسیب‌پذیری در سطح دارایی.'],
-  ['انطباق', 'هاردنینگ و Compliance', 'ارزیابی CIS Benchmark و گزارش‌دهی فنی بر پایه داده جمع‌آوری‌شده برای چارچوب‌های پشتیبانی‌شده از جمله PCI DSS و ISO/IEC 27001.'],
+  ['انطباق', 'هاردنینگ و انطباق', 'ارزیابی CIS Benchmark و گزارش‌دهی فنی بر پایه داده جمع‌آوری‌شده برای چارچوب‌های پشتیبانی‌شده از جمله PCI DSS و ISO/IEC 27001.'],
   ['ریسک', 'اولویت‌بندی مبتنی بر زمینه', 'ترکیب Impact و Likelihood و ایجاد Risk Score در سطح دارایی و سازمان برای تمرکز روی موارد مهم‌تر.'],
-  ['کسب‌وکار', 'Business Service و Business Impact', 'ثبت و نمایش روابط مشاهده‌شده، تعریف سرویس‌های کسب‌وکاری و استفاده از Business Impact تأییدشده سازمان در محاسبه ریسک.'],
+  ['کسب‌وکار', 'سرویس کسب‌وکاری و اهمیت دارایی', 'ثبت و نمایش روابط مشاهده‌شده، تعریف سرویس‌های کسب‌وکاری و استفاده از Business Impact تأییدشده سازمان در محاسبه ریسک.'],
   ['عملیات', 'Policy، اعلان و Ticket', 'ساخت Policy بر پایه داده دارایی، تغییر، آسیب‌پذیری، Exposure، Score و Compliance و ارسال اعلان یا ایجاد تیکت از مسیرهای پشتیبانی‌شده.'],
 ];
 
 const scores = [
-  ['gauge85', '۸۵٪', 'رصدپذیری', 'Visibility Score', 'نشان می‌دهد سازمان تا چه اندازه دارایی را شناخته، پروفایل آن را کامل کرده و تغییرات و روابط آن را زیر نظر دارد.'],
-  ['gauge78', '۷۸٪', 'حفاظت', 'نشان می‌دهد هر دارایی بر پایه وضعیت آسیب‌پذیری، سطح حمله، هاردنینگ و انطباق تا چه اندازه در وضعیت حفاظتی مناسبی قرار دارد.'],
-  ['gauge30', '۳۰٪', 'ریسک', 'ریسک باقی‌مانده هر دارایی را نمایش می‌دهد و همان ریسک را در سطح سرویس، سایت و کل سازمان تجمیع می‌کند.'],
+  {
+    value: 85,
+    display: '۸۵٪',
+    fa: 'رصدپذیری',
+    en: 'Visibility Score',
+    text: 'نشان می‌دهد سازمان تا چه اندازه دارایی‌های خود را کشف، شناسایی و با زمینه کافی برای استفاده عملیاتی آماده کرده است.',
+    factors: ['کشف دارایی', 'داده‌های سیستمی', 'یکپارچه‌سازی داده', 'زمینه سازمانی', 'چرخه حیات', 'روابط و ارتباطات'],
+    tone: 'visibility',
+  },
+  {
+    value: 78,
+    display: '۷۸٪',
+    fa: 'حفاظت',
+    en: 'Protection Score',
+    text: 'یک نمای قابل سنجش از وضعیت حفاظتی هر دارایی بر پایه شواهد امنیتی و میزان آمادگی آن در برابر تهدید ارائه می‌کند.',
+    factors: ['سطح حمله', 'آسیب‌پذیری', 'پیکربندی و انطباق', 'اهمیت دارایی', 'ریسک'],
+    tone: 'protection',
+  },
+  {
+    value: 30,
+    display: '۳۰٪',
+    fa: 'ریسک',
+    en: 'Risk Score',
+    text: 'ریسک هر دارایی را با درنظرگرفتن اهمیت و شرایط واقعی آن مشخص می‌کند و امکان تجمیع تصویر ریسک در سطح سازمان را می‌دهد.',
+    factors: ['اهمیت دارایی', 'احتمال تهدید', 'آسیب‌پذیری', 'سطح حمله', 'وضعیت حفاظتی'],
+    tone: 'risk',
+  },
 ];
 
 const integrations = [
@@ -85,16 +109,32 @@ export default function MonoSuitePage() {
         <section className={styles.sectionDark}><div className="shell">
           <div className={styles.scoreHero}>
             <div className={styles.scoreIntro}>
-              <span className={styles.eyebrowLight}>هوش مدیریتی از دل داده‌های فنی</span>
-              <h2>سه عدد برای پاسخ به سه سؤال مدیریتی</h2>
-              <p>مونوسوئیت اطلاعات فنی و امنیتی هر دارایی را به سه شاخص قابل سنجش تبدیل می‌کند: سازمان تا چه اندازه دارایی‌های خود را می‌شناسد، وضعیت حفاظتی آن‌ها چگونه است و ریسک واقعی در کجا متمرکز شده است. این سه شاخص هم برای هر دارایی و هم برای کل سازمان محاسبه می‌شوند و هر عدد تا عوامل سازنده و شواهد فنی قابل بررسی است.</p>
-              <div className={styles.scoreFlow}><span>چقدر محیط را می‌شناسیم؟</span><i>•</i><span>چقدر از دارایی‌ها محافظت شده؟</span><i>•</i><strong>ریسک واقعی کجاست؟</strong></div>
-              <small className={styles.sampleNote}>اعداد زیر نمای نمونه از داشبورد مدیریتی هستند.</small>
+              <span className={styles.eyebrowLight}>خروجی مدیریتی از داده‌های فنی</span>
+              <h2>سه عدد برای دیدن وضعیت امنیت؛ از هر دارایی تا کل سازمان</h2>
+              <p>مونوسوئیت داده‌های فنی و امنیتی را به سه شاخص قابل سنجش تبدیل می‌کند تا مدیر به‌جای مواجهه با انبوهی از جزئیات، در یک نگاه بداند چه میزان از محیط شناخته شده، وضعیت حفاظتی چگونه است و ریسک در کجا متمرکز شده است. هر شاخص هم در سطح دارایی و هم در سطح سازمان قابل مشاهده است و جزئیات سازنده آن برای تحلیل بیشتر در دسترس قرار دارد.</p>
+              <small className={styles.sampleNote}>اعداد نمایش‌داده‌شده نمونه هستند.</small>
             </div>
-            <div className={styles.scoreCards}>{scores.map(([gauge,value,fa,en,text]) => <article className={styles.scoreCard} key={en}>
-              <div className={`${styles.gauge} ${styles[gauge]}`}><div><b>{value}</b><small dir="ltr">{en}</small></div></div>
-              <strong>{fa}</strong><p>{text}</p><span className={styles.drilldown}>از شاخص کل تا دارایی و شواهد ←</span>
-            </article>)}</div>
+            <div className={styles.scoreCards}>
+              {scores.map((score) => (
+                <article className={`${styles.scoreCard} ${styles[score.tone]}`} key={score.en}>
+                  <div className={styles.gaugeWrap} aria-label={`${score.fa} ${score.display}`}>
+                    <svg className={styles.gaugeSvg} viewBox="0 0 180 112" aria-hidden="true">
+                      <path className={styles.gaugeTrack} d="M20 92 A70 70 0 0 1 160 92" pathLength="100" />
+                      <path className={styles.gaugeProgress} d="M20 92 A70 70 0 0 1 160 92" pathLength="100" style={{ strokeDasharray: `${score.value} ${100 - score.value}` }} />
+                    </svg>
+                    <div className={styles.gaugeValue}><b>{score.display}</b><small dir="ltr">{score.en}</small></div>
+                  </div>
+                  <h3>{score.fa}</h3>
+                  <p>{score.text}</p>
+                  <div className={styles.factorList}>{score.factors.map((factor) => <span key={factor}>{factor}</span>)}</div>
+                </article>
+              ))}
+            </div>
+            <div className={styles.scoreSummary}>
+              <span>رصدپذیری می‌گوید چقدر می‌دانیم.</span>
+              <span>حفاظت می‌گوید چقدر آماده‌ایم.</span>
+              <strong>ریسک می‌گوید کجا باید اقدام کنیم.</strong>
+            </div>
           </div>
         </div></section>
 
@@ -113,7 +153,7 @@ export default function MonoSuitePage() {
         </div></div></section>
 
         <section className={styles.sectionSoft}><div className="shell">
-          <div className={styles.heading}><span className={styles.eyebrow}>انطباق و هاردنینگ</span><h2>وضعیت پیکربندی امنیتی را در سطح هر دارایی ببینید</h2><p>مونوسوئیت داده‌های فنی جمع‌آوری‌شده را با توصیه‌های امنیتی و نگاشت‌های از پیش تعریف‌شده مقایسه می‌کند تا وضعیت انطباق و هاردنینگ به‌صورت قابل بررسی و قابل گزارش در اختیار تیم امنیت و ممیزی قرار گیرد.</p></div>
+          <div className={styles.heading}><span className={styles.eyebrow}>هاردنینگ و انطباق</span><h2>از شناسایی انحراف تا شواهد قابل گزارش</h2><p>مونوسوئیت داده‌های فنی دارایی را به ارزیابی‌های قابل استفاده برای تیم امنیت و انطباق تبدیل می‌کند و وضعیت هر کنترل را به شواهد همان دارایی متصل نگه می‌دارد.</p></div>
           <div className={styles.integrationGrid}>{compliance.map(([name,title,text]) => <article className={styles.integrationCard} key={name}><b dir="ltr">{name}</b><strong>{title}</strong><p>{text}</p></article>)}</div>
         </div></section>
 
