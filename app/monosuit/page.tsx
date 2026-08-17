@@ -142,11 +142,33 @@ export default function MonoSuitePage() {
           <div className={styles.socHeading}>
             <span className={styles.eyebrow}>کاربرد در مرکز عملیات امنیت</span>
             <h2>از هشدار امنیتی تا تصمیم؛ Context دارایی از قبل آماده است</h2>
-            <p>ابزار تشخیص، رخداد را پیدا می‌کند. مونوسوئیت مشخص می‌کند این رخداد روی چه دارایی‌ای اتفاق افتاده، آن دارایی چه اهمیتی دارد، وضعیت حفاظتی آن چگونه است و چه ارتباطی با سایر اجزای سازمان دارد.</p>
+            <p>ابزارهای تشخیص رخداد را پیدا می‌کنند؛ مونوسوئیت زمینه لازم برای تصمیم را آماده می‌کند. تحلیلگر بدون جست‌وجوی دستی میان چند سامانه می‌تواند اهمیت دارایی، وضعیت امنیتی، روابط و تغییرات آن را کنار هشدار ببیند و سریع‌تر دامنه حادثه و اولویت پاسخ را مشخص کند.</p>
           </div>
-          <div className={styles.socImageFrame}>
-            <img src="/monosuite-soc-context.webp" alt="کاربرد مونوسوئیت در مرکز عملیات امنیت؛ از هشدار امنیتی تا Context دارایی و تصمیم تحلیلگر" />
+
+          <div className={styles.integrationGrid}>
+            <article className={styles.integrationCard}>
+              <b>۰۱ — هشدار امنیتی</b>
+              <strong>ورودی از سامانه‌های تشخیص</strong>
+              <p>هشدار از منابعی مانند SIEM، EDR یا NDR همراه با شناسه دارایی، زمان رخداد و شواهد اولیه وارد فرآیند بررسی می‌شود.</p>
+            </article>
+            <article className={styles.integrationCard}>
+              <b>۰۲ — Context مونوسوئیت</b>
+              <strong>تصویر کامل دارایی درگیر</strong>
+              <p>مالک و سرویس کسب‌وکاری، اهمیت دارایی، آسیب‌پذیری، هاردنینگ و انطباق، پورت‌ها و سرویس‌ها، ارتباطات، تغییرات اخیر و سه امتیاز Identification، Protection و Risk در یک نما در دسترس قرار می‌گیرد.</p>
+            </article>
+            <article className={styles.integrationCard}>
+              <b>۰۳ — تصمیم تحلیلگر</b>
+              <strong>Scope روشن‌تر و اولویت دقیق‌تر</strong>
+              <p>تیم SOC سریع‌تر اهمیت واقعی رخداد، دارایی‌ها و سرویس‌های مرتبط و دامنه احتمالی حادثه را مشخص می‌کند و Investigation را بر اساس ریسک اولویت می‌دهد.</p>
+            </article>
           </div>
+
+          <div className={styles.metrics}>
+            <div className={styles.metric}><b>Context</b><strong>Investigation سریع‌تر</strong><span>کاهش زمان جمع‌آوری اطلاعات پیش از شروع تحلیل</span></div>
+            <div className={styles.metric}><b>Scope</b><strong>دامنه رخداد دقیق‌تر</strong><span>استفاده از روابط دارایی، سرویس و شبکه برای تشخیص محدوده اثر</span></div>
+            <div className={styles.metric}><b>Risk</b><strong>اولویت پاسخ بهتر</strong><span>قرار دادن اهمیت و وضعیت ریسک دارایی در کنار خود هشدار</span></div>
+          </div>
+
           <div className={styles.socLinkRow}><Link href="/soc-role/">کاربردهای مونوسوئیت در مرکز عملیات امنیت ←</Link></div>
         </div></section>
 
