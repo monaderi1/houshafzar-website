@@ -120,7 +120,7 @@ export default function HomePage() {
       </div></section>
 
       <section className="section services-portfolio-section" id="services"><div className="shell">
-        <div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>محصول بومی می‌سازیم و سامانه‌های تخصصی امنیت را نیز مستقر و راهبری می‌کنیم.</h2><p>خدمات ما به‌صورت پروژه‌ای با دامنه مشخص یا به‌صورت راهبری و پشتیبانی مستمر ارائه می‌شوند و متناسب با معماری، حجم داده و محدودیت‌های هر سازمان طراحی می‌شوند.</p></div>
+        <div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>هوش‌افزار، در کنار توسعه محصولات بومی، خدمات استقرار، پیاده‌سازی و راهبری سامانه‌های تخصصی امنیت را نیز ارائه می‌کند.</h2><p>خدمات ما به‌صورت پروژه‌ای با دامنه مشخص یا به‌صورت راهبری و پشتیبانی مستمر ارائه می‌شوند و متناسب با معماری، حجم داده و محدودیت‌های هر سازمان طراحی می‌شوند.</p></div>
         <div className="service-portfolio-grid">{services.map((service) => (
           <article className="service-portfolio-card" key={service.title}>
             <span className="service-tech" dir="ltr">{service.tag}</span>
