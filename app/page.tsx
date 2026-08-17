@@ -9,12 +9,12 @@ const challenges = [
 ];
 
 const chain = [
-  ['', 'شناخت دارایی', 'مونوسوئیت', true],
-  ['۰۲', 'کنترل دسترسی شبکه', 'Cisco ISE · TACACS+', false],
-  ['۰۳', 'حفاظت از داده', 'Imperva DAM', false],
-  ['۰۴', 'تشخیص و همبستگی رویداد', 'Splunk', false],
-  ['۰۵', 'پایش عملیاتی', 'Managed SOC', false],
-  ['۰۶', 'واکنش به رخداد', 'Incident Response', false],
+  ['شناخت دارایی', 'مونوسوئیت', true],
+  ['کنترل دسترسی شبکه', 'Cisco ISE · TACACS+', false],
+  ['حفاظت از داده', 'Imperva DAM', false],
+  ['تشخیص و همبستگی رویداد', 'Splunk', false],
+  ['پایش عملیاتی', 'Managed SOC', false],
+  ['واکنش به رخداد', 'Incident Response', false],
 ] as const;
 
 const services = [
@@ -62,6 +62,18 @@ const trustPoints = [
   ['حاکمیت کامل داده و عملیات', 'مالکیت داده، کنترل دسترسی، نگهداشت اطلاعات و فرآیندهای عملیاتی در اختیار سازمان باقی می‌ماند.'],
 ];
 
+const monoMetrics = [
+  ['۱۰۰٬۰۰۰', 'دارایی در ۶۰ ثانیه', 'سرعت کشف و شناسنامه‌سازی دارایی‌های سازمان'],
+  ['۷۰+', 'آداپتور', 'اتصال به تجهیزات، سرویس‌ها و منابع داده سازمانی'],
+  ['۱۵۰۰+', 'بررسی امن‌سازی', 'ارزیابی تنظیمات امنیتی و وضعیت هاردنینگ دارایی‌ها'],
+];
+
+const monoScores = [
+  ['رصدپذیری', 'سنجش میزان کامل‌بودن شناخت سازمان از دارایی‌ها و نقاط کور اطلاعاتی'],
+  ['حفاظت', 'ارزیابی وضعیت امنیتی، هاردنینگ، انطباق و سطح حفاظتی هر دارایی'],
+  ['ریسک', 'اولویت‌بندی ریسک بر پایه آسیب‌پذیری، اهمیت دارایی و زمینه واقعی محیط'],
+];
+
 export default function HomePage() {
   return (
     <PageShell>
@@ -69,10 +81,10 @@ export default function HomePage() {
         <div className="shell hero-grid hero-grid-redesign">
           <div className="hero-copy">
             <span className="eyebrow">راهکارهای هوشمند امنیت سایبری</span>
-            <h1>ریسک واقعی را ببینید؛<em> دقیق‌تر و سریع‌تر تصمیم بگیرید.</em></h1>
+            <h1>از شناخت دارایی تا واکنش به رخداد؛<em> ریسک واقعی را ببینید و دقیق‌تر تصمیم بگیرید.</em></h1>
             <p>هوش‌افزار با تلفیق سامانه بومی «هوش دارایی مونوسوئیت» و خدمات تخصصی امنیت، داده‌های پراکنده زیرساخت را به شناختی شفاف، اولویت‌بندی‌شده و قابل اقدام برای تیم‌های فناوری اطلاعات و امنیت تبدیل می‌کند.</p>
             <div className="actions">
-              <Link className="button" href="/contcat/">درخواست جلسه معرفی</Link>
+              <Link className="button" href="/contact/">درخواست جلسه معرفی</Link>
               <a className="text-link" href="#services">مشاهده محصول و خدمات</a>
             </div>
             <div className="hero-notes" aria-label="ویژگی‌های کلیدی ارائه"><span>محصول بومی</span><span>خدمات تخصصی سازمانی</span><span>استقرار درون‌سازمانی</span></div>
@@ -81,9 +93,8 @@ export default function HomePage() {
           <div className="security-chain" aria-label="زنجیره امنیت سازمانی">
             <div className="security-chain-head"><span>زنجیره امنیت سازمانی</span><strong>از شناخت دارایی تا واکنش به رخداد</strong></div>
             <div className="security-chain-body">
-              {chain.map(([n, title, value, own]) => (
+              {chain.map(([title, value, own]) => (
                 <a key={title} href={own ? '#monosuite' : '#services'} className={`security-chain-row${own ? ' own' : ''}`}>
-                  <span className="security-chain-number">{n}</span>
                   <span className="security-chain-copy"><strong>{title}</strong><small dir={value.includes('Cisco') || value.includes('Imperva') || value.includes('Splunk') || value.includes('Managed') || value.includes('Incident') ? 'ltr' : undefined}>{value}</small></span>
                   {own && <span className="security-chain-badge">سامانه بومی مونوسوئیت</span>}
                 </a>
@@ -93,6 +104,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <section className="credential-strip" aria-label="اعتبار محصول"><div className="shell"><span>محصول دانش‌بنیان</span><strong>سامانه بومی مونوسوئیت در حوزه مدیریت دارایی‌های سایبری</strong></div></section>
 
       <section className="position-strip" aria-label="مدل ارائه هوش‌افزار"><div className="shell position-grid">
         <div><b>سامانه بومی هوش دارایی</b><span dir="ltr">MonoSuite Asset Intelligence</span></div>
@@ -127,9 +140,12 @@ export default function HomePage() {
         <div className="section-heading section-heading-wide monosuite-heading">
           <span className="eyebrow">محصول شاخص هوش‌افزار</span>
           <h2>سامانه بومی هوش دارایی مونوسوئیت</h2>
-          <div className="knowledge-badge"><strong>محصول دانش‌بنیان</strong><span>در حوزه مدیریت دارایی‌های سایبری</span></div>
           <p>مونوسوئیت با ایجاد تصویری یکپارچه و به‌روز از دارایی‌ها و زمینه امنیتی آن‌ها، بستر اطلاعاتی لازم برای اولویت‌بندی ریسک، ارزیابی هاردنینگ و انطباق، و تسریع تصمیم‌گیری در پاسخ به رخداد را فراهم می‌سازد.</p>
         </div>
+
+        <div className="mono-metrics">{monoMetrics.map(([value, title, text]) => (<div key={title}><b>{value}</b><strong>{title}</strong><span>{text}</span></div>))}</div>
+        <div className="mono-scores">{monoScores.map(([title, text]) => (<div key={title}><span>شاخص</span><strong>{title}</strong><p>{text}</p></div>))}</div>
+
         <div className="offering-grid">
           <article className="offering-card offering-product">
             <div className="offering-label">خرید سامانه</div><span className="offering-name">خرید مونوسوئیت؛ سرمایه‌گذاری بلندمدت</span><h3>دید مستمر و یکپارچه از دارایی‌ها و وضعیت امنیت</h3>
@@ -139,7 +155,7 @@ export default function HomePage() {
           </article>
           <article className="offering-card offering-services project-service-card">
             <div className="offering-label">مدل اجرایی پروژه‌ای</div><span className="offering-name">خروجی مونوسوئیت به‌صورت پروژه</span><h3>دریافت خروجی‌های عملیاتی، بدون نیاز به خرید سامانه</h3>
-            <p>در مدل اجرایی پروژه‌ای، مونوسوئیت جهت استخراج شناسه دارایی‌ها و تحلیل سطح حمله در زیرساخت مشتری پیاده‌سازی می‌شود. پس از تکمیل تحلیل‌ها و ارائه شناسه جامع ریسک به سازمان، ابزار جمع‌آوری شده اما تمامی خروجی‌ها و نتایج عملیاتی در اختیار تیم امنیت قرار می‌گیرد.</p>
+            <p>در مدل اجرایی پروژه‌ای، مونوسوئیت برای استخراج شناسنامه دارایی‌ها و تحلیل سطح حمله در زیرساخت مشتری مستقر می‌شود. پس از تکمیل تحلیل‌ها و ارائه گزارش جامع ریسک، استقرار موقت سامانه پایان می‌یابد و تمامی یافته‌ها، گزارش‌ها و خروجی‌های عملیاتی در اختیار تیم امنیت سازمان قرار می‌گیرد.</p>
             <ul><li>استقرار موقت در زیرساخت سازمان</li><li>تولید موجودی، تحلیل ریسک، هاردنینگ و گزارش تغییرات</li><li>تحویل یافته‌ها، گزارش‌ها و اقدامات پیشنهادی</li><li>بدون هزینه دائمی لایسنس، نگهداشت و راهبری سامانه</li></ul>
             <Link href="/services/" className="text-link">بررسی مدل خدمت پروژه‌ای</Link>
           </article>
@@ -172,7 +188,7 @@ export default function HomePage() {
 
       <section className="section trust-section"><div className="shell trust-grid"><div className="trust-copy"><span className="eyebrow">آماده برای محیط‌های سازمانی</span><h2>برای استقرار در زیرساخت‌های حساس و پیچیده سازمانی آماده‌ایم.</h2><p>شیوه طراحی و اجرای راهکارهای هوش‌افزار با الزامات امنیتی، معماری‌های موجود، حاکمیت داده و محدودیت‌های عملیاتی سازمان‌ها هم‌راستا می‌شود.</p></div><div className="trust-points trust-points-three">{trustPoints.map(([title, text]) => (<div key={title}><strong>{title}</strong><p>{text}</p></div>))}</div></div></section>
 
-      <section className="cta cta-redesign"><div className="shell cta-inner"><div><span>برای تصمیم بهتر، ابتدا باید تصویر دقیق‌تری از مسئله داشت.</span><h2>برای بررسی قابلیت‌های مونوسوئیت یا طراحی یک خدمت تخصصی امنیت با ما گفت‌وگو کنید.</h2></div><Link className="button button-light" href="/contcat/">درخواست جلسه</Link></div></section>
+      <section className="cta cta-redesign"><div className="shell cta-inner"><div><span>برای تصمیم بهتر، ابتدا باید تصویر دقیق‌تری از مسئله داشت.</span><h2>برای بررسی قابلیت‌های مونوسوئیت یا طراحی یک خدمت تخصصی امنیت با ما گفت‌وگو کنید.</h2></div><Link className="button button-light" href="/contact/">درخواست جلسه</Link></div></section>
     </PageShell>
   );
 }
