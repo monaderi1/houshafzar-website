@@ -125,7 +125,6 @@ export default function MonoSuitePage() {
               <span className={styles.eyebrowLight}>خروجی مدیریتی از داده‌های فنی</span>
               <h2>سه عدد برای دیدن وضعیت امنیت؛ از هر دارایی تا کل سازمان</h2>
               <p>مونوسوئیت داده‌های فنی و امنیتی را به سه شاخص قابل سنجش تبدیل می‌کند تا مدیر به‌جای مواجهه با انبوهی از جزئیات، در یک نگاه بداند چه میزان از محیط شناسایی شده، وضعیت حفاظتی چگونه است و ریسک در کجا متمرکز شده است. هر شاخص هم در سطح دارایی و هم در سطح سازمان قابل مشاهده است و جزئیات سازنده آن برای تحلیل بیشتر در دسترس قرار دارد.</p>
-              <small className={styles.sampleNote}>اعداد نمایش‌داده‌شده نمونه هستند.</small>
             </div>
             <div className={styles.scoreCards}>
               {scores.map((score) => (
@@ -144,9 +143,9 @@ export default function MonoSuitePage() {
               ))}
             </div>
             <div className={styles.scoreSummary}>
-              <span>شناسایی می‌گوید چقدر از محیط را می‌شناسیم.</span>
-              <span>حفاظت می‌گوید چقدر آماده‌ایم.</span>
-              <strong>ریسک می‌گوید کجا باید اقدام کنیم.</strong>
+              <span>امتیاز رصدپذیری: چقدر از سازمان را می‌شناسیم.</span>
+              <span>امتیاز حفاظت (امن‌سازی): چقدر برای حوادث آماده‌ایم.</span>
+              <strong>امتیاز ریسک: کجا باید اقدام کنیم.</strong>
             </div>
           </div>
         </div></section>
@@ -161,7 +160,7 @@ export default function MonoSuitePage() {
           <div className={styles.socScenario}>
             <div className={styles.alertCard}>
               <span>۰۱</span>
-              <small>ورودی عملیات امنیت</small>
+              <small>ورودی مرکز عملیات امنیت</small>
               <strong>هشدار از SIEM / EDR / NDR</strong>
               <p>شناسه یا نشانی دارایی درگیر، زمان رخداد و شواهد اولیه وارد فرآیند Investigation می‌شود.</p>
               <div className={styles.rawLog}>
