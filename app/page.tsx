@@ -101,7 +101,7 @@ export default function HomePage() {
       </div></section>
 
       <section className="section section-challenges"><div className="shell">
-        <div className="section-heading"><span className="eyebrow">مسئله‌های واقعی سازمان</span><h2>پیچیدگی زیرساخت، دیدپذیری و سرعت تصمیم را کاهش می‌دهد.</h2><p>هوش‌افزار از شناخت دارایی تا کنترل دسترسی، پایش، حفاظت داده و پاسخ به رخداد، این شکاف‌ها را در لایه‌های مختلف پوشش می‌دهد.</p></div>
+        <div className="section-heading"><span className="eyebrow">مسئله‌های واقعی سازمان</span><h2>پیچیدگی زیرساخت، دیدپذیری و سرعت تصمیم را کاهش می‌دهد.</h2><p>هوش‌افزار با ایجاد پیوند میان شناخت دارایی، کنترل دسترسی، پایش، حفاظت داده و پاسخ به رخداد، شکاف‌های امنیتی را در امتداد چرخه عملیات سازمان پوشش می‌دهد و زمینه تصمیم‌گیری منسجم‌تر و اقدام مؤثرتر را فراهم می‌سازد.</p></div>
         <div className="challenge-grid challenge-grid-linked">{challenges.map((item) => (
           <article className="challenge-card" key={item.number}>
             <span className="challenge-number">{item.number}</span><h3>{item.title}</h3><p>{item.text}</p>
@@ -111,7 +111,7 @@ export default function HomePage() {
       </div></section>
 
       <section className="section services-portfolio-section" id="services"><div className="shell">
-        <div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>هوش‌افزار فقط محصول نمی‌سازد؛ اجرا و عملیات را هم بر عهده می‌گیرد.</h2><p>خدمات ما به‌صورت پروژه‌ای با دامنه مشخص یا به‌صورت راهبری و پشتیبانی مستمر ارائه می‌شوند و متناسب با معماری، حجم داده و محدودیت‌های هر سازمان طراحی می‌شوند.</p></div>
+        <div className="section-heading section-heading-wide"><span className="eyebrow">خدمات تخصصی امنیت</span><h2>در کنار توسعه محصولات بومی، دانش استقرار، پیاده‌سازی و راهبری سامانه‌های تخصصی امنیت را نیز در اختیار سازمان‌ها قرار می‌دهیم.</h2><p>خدمات ما به‌صورت پروژه‌ای با دامنه مشخص یا به‌صورت راهبری و پشتیبانی مستمر ارائه می‌شوند و متناسب با معماری، حجم داده و محدودیت‌های هر سازمان طراحی می‌شوند.</p></div>
         <div className="service-portfolio-grid">{services.map((service) => (
           <article className="service-portfolio-card" key={service.title}>
             <span className="service-tech" dir="ltr">{service.tag}</span>
@@ -132,9 +132,9 @@ export default function HomePage() {
         </div>
         <div className="offering-grid">
           <article className="offering-card offering-product">
-            <div className="offering-label">استقرار به‌عنوان سامانه</div><span className="offering-name">مونوسوئیت در اختیار سازمان</span><h3>دید مستمر و یکپارچه از دارایی‌ها و وضعیت امنیت</h3>
+            <div className="offering-label">خرید سامانه</div><span className="offering-name">خرید مونوسوئیت؛ سرمایه‌گذاری بلندمدت</span><h3>دید مستمر و یکپارچه از دارایی‌ها و وضعیت امنیت</h3>
             <p>سامانه‌ای درون‌سازمانی برای ایجاد موجودی یکپارچه دارایی‌های سایبری، افزایش رصدپذیری، تحلیل ریسک و ارزیابی مستمر وضعیت امنیت.</p>
-            <ul><li>استقرار درون‌سازمانی</li><li>تجمیع اطلاعات دارایی از منابع متعدد</li><li>اولویت‌بندی ریسک با درنظرگرفتن زمینه دارایی</li><li>ارزیابی هاردنینگ، انطباق و تغییرات</li></ul>
+            <ul><li>کشف و شناسنامه‌سازی دارایی‌های شبکه و نقاط پایانی</li><li>تجمیع و تطبیق اطلاعات دارایی از منابع متعدد</li><li>تشخیص تغییرات و نگهداشت تاریخچه دارایی</li><li>تحلیل آسیب‌پذیری و اولویت‌بندی ریسک با درنظرگرفتن زمینه دارایی</li><li>ارزیابی هاردنینگ، انطباق و وضعیت حفاظتی</li><li>استقرار درون‌سازمانی و حفظ کامل داده در زیرساخت سازمان</li></ul>
             <Link href="/monosuit/" className="text-link">معرفی کامل مونوسوئیت</Link>
           </article>
           <article className="offering-card offering-services project-service-card">
