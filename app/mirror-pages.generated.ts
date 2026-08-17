@@ -33,6 +33,7 @@ export const mirroredPages: Record<string, string> = {
   "blog": localize(page1),
   "comments/feed": localize(page2),
   "contcat": localize(page3),
+  "contact": localize(page3),
   "cyber-risk-defense-index": localize(page4),
   "cybersecurity-asset-management": localize(page5),
   "datasheet": localize(page6),
