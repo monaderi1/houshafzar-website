@@ -1,0 +1,63 @@
+.hero-copy h1{
+  font-size:clamp(38px,4.5vw,66px);
+  line-height:1.55;
+  font-weight:850;
+}
+.hero-copy h1 em{font-weight:850}
+
+.hero-product-note b{
+  color:#e4671d;
+  font-weight:900;
+}
+
+.security-chain-row{
+  grid-template-columns:1fr auto;
+  padding-right:56px;
+}
+.security-chain-copy strong{
+  font-size:13px;
+  line-height:1.55;
+  font-weight:900;
+}
+.security-chain-copy small{
+  font-size:9.5px;
+  line-height:1.45;
+  font-weight:650;
+}
+.security-chain-row::after{
+  top:50%;
+  transform:translateY(-64%);
+}
+.security-chain-head strong{
+  font-size:13px;
+  font-weight:900;
+}
+.security-chain-head span{
+  font-weight:900;
+}
+
+.mono-metrics>div{
+  text-align:center;
+  align-items:center;
+  justify-content:center;
+}
+.mono-metrics>div b,
+.mono-metrics>div strong,
+.mono-metrics>div span{
+  display:block;
+  width:100%;
+  text-align:center;
+}
+.mono-metrics>div b{
+  font-weight:900;
+}
+.mono-metrics>div strong{
+  font-weight:850;
+}
+
+@media(max-width:760px){
+  .hero-copy h1{font-size:clamp(32px,9vw,46px);line-height:1.5}
+  .security-chain-row{grid-template-columns:1fr auto;padding-right:50px}
+  .security-chain-copy strong{font-size:12.5px}
+  .security-chain-copy small{font-size:9px}
+}
