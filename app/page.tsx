@@ -9,7 +9,7 @@ const challenges = [
 ];
 
 const chain = [
-  ['۰۱', 'شناخت دارایی', 'مونوسوئیت', true],
+  ['', 'شناخت دارایی', 'مونوسوئیت', true],
   ['۰۲', 'کنترل دسترسی شبکه', 'Cisco ISE · TACACS+', false],
   ['۰۳', 'حفاظت از داده', 'Imperva DAM', false],
   ['۰۴', 'تشخیص و همبستگی رویداد', 'Splunk', false],
@@ -82,11 +82,10 @@ export default function HomePage() {
             <div className="security-chain-head"><span>زنجیره امنیت سازمانی</span><strong>از شناخت دارایی تا واکنش به رخداد</strong></div>
             <div className="security-chain-body">
               {chain.map(([n, title, value, own]) => (
-                <a key={n} href={own ? '#monosuite' : '#services'} className={`security-chain-row${own ? ' own' : ''}`}>
+                <a key={title} href={own ? '#monosuite' : '#services'} className={`security-chain-row${own ? ' own' : ''}`}>
                   <span className="security-chain-number">{n}</span>
                   <span className="security-chain-copy"><strong>{title}</strong><small dir={value.includes('Cisco') || value.includes('Imperva') || value.includes('Splunk') || value.includes('Managed') || value.includes('Incident') ? 'ltr' : undefined}>{value}</small></span>
                   {own && <span className="security-chain-badge">سامانه بومی مونوسوئیت</span>}
-                  {own && <span className="security-chain-kb">محصول دانش‌بنیان</span>}
                 </a>
               ))}
             </div>
