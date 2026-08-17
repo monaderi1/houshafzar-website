@@ -30,8 +30,8 @@ const scores = [
   {
     value: 85,
     display: '۸۵٪',
-    fa: 'رصدپذیری',
-    en: 'Visibility Score',
+    fa: 'شناسایی',
+    en: 'Identification Score',
     text: 'نشان می‌دهد سازمان تا چه اندازه دارایی‌های خود را کشف، شناسایی و با زمینه کافی برای استفاده عملیاتی آماده کرده است.',
     factors: ['کشف دارایی', 'داده‌های سیستمی', 'یکپارچه‌سازی داده', 'زمینه سازمانی', 'چرخه حیات', 'روابط و ارتباطات'],
     tone: 'visibility',
@@ -71,13 +71,6 @@ const compliance = [
   ['ISO/IEC 27001', 'نمای انطباق مبتنی بر شواهد', 'ارائه وضعیت کنترل‌های پشتیبانی‌شده بر پایه شواهد فنی موجود در سامانه.'],
 ];
 
-const socContext = [
-  ['مالک و سرویس', 'مالک دارایی، سرویس کسب‌وکاری و اهمیت آن برای سازمان'],
-  ['وضعیت امنیتی', 'آسیب‌پذیری‌ها، هاردنینگ، انطباق و امتیازهای حفاظتی و ریسک'],
-  ['سطح تماس', 'پورت‌های باز، سرویس‌ها، دسترسی اینترنت و ارتباطات قابل مشاهده'],
-  ['تغییرات اخیر', 'تغییرات دارایی، نرم‌افزار، پیکربندی و روابط در چرخه‌های اخیر'],
-];
-
 export default function MonoSuitePage() {
   return (
     <PageShell>
@@ -88,7 +81,7 @@ export default function MonoSuitePage() {
               <div>
                 <span className={styles.eyebrow}>MonoSuite Asset Intelligence</span>
                 <h1>از دارایی‌های پراکنده،<em> یک تصویر قابل اتکا برای تصمیم امنیتی بسازید.</em></h1>
-                <p>مونوسوئیت یک پلتفرم سازمانی و درون‌سازمانی برای کشف، فهرست‌برداری، حاکمیت و تحلیل دارایی‌های فناوری است. داده‌های شبکه، نقاط پایانی، ابزارهای امنیتی و منابع سازمانی در یک لایه هوش دارایی تجمیع می‌شوند تا تیم‌های امنیت و فناوری اطلاعات بتوانند رصدپذیری، وضعیت حفاظتی و ریسک را بر پایه شواهد واقعی تحلیل کنند.</p>
+                <p>مونوسوئیت یک پلتفرم سازمانی و درون‌سازمانی برای کشف، فهرست‌برداری، حاکمیت و تحلیل دارایی‌های فناوری است. داده‌های شبکه، نقاط پایانی، ابزارهای امنیتی و منابع سازمانی در یک لایه هوش دارایی تجمیع می‌شوند تا تیم‌های امنیت و فناوری اطلاعات بتوانند شناخت دارایی، وضعیت حفاظتی و ریسک را بر پایه شواهد واقعی تحلیل کنند.</p>
                 <div className={styles.actions}>
                   <Link className={styles.primary} href="/contact/">درخواست جلسه معرفی</Link>
                   <a className={styles.secondary} href="#capabilities">بررسی قابلیت‌ها</a>
@@ -118,7 +111,7 @@ export default function MonoSuitePage() {
             <div className={styles.scoreIntro}>
               <span className={styles.eyebrowLight}>خروجی مدیریتی از داده‌های فنی</span>
               <h2>سه عدد برای دیدن وضعیت امنیت؛ از هر دارایی تا کل سازمان</h2>
-              <p>مونوسوئیت داده‌های فنی و امنیتی را به سه شاخص قابل سنجش تبدیل می‌کند تا مدیر به‌جای مواجهه با انبوهی از جزئیات، در یک نگاه بداند چه میزان از محیط شناخته شده، وضعیت حفاظتی چگونه است و ریسک در کجا متمرکز شده است. هر شاخص هم در سطح دارایی و هم در سطح سازمان قابل مشاهده است و جزئیات سازنده آن برای تحلیل بیشتر در دسترس قرار دارد.</p>
+              <p>مونوسوئیت داده‌های فنی و امنیتی را به سه شاخص قابل سنجش تبدیل می‌کند تا مدیر به‌جای مواجهه با انبوهی از جزئیات، در یک نگاه بداند چه میزان از محیط شناسایی شده، وضعیت حفاظتی چگونه است و ریسک در کجا متمرکز شده است. هر شاخص هم در سطح دارایی و هم در سطح سازمان قابل مشاهده است و جزئیات سازنده آن برای تحلیل بیشتر در دسترس قرار دارد.</p>
               <small className={styles.sampleNote}>اعداد نمایش‌داده‌شده نمونه هستند.</small>
             </div>
             <div className={styles.scoreCards}>
@@ -138,7 +131,7 @@ export default function MonoSuitePage() {
               ))}
             </div>
             <div className={styles.scoreSummary}>
-              <span>رصدپذیری می‌گوید چقدر می‌دانیم.</span>
+              <span>شناسایی می‌گوید چقدر از محیط را می‌شناسیم.</span>
               <span>حفاظت می‌گوید چقدر آماده‌ایم.</span>
               <strong>ریسک می‌گوید کجا باید اقدام کنیم.</strong>
             </div>
@@ -148,49 +141,11 @@ export default function MonoSuitePage() {
         <section className={styles.socSection}><div className="shell">
           <div className={styles.socHeading}>
             <span className={styles.eyebrow}>کاربرد در مرکز عملیات امنیت</span>
-            <h2>وقتی هشدار می‌رسد، مونوسوئیت Context دارایی را آماده دارد.</h2>
-            <p>سامانه تشخیص می‌گوید چه رخدادی دیده شده است؛ مونوسوئیت کمک می‌کند تیم SOC سریع‌تر بفهمد این رخداد روی چه دارایی‌ای اتفاق افتاده، آن دارایی چقدر مهم است، چه ضعف‌هایی دارد، با چه بخش‌هایی در ارتباط است و دامنه احتمالی حادثه تا کجا می‌تواند گسترش پیدا کند.</p>
+            <h2>از هشدار امنیتی تا تصمیم؛ Context دارایی از قبل آماده است</h2>
+            <p>ابزار تشخیص، رخداد را پیدا می‌کند. مونوسوئیت مشخص می‌کند این رخداد روی چه دارایی‌ای اتفاق افتاده، آن دارایی چه اهمیتی دارد، وضعیت حفاظتی آن چگونه است و چه ارتباطی با سایر اجزای سازمان دارد.</p>
           </div>
-
-          <div className={styles.socScenario}>
-            <div className={styles.alertCard}>
-              <span>۰۱</span>
-              <small>ورودی عملیات امنیت</small>
-              <strong>هشدار از SIEM / EDR / NDR</strong>
-              <p>شناسه یا نشانی دارایی درگیر، زمان رخداد و شواهد اولیه وارد فرآیند Investigation می‌شود.</p>
-            </div>
-
-            <div className={styles.socArrow}>←</div>
-
-            <div className={styles.contextCard}>
-              <div className={styles.contextTop}><span>MonoSuite Asset Context</span><b>دارایی درگیر</b></div>
-              <div className={styles.contextAsset}><strong>APP-SRV-042</strong><span>سرویس پرداخت سازمان</span></div>
-              <div className={styles.contextGrid}>{socContext.map(([title,text]) => <div key={title}><strong>{title}</strong><p>{text}</p></div>)}</div>
-              <div className={styles.contextSignals}>
-                <span>Risk 72</span><span>Protection 61</span><span>Visibility 94</span>
-              </div>
-            </div>
-
-            <div className={styles.socArrow}>←</div>
-
-            <div className={styles.decisionCard}>
-              <span>۰۳</span>
-              <small>خروجی برای تحلیلگر</small>
-              <strong>Scope و اولویت روشن‌تر</strong>
-              <ul>
-                <li>تشخیص سریع‌تر اهمیت واقعی رخداد</li>
-                <li>شناسایی دارایی‌ها و سرویس‌های مرتبط</li>
-                <li>اولویت‌بندی Investigation بر اساس ریسک</li>
-                <li>کاهش زمان جمع‌آوری Context پیش از اقدام</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className={styles.socOutcomes}>
-            <div><b>Investigation سریع‌تر</b><span>Context آماده به‌جای جست‌وجوی دستی میان چند ابزار</span></div>
-            <div><b>Incident Scoping دقیق‌تر</b><span>روابط دارایی، سرویس و شبکه برای تعیین دامنه رخداد</span></div>
-            <div><b>اولویت پاسخ بهتر</b><span>اهمیت دارایی و وضعیت ریسک در کنار خود Alert</span></div>
-            <div><b>MTTI و MTTR قابل‌کنترل‌تر</b><span>کاهش زمان صرف‌شده برای شناخت محیط پیش از تصمیم</span></div>
+          <div className={styles.socImageFrame}>
+            <img src="/monosuite-soc-context.webp" alt="کاربرد مونوسوئیت در مرکز عملیات امنیت؛ از هشدار امنیتی تا Context دارایی و تصمیم تحلیلگر" />
           </div>
           <div className={styles.socLinkRow}><Link href="/soc-role/">کاربردهای مونوسوئیت در مرکز عملیات امنیت ←</Link></div>
         </div></section>
