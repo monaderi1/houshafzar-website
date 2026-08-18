@@ -93,7 +93,7 @@ export default function MonoSuitePage() {
             <div className={styles.heroGrid}>
               <div>
                 <span className={styles.eyebrow}>MonoSuite Asset Intelligence</span>
-                <h1>از دارایی‌های پراکنده،<em> یک تصویر قابل اتکا برای تصمیم امنیتی بسازید.</em></h1>
+                <h1>دید کامل بر تمام دارایی‌ها؛<em> پیش نیاز امنیت سایبری</em></h1>
                 <p>مونوسوئیت یک پلتفرم سازمانی و درون‌سازمانی برای کشف، فهرست‌برداری، حاکمیت و تحلیل دارایی‌های فناوری است. داده‌های شبکه، نقاط پایانی، ابزارهای امنیتی و منابع سازمانی در یک لایه هوش دارایی تجمیع می‌شوند تا تیم‌های امنیت و فناوری اطلاعات بتوانند شناخت دارایی، وضعیت حفاظتی و ریسک را بر پایه شواهد واقعی تحلیل کنند.</p>
                 <div className={styles.actions}>
                   <Link className={styles.primary} href="/contact/">درخواست جلسه معرفی</Link>
@@ -123,7 +123,7 @@ export default function MonoSuitePage() {
           <div className={styles.scoreHero}>
             <div className={styles.scoreIntro}>
               <span className={styles.eyebrowLight}>خروجی مدیریتی از داده‌های فنی</span>
-              <h2>سه عدد برای دیدن وضعیت امنیت؛ از هر دارایی تا کل سازمان</h2>
+              <h2>شناسایی، ارزیابی و مدیریت ریسک؛ ۳ گام تا امنیت کامل دارایی‌ها</h2>
               <p>مونوسوئیت داده‌های فنی و امنیتی را به سه شاخص قابل سنجش تبدیل می‌کند تا مدیر به‌جای مواجهه با انبوهی از جزئیات، در یک نگاه بداند چه میزان از محیط شناسایی شده، وضعیت حفاظتی چگونه است و ریسک در کجا متمرکز شده است. هر شاخص هم در سطح دارایی و هم در سطح سازمان قابل مشاهده است و جزئیات سازنده آن برای تحلیل بیشتر در دسترس قرار دارد.</p>
             </div>
             <div className={styles.scoreCards}>
@@ -153,7 +153,7 @@ export default function MonoSuitePage() {
         <section className={styles.socSection}><div className="shell">
           <div className={styles.socHeading}>
             <span className={styles.eyebrow}>کاربرد در مرکز عملیات امنیت</span>
-            <h2>از هشدار امنیتی تا تصمیم آگاهانه؛ مونوسوئیت زمینه کامل دارایی را در اختیار تحلیلگر قرار می‌دهد.</h2>
+            <h2>فراتر از یک هشدار؛ دسترسی لحظه‌ای تحلیلگر به اطلاعات زمینه‌ای هر دارایی.</h2>
             <p>سامانه‌های تشخیص، وقوع رخداد و شواهد اولیه را در اختیار تیم SOC قرار می‌دهند؛ اما تصمیم‌گیری مؤثر نیازمند شناخت دقیق دارایی درگیر و جایگاه آن در سازمان است. مونوسوئیت با ارائه اطلاعات مالکیت، اهمیت کسب‌وکاری، وضعیت آسیب‌پذیری و هاردنینگ، روابط و ارتباطات، تغییرات اخیر و امتیازهای امنیتی، زمینه لازم را در کنار هشدار قرار می‌دهد تا تحلیلگر بتواند دامنه حادثه را سریع‌تر تعیین کند، ریسک واقعی را دقیق‌تر ارزیابی کند و اولویت پاسخ را بر مبنای شواهد مشخص سازد.</p>
           </div>
 
@@ -213,12 +213,12 @@ export default function MonoSuitePage() {
         </div></section>
 
         <section className={styles.sectionSoft}><div className="shell">
-          <div className={styles.heading}><span className={styles.eyebrow}>یکپارچه‌سازی</span><h2>هوش دارایی در کنار ابزارهای موجود سازمان</h2><p>مونوسوئیت با آداپتورها و رابط‌های پشتیبانی‌شده، داده را از زیرساخت و ابزارهای امنیتی دریافت می‌کند و خروجی را در جریان‌های عملیاتی سازمان قابل استفاده می‌سازد.</p></div>
+          <div className={styles.heading}><span className={styles.eyebrow}>یکپارچه‌سازی</span><h2>هوش دارایی، متصل به جریان کاری و ابزارهای فعلی سازمان</h2><p>مونوسوئیت با آداپتورها و رابط‌های پشتیبانی‌شده، داده را از زیرساخت و ابزارهای امنیتی دریافت می‌کند و خروجی را در جریان‌های عملیاتی سازمان قابل استفاده می‌سازد.</p></div>
           <div className={styles.integrationGrid}>{integrations.map(([name,text]) => <article className={styles.integrationCard} key={name}><b dir="ltr">{name}</b><p>{text}</p></article>)}</div>
         </div></section>
 
         <section className={styles.section}><div className="shell"><div className={styles.enterpriseGrid}>
-          <div className={styles.heading}><span className={styles.eyebrow}>استقرار سازمانی</span><h2>کنترل داده و عملیات در زیرساخت سازمان</h2><p>مونوسوئیت به‌صورت On-Premises در زیرساخت مشتری مستقر می‌شود و امکان بهره‌برداری در محیط‌های Air-Gapped، به‌روزرسانی آفلاین و مدیریت روزمره از طریق رابط تحت وب را فراهم می‌کند.</p></div>
+          <div className={styles.heading}><span className={styles.eyebrow}>استقرار سازمانی</span><h2>استقرار در محل سازمان؛ حفظ محرمانگی و مالکیت مطلق داده‌ها.</h2><p>مونوسوئیت به‌صورت On-Premises در زیرساخت مشتری مستقر می‌شود و امکان بهره‌برداری در محیط‌های Air-Gapped، به‌روزرسانی آفلاین و مدیریت روزمره از طریق رابط تحت وب را فراهم می‌کند.</p></div>
           <div className={styles.enterpriseCards}>
             <article><span>۰۱</span><strong>استقرار درون‌سازمانی</strong><p>ارائه Applianceهای مجازی و نگهداشت داده و خروجی‌های امنیتی در زیرساخت کنترل‌شده سازمان.</p></article>
             <article><span>۰۲</span><strong>کار در محیط‌های ایزوله</strong><p>پشتیبانی از بهره‌برداری Air-Gapped و بسته‌های به‌روزرسانی آفلاین برای محیط‌های بدون اتصال دائمی به اینترنت.</p></article>
@@ -227,7 +227,7 @@ export default function MonoSuitePage() {
         </div></div></section>
 
         <section className={styles.sectionSoft}><div className="shell">
-          <div className={styles.heading}><span className={styles.eyebrow}>هاردنینگ و انطباق</span><h2>از شناسایی انحراف تا شواهد قابل گزارش</h2><p>مونوسوئیت داده‌های فنی دارایی را به ارزیابی‌های قابل استفاده برای تیم امنیت و انطباق تبدیل می‌کند و وضعیت هر کنترل را به شواهد همان دارایی متصل نگه می‌دارد.</p></div>
+          <div className={styles.heading}><span className={styles.eyebrow}>هاردنینگ و انطباق</span><h2>از تشخیص انحراف تا اثبات انطباق؛ ممیزی ساده و بی‌دردسر</h2><p>مونوسوئیت داده‌های فنی دارایی را به ارزیابی‌های قابل استفاده برای تیم امنیت و انطباق تبدیل می‌کند و وضعیت هر کنترل را به شواهد همان دارایی متصل نگه می‌دارد.</p></div>
           <div className={styles.integrationGrid}>{compliance.map(([name,title,text]) => <article className={styles.integrationCard} key={name}><b dir="ltr">{name}</b><strong>{title}</strong><p>{text}</p></article>)}</div>
         </div></section>
 
