@@ -46,8 +46,8 @@ export default function SocAlertVisual() {
           <b>Payment Service</b>
           <span>Critical · Production</span>
         </div>
-        <div><small>Risk Score</small><b>۷۲٪</b><span className={styles.risk}>High</span></div>
-        <div><small>Protection</small><b>۶۱٪</b><span>Below target</span></div>
+        <div><small>Risk Score</small><b dir="ltr">72%</b><span className={styles.risk}>High</span></div>
+        <div><small>Protection</small><b dir="ltr">61%</b><span>Below target</span></div>
         <div><small>Recent Change</small><b>Detected</b><span>New service · 18 min ago</span></div>
       </div>
 
