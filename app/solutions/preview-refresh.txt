@@ -1,0 +1,2 @@
+Preview rebuild trigger for solutions-redesign after map direction update.
+2026-08-21
