@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import styles from './workflow.module.css';
 
+const substepDigits = ['۱', '۲', '۳', '۴', '۵'];
+
 const phases = [
   {
     n: '۱',
@@ -62,7 +64,6 @@ const phases = [
       ['تشخیص مواجهه — CVE', 'CPEهای دارایی با پایگاه محلی آسیب‌پذیری تطبیق داده می‌شوند تا CVEهای شناخته‌شده مرتبط مشخص شوند.'],
     ],
     outputs: ['مجموعه CPE معتبر', 'فهرست CVE متناظر'],
-    hot: true,
   },
   {
     n: '۶',
@@ -75,7 +76,6 @@ const phases = [
       ['خروجی گزارشی', 'نتیجه کنترل‌ها در سطح دارایی، کنترل و چارچوب برای گزارش فنی و مدیریتی ارائه می‌شود.'],
     ],
     outputs: ['Compliant', 'Not Compliant', 'Not Applicable', 'Insufficient Data'],
-    hot: true,
   },
 ];
 
@@ -99,7 +99,7 @@ export default function WorkflowSection() {
                 type="button"
                 key={item.n}
                 onClick={() => setActive(index)}
-                className={`${styles.step} ${index === active ? styles.active : ''} ${index < active ? styles.done : ''} ${item.hot ? styles.hot : ''}`}
+                className={`${styles.step} ${index === active ? styles.active : ''} ${index < active ? styles.done : ''}`}
                 aria-pressed={index === active}
               >
                 <span className={styles.stepNo}>{item.n}</span>
@@ -111,7 +111,7 @@ export default function WorkflowSection() {
             ))}
           </div>
 
-          <article className={`${styles.detailCard} ${phase.hot ? styles.detailHot : ''}`}>
+          <article className={styles.detailCard}>
             <div className={styles.detailHead}>
               <div className={styles.phaseMark}>{phase.n}</div>
               <div>
@@ -126,7 +126,7 @@ export default function WorkflowSection() {
             <div className={styles.stepList}>
               {phase.steps.map(([title, text], index) => (
                 <div className={styles.processStep} key={title}>
-                  <span className={styles.processIndex}>{phase.n}.{index + 1}</span>
+                  <span className={styles.processIndex}>{phase.n}.{substepDigits[index]}</span>
                   <div>
                     <strong>{title}</strong>
                     <p>{text}</p>
