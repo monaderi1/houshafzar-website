@@ -8,98 +8,74 @@ const phases = [
     n: '۱',
     en: 'Asset Discovery',
     title: 'کشف دارایی',
-    text: 'دارایی فعال شناسایی می‌شود و نخستین تصویر از سطح شبکه و سرویس‌های در دسترس شکل می‌گیرد.',
-    outputs: ['IP', 'پورت‌های باز', 'سرویس‌ها', 'SSL'],
+    summary: 'دارایی‌های موجود روی شبکه شناسایی می‌شوند و نخستین تصویر از زیرساخت شکل می‌گیرد.',
+    steps: [
+      ['پیش‌پردازش کشف', 'رکوردهای تکراری شناسایی و حذف یا ادغام می‌شوند و داده برای اجرای کشف آماده می‌شود.'],
+      ['کشف IPهای فعال', 'اطلاعات شبکه از Discovery Adapter دریافت و هر IP فعال به‌عنوان یک دارایی ثبت می‌شود.'],
+      ['تشخیص پورت', 'پورت‌های از پیش تعریف‌شده بررسی و پورت‌های باز به رکورد دارایی افزوده می‌شوند.'],
+      ['تشخیص سرویس وب', 'پاسخ سرویس‌های وب با الگوهای محصول تطبیق داده می‌شود تا نوع سرویس قابل شناسایی باشد.'],
+      ['استخراج اطلاعات SSL', 'جزئیات گواهی، صادرکننده و تاریخ‌های اعتبار برای سرویس‌های وب گردآوری می‌شود.'],
+    ],
+    outputs: ['آدرس IP', 'پورت‌های باز', 'سرویس‌های فعال', 'اطلاعات گواهی SSL'],
   },
   {
     n: '۲',
     en: 'Asset Profiling',
     title: 'پروفایل‌سازی دارایی',
-    text: 'پرونده دارایی با موجودی فنی و مدیریتی از طریق آداپتورها و Agent غنی‌تر می‌شود.',
-    outputs: ['سیستم‌عامل', 'سخت‌افزار', 'کاربران', 'پیکربندی'],
+    summary: 'داده پایه کشف‌شده با اطلاعات فنی و مدیریتی دقیق‌تر غنی می‌شود.',
+    steps: [
+      ['آداپتورهای Pull Based', 'بر اساس Inventory Rules، آداپتور مناسب مانند Cisco SSH، SNMP یا VMware به دارایی متصل می‌شود و موجودی آن را استخراج می‌کند.'],
+      ['آداپتورهای Push Based', 'داده MonoSuite Agent اعتبارسنجی، تجمیع و نرمال‌سازی می‌شود و به‌صورت دسته‌ای در پایگاه داده ثبت می‌گردد.'],
+    ],
+    outputs: ['مشخصات سخت‌افزار', 'سیستم‌عامل', 'Firmware', 'رابط‌های شبکه', 'کاربران', 'سرویس‌ها و پیکربندی'],
   },
   {
     n: '۳',
     en: 'Change Detection',
     title: 'تشخیص تغییر',
-    text: 'وضعیت فعلی با چرخه‌های قبلی مقایسه و تغییرات قابل پیگیری به تاریخچه دارایی افزوده می‌شود.',
-    outputs: ['تاریخچه تغییر', 'انحراف‌ها', 'روند تغییر'],
+    summary: 'وضعیت فعلی دارایی با آخرین اجرای موفق مقایسه و تغییرات قابل پیگیری ثبت می‌شوند.',
+    steps: [
+      ['مقایسه چرخه‌ها', 'موجودی فعلی با وضعیت ثبت‌شده در چرخه قبلی مقایسه می‌شود.'],
+      ['ثبت Change', 'هر اختلاف به‌عنوان یک Change ذخیره می‌شود تا در گزارش تغییر، ممیزی و تحلیل روند قابل استفاده باشد.'],
+    ],
+    outputs: ['تاریخچه تغییر در طول زمان', 'مبنای تشخیص تغییر غیرمجاز'],
   },
   {
     n: '۴',
     en: 'Asset Enrichment',
     title: 'غنی‌سازی و امتیازدهی',
-    text: 'موجودی خام به زمینه قابل تحلیل تبدیل و شاخص‌های مدیریتی هر دارایی محاسبه می‌شود.',
-    outputs: ['Identification', 'Protection', 'Risk'],
+    summary: 'موجودی خام به داده قابل تحلیل تبدیل می‌شود و شاخص‌های مدیریتی دارایی محاسبه می‌شوند.',
+    steps: [
+      ['Identification Score', 'میزان کامل‌بودن شناخت سامانه از دارایی در برابر مجموعه‌ای از شاخص‌های از پیش تعریف‌شده محاسبه می‌شود.'],
+      ['Protection Score', 'سطح حفاظت دارایی بر پایه اطلاعات امنیتی در دسترس، نرم‌افزارهای حفاظتی و تنظیمات امنیتی ارزیابی می‌شود.'],
+      ['Risk Score', 'با اتکا به اطلاعات گردآوری‌شده در مراحل پیشین و نتیجه سایر شاخص‌ها محاسبه می‌شود.'],
+    ],
+    outputs: ['Predicted Vendor', 'جایگاه شبکه و VLAN', 'طبقه‌بندی نرم‌افزار و سرویس', 'Identification Score', 'Protection Score', 'Risk Score'],
   },
   {
     n: '۵',
-    en: 'Vulnerability Context',
-    title: 'تحلیل آسیب‌پذیری',
-    text: 'پروفایل دارایی به CPE تبدیل و با CVEهای مرتبط تطبیق داده می‌شود تا زمینه آسیب‌پذیری شکل بگیرد.',
-    outputs: ['CPE', 'CVE', 'Vulnerability Context'],
+    en: 'Threat Intelligence Enrichment',
+    title: 'غنی‌سازی هوش تهدید',
+    summary: 'پروفایل نرم‌افزاری و سخت‌افزاری دارایی به زمینه آسیب‌پذیری قابل استفاده تبدیل می‌شود.',
+    steps: [
+      ['طبقه‌بندی پلتفرم — CPE', 'موجودی دارایی تحلیل و CPE متناظر محصولات ساخته یا شناسایی می‌شود تا دارایی به پایگاه‌های آسیب‌پذیری پیوند بخورد.'],
+      ['تشخیص مواجهه — CVE', 'CPEهای دارایی با پایگاه محلی آسیب‌پذیری تطبیق داده می‌شوند تا CVEهای شناخته‌شده مرتبط مشخص شوند.'],
+    ],
+    outputs: ['مجموعه CPE معتبر', 'فهرست CVE متناظر'],
     hot: true,
   },
   {
     n: '۶',
     en: 'Compliance Assessment',
     title: 'ارزیابی انطباق',
-    text: 'شواهد فنی به کنترل‌های مرجع نگاشت و وضعیت انطباق در سطح دارایی و سازمان تولید می‌شود.',
-    outputs: ['CIS Benchmark', 'PCI DSS', 'ISO/IEC 27001'],
+    summary: 'داده فنی و عملیاتی گردآوری‌شده به کنترل‌های مرجع نگاشت و نتیجه قابل گزارش تولید می‌شود.',
+    steps: [
+      ['پوشش چارچوب‌ها', 'کنترل‌های قابل اعمال از CIS Benchmark، PCI DSS و ISO/IEC 27001 بر اساس نوع دارایی و داده موجود ارزیابی می‌شوند.'],
+      ['نگاشت کنترل‌ها', 'یک داده گردآوری‌شده می‌تواند به بیش از یک کنترل یا چارچوب کمک کند و نگاشت‌ها توسط محصول نگهداری می‌شوند.'],
+      ['خروجی گزارشی', 'نتیجه کنترل‌ها در سطح دارایی، کنترل و چارچوب برای گزارش فنی و مدیریتی ارائه می‌شود.'],
+    ],
+    outputs: ['Compliant', 'Not Compliant', 'Not Applicable', 'Insufficient Data'],
     hot: true,
-  },
-];
-
-const recordGroups = [
-  {
-    title: 'کشف شبکه',
-    items: [
-      ['IP Address', '10.20.4.42'],
-      ['Open Ports', '22 · 443'],
-      ['Services', 'SSH · HTTPS'],
-      ['SSL', 'Certificate detected'],
-    ],
-  },
-  {
-    title: 'پروفایل فنی',
-    items: [
-      ['Operating System', 'AlmaLinux 9'],
-      ['Hardware', 'Virtual Machine'],
-      ['Users', '12 accounts'],
-      ['Configuration', 'Inventory captured'],
-    ],
-  },
-  {
-    title: 'تغییرات',
-    items: [
-      ['Last Change', 'Package updated'],
-      ['History', 'Change recorded'],
-      ['Baseline', 'Previous cycle compared'],
-    ],
-  },
-  {
-    title: 'امتیازهای امنیتی',
-    scores: [
-      ['Identification', '94%'],
-      ['Protection', '78%'],
-      ['Risk', '30%'],
-    ],
-  },
-  {
-    title: 'زمینه آسیب‌پذیری',
-    items: [
-      ['CPE', 'Platform identified'],
-      ['CVE', 'Related findings mapped'],
-      ['Context', 'Asset exposure enriched'],
-    ],
-  },
-  {
-    title: 'وضعیت انطباق',
-    items: [
-      ['CIS Benchmark', 'Controls assessed'],
-      ['PCI DSS', 'Evidence mapped'],
-      ['ISO/IEC 27001', 'Evidence mapped'],
-    ],
   },
 ];
 
@@ -112,8 +88,8 @@ export default function WorkflowSection() {
       <div className="shell">
         <div className={styles.heading}>
           <span>چرخه هوش دارایی در مونوسوئیت</span>
-          <h2 id="workflow-title">از یک IP ناشناخته تا یک پرونده قابل اتکا برای تصمیم امنیتی</h2>
-          <p>هر مرحله، لایه تازه‌ای از شناخت را به پرونده دارایی اضافه می‌کند. مراحل را انتخاب کنید و ببینید چگونه داده خام به زمینه امنیتی قابل استفاده تبدیل می‌شود.</p>
+          <h2 id="workflow-title">از کشف دارایی تا تصمیم امنیتی؛ هر مرحله چه کاری انجام می‌دهد؟</h2>
+          <p>مراحل را انتخاب کنید تا ببینید مونوسوئیت در هر فاز چگونه داده را پردازش می‌کند و چه اطلاعاتی به زمینه دارایی افزوده می‌شود.</p>
         </div>
 
         <div className={styles.layout}>
@@ -130,84 +106,58 @@ export default function WorkflowSection() {
                 <span className={styles.stepCopy}>
                   <small dir="ltr">{item.en}</small>
                   <strong>{item.title}</strong>
-                  <span>{item.text}</span>
                 </span>
               </button>
             ))}
           </div>
 
-          <div className={styles.recordShell}>
-            <div className={styles.recordCard}>
-              <div className={styles.recordHead}>
-                <div>
-                  <small>نمونه پرونده دارایی</small>
-                  <strong dir="ltr">APP-SRV-042</strong>
+          <article className={`${styles.detailCard} ${phase.hot ? styles.detailHot : ''}`}>
+            <div className={styles.detailHead}>
+              <div className={styles.phaseMark}>{phase.n}</div>
+              <div>
+                <small dir="ltr">{phase.en}</small>
+                <h3>{phase.title}</h3>
+              </div>
+              <span className={styles.phaseCount}>مرحله {phase.n} از ۶</span>
+            </div>
+
+            <p className={styles.summary}>{phase.summary}</p>
+
+            <div className={styles.stepList}>
+              {phase.steps.map(([title, text], index) => (
+                <div className={styles.processStep} key={title}>
+                  <span className={styles.processIndex}>{phase.n}.{index + 1}</span>
+                  <div>
+                    <strong>{title}</strong>
+                    <p>{text}</p>
+                  </div>
                 </div>
-                <div className={styles.progress}>
-                  <span>مرحله {phase.n} از ۶</span>
-                  <i><b style={{ width: `${((active + 1) / phases.length) * 100}%` }} /></i>
+              ))}
+            </div>
+
+            <div className={styles.outputPanel}>
+              <div className={styles.outputTitle}>
+                <span aria-hidden="true">＋</span>
+                <div>
+                  <small>خروجی این مرحله</small>
+                  <strong>افزوده به زمینه دارایی</strong>
                 </div>
               </div>
-
-              <div className={styles.assetIdentity}>
-                <div className={styles.assetIcon} aria-hidden="true">◆</div>
-                <div>
-                  <small>دارایی در حال غنی‌سازی</small>
-                  <strong>{active < 1 ? 'دارایی تازه کشف‌شده' : 'سرور کاربردی سازمان'}</strong>
-                </div>
-                <span className={styles.liveBadge}>Asset Record</span>
-              </div>
-
-              <div className={styles.currentStage}>
-                <div>
-                  <small>در این مرحله</small>
-                  <strong>{phase.title}</strong>
-                </div>
-                <div className={styles.outputChips}>
-                  {phase.outputs.map((output) => (
-                    <span key={output} dir={/[A-Za-z]/.test(output) ? 'ltr' : undefined}>{output}</span>
-                  ))}
-                </div>
-              </div>
-
-              <div className={styles.recordBody}>
-                {recordGroups.slice(0, active + 1).map((group, groupIndex) => (
-                  <section className={`${styles.recordGroup} ${groupIndex === active ? styles.justAdded : ''}`} key={group.title}>
-                    <div className={styles.groupTitle}>
-                      <span>{String(groupIndex + 1).padStart(2, '0')}</span>
-                      <strong>{group.title}</strong>
-                      {groupIndex === active && <small>افزوده شد</small>}
-                    </div>
-
-                    {'scores' in group && group.scores ? (
-                      <div className={styles.scoreStrip}>
-                        {group.scores.map(([name, value]) => (
-                          <div key={name}>
-                            <b dir="ltr">{value}</b>
-                            <span dir="ltr">{name}</span>
-                          </div>
-                        ))}
-                      </div>
-                    ) : (
-                      <div className={styles.fields}>
-                        {group.items?.map(([label, value]) => (
-                          <div key={label}>
-                            <span dir="ltr">{label}</span>
-                            <b dir="ltr">{value}</b>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </section>
+              <div className={styles.outputs}>
+                {phase.outputs.map((output) => (
+                  <span key={output} dir={/[A-Za-z]/.test(output) ? 'ltr' : undefined}>{output}</span>
                 ))}
               </div>
-
-              <div className={styles.recordFoot}>
-                <span>هرچه پرونده کامل‌تر می‌شود، تصمیم امنیتی بر زمینه دقیق‌تری استوار می‌شود.</span>
-                <b>{active === phases.length - 1 ? 'پرونده آماده تحلیل' : 'در حال تکمیل پرونده'}</b>
-              </div>
             </div>
-          </div>
+
+            <div className={styles.navRow}>
+              <button type="button" onClick={() => setActive(Math.max(0, active - 1))} disabled={active === 0}>مرحله قبل</button>
+              <div className={styles.progressDots} aria-hidden="true">
+                {phases.map((_, index) => <i className={index === active ? styles.dotActive : ''} key={index} />)}
+              </div>
+              <button type="button" onClick={() => setActive(Math.min(phases.length - 1, active + 1))} disabled={active === phases.length - 1}>مرحله بعد</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
