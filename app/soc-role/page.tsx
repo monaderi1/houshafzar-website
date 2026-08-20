@@ -58,7 +58,7 @@ export default function SocRolePage() {
                 <div className={styles.contextLine}><span>+</span><b>Asset Context</b></div>
                 <div className={styles.miniGrid}>
                   <div><small>مالک / سرویس</small><strong>Payment Service</strong></div>
-                  <div><small>Risk Score</small><strong>۷۲</strong></div>
+                  <div><small>Risk Score</small><strong>۷۲٪</strong></div>
                   <div><small>Protection</small><strong>۶۱٪</strong></div>
                   <div><small>Recent Change</small><strong>Detected</strong></div>
                 </div>
@@ -98,7 +98,7 @@ export default function SocRolePage() {
                 <div className={styles.scoreStrip}>
                   <div><small>Identification</small><b>۹۴٪</b></div>
                   <div><small>Protection</small><b>۶۱٪</b></div>
-                  <div><small>Risk</small><b>۷۲</b></div>
+                  <div><small>Risk</small><b>۷۲٪</b></div>
                 </div>
               </div>
               <div className={styles.contextCards}>
