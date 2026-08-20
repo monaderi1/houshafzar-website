@@ -75,10 +75,10 @@ const assetProjectSteps = [
 ];
 
 const engagementModels = [
-  ['لایسنس + اجرا + پشتیبانی', 'برای فناوری‌هایی مانند Imperva DAM و Cisco ISE که سازمان علاوه بر تأمین مجوز، به طراحی، استقرار و پشتیبانی تخصصی نیاز دارد.'],
-  ['پروژه تخصصی', 'برای ارزیابی، Threat Hunting، Incident Response و پروژه‌های هوش دارایی با محدوده و خروجی مشخص.'],
-  ['خدمت مستمر', 'برای عملیات SOC، راهبری و پشتیبانی سامانه‌هایی که نیازمند حضور و بهبود مداوم هستند.'],
-  ['رزرو ظرفیت', 'برای سازمان‌هایی که می‌خواهند در رخدادهای حساس یا نیازهای تخصصی، ظرفیت کارشناسی از پیش در دسترس داشته باشند.'],
+  ['۰۱', 'لایسنس + اجرا + پشتیبانی', 'برای فناوری‌هایی مانند Imperva DAM و Cisco ISE که سازمان علاوه بر تأمین مجوز، به طراحی، استقرار و پشتیبانی تخصصی نیاز دارد.'],
+  ['۰۲', 'پروژه تخصصی', 'برای ارزیابی، Threat Hunting، Incident Response و پروژه‌های هوش دارایی با محدوده و خروجی مشخص.'],
+  ['۰۳', 'خدمت مستمر', 'برای عملیات SOC، راهبری و پشتیبانی سامانه‌هایی که نیازمند حضور و بهبود مداوم هستند.'],
+  ['۰۴', 'رزرو ظرفیت', 'برای سازمان‌هایی که می‌خواهند در رخدادهای حساس یا نیازهای تخصصی، ظرفیت کارشناسی از پیش در دسترس داشته باشند.'],
 ];
 
 export default function ServicesPage() {
@@ -90,8 +90,8 @@ export default function ServicesPage() {
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <span className={styles.eyebrow}>خدمات تخصصی امنیت سایبری</span>
-                <h1>از طراحی و استقرار تا عملیات و پاسخ؛<em> هر نیاز امنیتی، مدل ارائه مناسب خود را دارد.</em></h1>
-                <p>خدمات هوش‌افزار یک فهرست یک‌شکل از سرویس‌ها نیست. بخشی از نیازهای سازمان با تأمین لایسنس و پیاده‌سازی فناوری پاسخ داده می‌شود، بخشی نیازمند عملیات مستمر است و بخشی به‌صورت پروژه تخصصی با خروجی مشخص اجرا می‌شود.</p>
+                <h1>از معماری و استقرار تا عملیات و پاسخ؛<em> خدمات امنیت سایبری متناسب با نیاز واقعی سازمان.</em></h1>
+                <p>هوش‌افزار خدمات امنیت سایبری را متناسب با ماهیت نیاز، بلوغ امنیتی و ساختار عملیاتی هر سازمان ارائه می‌کند؛ از تأمین و مهندسی فناوری‌های امنیتی تا عملیات مستمر، پاسخ تخصصی و اجرای پروژه‌های تحلیلی.</p>
                 <div className={styles.actions}>
                   <Link className={styles.primary} href="/contact/">درخواست جلسه مشاوره</Link>
                   <a className={styles.secondary} href="#service-families">مشاهده حوزه‌های خدمات</a>
@@ -116,7 +116,7 @@ export default function ServicesPage() {
             <div className={styles.familyGrid}>
               <a href="#engineering"><span>01</span><div><b>مهندسی و پلتفرم‌ها</b><small>طراحی، استقرار، یکپارچه‌سازی و راهبری</small></div></a>
               <a href="#operations"><span>02</span><div><b>عملیات و پاسخ</b><small>پایش، شکار تهدید، ارزیابی و Incident Response</small></div></a>
-              <a href="#asset-project"><span>03</span><div><b>پروژه هوش دارایی</b><small>خروجی عملیاتی بدون الزام خرید MonoSuite</small></div></a>
+              <a href="#asset-project"><span>03</span><div><b>پروژه هوش دارایی</b><small>ممیزی و تحلیل دارایی با توانمندی‌های MonoSuite</small></div></a>
             </div>
           </div>
         </section>
@@ -125,8 +125,8 @@ export default function ServicesPage() {
           <div className="shell">
             <div className={styles.sectionHeading}>
               <span className={styles.eyebrow}>Security Engineering & Platforms</span>
-              <h2>فناوری زمانی ارزش ایجاد می‌کند که درست طراحی، پیاده‌سازی و راهبری شود.</h2>
-              <p>در این دسته، هوش‌افزار علاوه بر تأمین فناوری موردنیاز، مسئولیت مهندسی معماری، استقرار، تنظیم، یکپارچه‌سازی و پشتیبانی تخصصی را بر عهده می‌گیرد.</p>
+              <h2>مهندسی پلتفرم‌های امنیتی برای پایداری، کارایی و بهره‌برداری مؤثر</h2>
+              <p>ارزش یک پلتفرم امنیتی تنها به انتخاب فناوری وابسته نیست؛ معماری، استقرار، یکپارچه‌سازی، تنظیم و راهبری آن تعیین می‌کند فناوری تا چه اندازه در عملیات واقعی سازمان مؤثر باشد. هوش‌افزار این چرخه را از تأمین لایسنس تا پیاده‌سازی، بهینه‌سازی و پشتیبانی تخصصی پوشش می‌دهد.</p>
             </div>
             <div className={styles.engineeringGrid}>
               {engineeringServices.map((service) => (
@@ -144,8 +144,8 @@ export default function ServicesPage() {
         <section className={styles.operationsSection} id="operations">
           <div className="shell">
             <div className={styles.operationsHeading}>
-              <div><span className={styles.darkEyebrow}>Security Operations & Response</span><h2>وقتی ابزار کافی نیست، عملیات و تصمیم انسانی تعیین‌کننده می‌شود.</h2></div>
-              <p>این خدمات برای سازمان‌هایی است که به ظرفیت عملیاتی، تحلیل تخصصی یا پاسخ سریع نیاز دارند؛ از پایش روزمره تا بررسی عمیق یک تهدید یا رخداد واقعی.</p>
+              <div><span className={styles.darkEyebrow}>Security Operations & Response</span><h2>عملیات امنیت؛ از پایش و شکار تهدید تا پاسخ تخصصی به رخداد</h2></div>
+              <p>پایداری دفاع سایبری تنها به فناوری متکی نیست. تحلیل تخصصی، پایش مستمر، شکار تهدید و توان پاسخ‌گویی در زمان رخداد، لایه عملیاتی امنیت سازمان را شکل می‌دهند. هوش‌افزار این خدمات را متناسب با نیاز سازمان به‌صورت مستمر، پروژه‌ای یا ظرفیت تخصصی ارائه می‌کند.</p>
             </div>
             <div className={styles.operationsGrid}>
               {operationsServices.map((service) => (
@@ -166,13 +166,13 @@ export default function ServicesPage() {
           <div className="shell">
             <div className={styles.assetGrid}>
               <div className={styles.assetCopy}>
-                <span className={styles.eyebrow}>MonoSuite as a Service Enabler</span>
-                <h2>پروژه هوش دارایی؛ دریافت خروجی عملیاتی بدون نیاز به خرید سامانه</h2>
-                <p>در مدل پروژه‌ای، مونوسوئیت ابزار اجرای خدمت است، نه الزام خرید برای مشتری. سامانه به‌صورت موقت در زیرساخت سازمان مستقر می‌شود تا شناسنامه دارایی‌ها، سطح مواجهه، وضعیت هاردنینگ و ریسک استخراج و تحلیل شود.</p>
-                <p>در پایان پروژه، یافته‌ها و گزارش‌های عملیاتی در اختیار تیم سازمان قرار می‌گیرد و استقرار موقت سامانه پایان می‌یابد.</p>
+                <span className={styles.eyebrow}>MonoSuite-Powered Assessment</span>
+                <h2>ممیزی و تحلیل جامع دارایی‌های سایبری با توانمندی‌های MonoSuite</h2>
+                <p>سازمان می‌تواند بدون الزام به استقرار دائمی MonoSuite، از قابلیت‌های تحلیلی آن در قالب یک پروژه تخصصی بهره‌مند شود. در این مدل، سامانه به‌صورت موقت در زیرساخت سازمان مستقر می‌شود و پس از کشف و شناسنامه‌سازی دارایی‌ها، تحلیل سطح مواجهه، وضعیت امنیتی، تغییرات و ریسک انجام می‌گیرد.</p>
+                <p>در پایان پروژه، گزارش‌های فنی و مدیریتی، یافته‌ها و اولویت‌های عملیاتی در اختیار تیم سازمان قرار می‌گیرد و استقرار موقت سامانه پایان می‌یابد.</p>
                 <div className={styles.assetActions}>
                   <Link className={styles.primary} href="/contact/">درخواست پروژه ارزیابی</Link>
-                  <Link className={styles.textLink} href="/monosuit/">اگر قصد خرید MonoSuite را دارید ←</Link>
+                  <Link className={styles.textLink} href="/monosuit/">مشاهده محصول MonoSuite ←</Link>
                 </div>
               </div>
               <div className={styles.assetSteps}>
@@ -186,11 +186,12 @@ export default function ServicesPage() {
           <div className="shell">
             <div className={styles.sectionHeading}>
               <span className={styles.eyebrow}>Engagement Models</span>
-              <h2>مدل همکاری بر اساس ماهیت نیاز انتخاب می‌شود، نه یک قرارداد ثابت برای همه خدمات.</h2>
+              <h2>مدل همکاری متناسب با ماهیت خدمت و نیاز سازمان</h2>
+              <p>نوع همکاری بر اساس دامنه مسئولیت، تداوم خدمت و سطح درگیری موردنیاز سازمان تعریف می‌شود؛ از تأمین و استقرار فناوری تا پروژه تخصصی، خدمت مستمر یا رزرو ظرفیت کارشناسی.</p>
             </div>
             <div className={styles.engagementGrid}>
-              {engagementModels.map(([title,text], index) => (
-                <article key={title}><span>۰{index + 1}</span><h3>{title}</h3><p>{text}</p></article>
+              {engagementModels.map(([number,title,text]) => (
+                <article key={title}><span>{number}</span><h3>{title}</h3><p>{text}</p></article>
               ))}
             </div>
           </div>
@@ -199,8 +200,8 @@ export default function ServicesPage() {
         <section className={styles.cta}>
           <div className="shell">
             <div className={styles.ctaBox}>
-              <div><span className={styles.eyebrow}>از مسئله شروع کنیم، نه از محصول</span><h2>نیاز امنیتی سازمان را مطرح کنید؛ مدل مناسب اجرا را با هم مشخص می‌کنیم.</h2><p>از انتخاب و استقرار فناوری تا عملیات مستمر، ارزیابی تخصصی یا پاسخ به رخداد، دامنه خدمت بر اساس وضعیت واقعی زیرساخت و هدف سازمان تعریف می‌شود.</p></div>
-              <Link className={styles.primary} href="/contact/">درخواست جلسه مشاوره</Link>
+              <div><span className={styles.eyebrow}>مشاوره تخصصی امنیت سایبری</span><h2>ارتقای امنیت سازمان را با یک گفت‌وگوی تخصصی آغاز کنید.</h2><p>چالش، زیرساخت و هدف موردنظر سازمان را با ما در میان بگذارید تا مدل فنی و اجرایی متناسب با آن بررسی و متناسب با شرایط عملیاتی سازمان تعریف شود.</p></div>
+              <Link className={styles.primary} href="/contact/">درخواست جلسه مشاوره تخصصی</Link>
             </div>
           </div>
         </section>
