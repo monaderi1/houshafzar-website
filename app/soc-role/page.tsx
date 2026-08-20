@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 };
 
 const contextItems = [
-  ['هویت و مالکیت', 'سیستم‌عامل، نرم‌افزار، مالک دارایی، سرویس کسب‌وکاری و اهمیت آن برای سازمان'],
-  ['وضعیت امنیتی', 'آسیب‌پذیری‌ها، وضعیت هاردنینگ و انطباق، Protection Score و Risk Score'],
-  ['سطح تماس', 'پورت‌های باز، سرویس‌ها، دسترسی اینترنت و ارتباطات قابل مشاهده'],
-  ['تغییرات اخیر', 'تغییرات دارایی، نرم‌افزار، پیکربندی و روابط در چرخه‌های اخیر'],
+  ['۰۱', 'هویت و مالکیت', 'سیستم‌عامل، نرم‌افزار، مالک دارایی، سرویس کسب‌وکاری و اهمیت آن برای سازمان'],
+  ['۰۲', 'وضعیت امنیتی', 'آسیب‌پذیری‌ها، وضعیت هاردنینگ و انطباق، Protection Score و Risk Score'],
+  ['۰۳', 'سطح تماس', 'پورت‌های باز، سرویس‌ها، دسترسی اینترنت و ارتباطات قابل مشاهده'],
+  ['۰۴', 'تغییرات اخیر', 'تغییرات دارایی، نرم‌افزار، پیکربندی و روابط در چرخه‌های اخیر'],
 ];
 
 const outcomes = [
@@ -58,8 +58,8 @@ export default function SocRolePage() {
                 <div className={styles.contextLine}><span>+</span><b>Asset Context</b></div>
                 <div className={styles.miniGrid}>
                   <div><small>مالک / سرویس</small><strong>Payment Service</strong></div>
-                  <div><small>Risk Score</small><strong>72</strong></div>
-                  <div><small>Protection</small><strong>61%</strong></div>
+                  <div><small>Risk Score</small><strong>۷۲</strong></div>
+                  <div><small>Protection</small><strong>۶۱٪</strong></div>
                   <div><small>Recent Change</small><strong>Detected</strong></div>
                 </div>
               </div>
@@ -96,15 +96,15 @@ export default function SocRolePage() {
                 <h2>تحلیلگر به‌جای یک IP، یک دارایی با زمینه کامل می‌بیند</h2>
                 <p>شناسه یا IP به‌تنهایی برای تصمیم امنیتی کافی نیست. مونوسوئیت اطلاعات پراکنده مربوط به دارایی را در یک زمینه مشترک کنار هم قرار می‌دهد تا تحلیلگر بداند با چه چیزی مواجه است.</p>
                 <div className={styles.scoreStrip}>
-                  <div><small>Identification</small><b>94%</b></div>
-                  <div><small>Protection</small><b>61%</b></div>
-                  <div><small>Risk</small><b>72</b></div>
+                  <div><small>Identification</small><b>۹۴٪</b></div>
+                  <div><small>Protection</small><b>۶۱٪</b></div>
+                  <div><small>Risk</small><b>۷۲</b></div>
                 </div>
               </div>
               <div className={styles.contextCards}>
-                {contextItems.map(([title,text], i) => (
+                {contextItems.map(([n,title,text]) => (
                   <article key={title}>
-                    <span>۰{i + 1}</span>
+                    <span>{n}</span>
                     <h3>{title}</h3>
                     <p>{text}</p>
                   </article>
@@ -135,10 +135,10 @@ export default function SocRolePage() {
                 <h2>Detection می‌گوید چه اتفاقی افتاده؛ Asset Intelligence می‌گوید این اتفاق چقدر اهمیت دارد.</h2>
               </div>
               <div className={styles.questions}>
-                <div><span>01</span><p>این دارایی چیست و چه کسی مالک آن است؟</p></div>
-                <div><span>02</span><p>چه سرویس کسب‌وکاری به آن وابسته است؟</p></div>
-                <div><span>03</span><p>آیا آسیب‌پذیر، در معرض تماس یا ضعیف پیکربندی شده است؟</p></div>
-                <div><span>04</span><p>آیا قبل از هشدار، تغییر مهمی روی آن رخ داده است؟</p></div>
+                <div><span>۰۱</span><p>این دارایی چیست و چه کسی مالک آن است؟</p></div>
+                <div><span>۰۲</span><p>چه سرویس کسب‌وکاری به آن وابسته است؟</p></div>
+                <div><span>۰۳</span><p>آیا آسیب‌پذیر، در معرض تماس یا ضعیف پیکربندی شده است؟</p></div>
+                <div><span>۰۴</span><p>آیا قبل از هشدار، تغییر مهمی روی آن رخ داده است؟</p></div>
               </div>
             </div>
           </div>
