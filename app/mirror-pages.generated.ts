@@ -14,7 +14,6 @@ import page12 from '../mirror-pages/monosuit/index.html?raw';
 import page13 from '../mirror-pages/product/index.html?raw';
 import page14 from '../mirror-pages/secure-index/index.html?raw';
 import page15 from '../mirror-pages/services/index.html?raw';
-import page16 from '../mirror-pages/soc-role/index.html?raw';
 import page17 from '../mirror-pages/solutions/index.html?raw';
 import page18 from '../mirror-pages/visibility-score/index.html?raw';
 import page19 from '../mirror-pages/wp-json/index.html?raw';
@@ -46,7 +45,6 @@ export const mirroredPages: Record<string, string> = {
   "product": localize(page13),
   "secure-index": localize(page14),
   "services": localize(page15),
-  "soc-role": localize(page16),
   "solutions": localize(page17),
   "visibility-score": localize(page18),
   "wp-json": localize(page19),
