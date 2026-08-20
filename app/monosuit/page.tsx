@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageShell } from '../components';
 import styles from './monosuit.module.css';
+import WorkflowSection from './WorkflowSection';
 
 export const metadata: Metadata = {
   title: 'مونوسوئیت | سامانه بومی هوش دارایی',
@@ -118,6 +119,8 @@ export default function MonoSuitePage() {
           <div className={styles.heading}><span className={styles.eyebrow}>قابلیت‌های منتخب</span><h2>دامنه‌ای فراتر از یک فهرست دارایی</h2><p>مونوسوئیت شناخت دارایی، وضعیت امنیت و زمینه عملیاتی را در یک مدل واحد کنار هم قرار می‌دهد تا تیم‌ها به‌جای جابه‌جایی میان ابزارهای متعدد، از یک نمای مشترک برای تحلیل و تصمیم استفاده کنند.</p></div>
           <div className={styles.capGrid}>{pillars.map(([tag,title,text]) => <article className={styles.cap} key={title}><span>{tag}</span><h3>{title}</h3><p>{text}</p></article>)}</div>
         </div></section>
+
+        <WorkflowSection />
 
         <section className={styles.sectionDark}><div className="shell">
           <div className={styles.scoreHero}>
