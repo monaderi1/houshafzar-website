@@ -90,7 +90,7 @@ export default function ServicesPage() {
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <span className={styles.eyebrow}>خدمات تخصصی امنیت سایبری</span>
-                <h1>از معماری و استقرار تا عملیات و پاسخ؛<em> خدمات امنیت سایبری متناسب با نیاز واقعی سازمان.</em></h1>
+                <h1>از معماری و استقرار تا عملیات و پاسخ؛<em> خدمات امنیت سایبری متناسب با نیاز واقعی سازمان</em></h1>
                 <p>هوش‌افزار خدمات امنیت سایبری را متناسب با ماهیت نیاز، بلوغ امنیتی و ساختار عملیاتی هر سازمان ارائه می‌کند؛ از تأمین و مهندسی فناوری‌های امنیتی تا عملیات مستمر، پاسخ تخصصی و اجرای پروژه‌های تحلیلی.</p>
                 <div className={styles.actions}>
                   <Link className={styles.primary} href="/contact/">درخواست جلسه مشاوره</Link>
@@ -123,9 +123,11 @@ export default function ServicesPage() {
 
         <section className={styles.section} id="engineering">
           <div className="shell">
-            <div className={styles.sectionHeading}>
-              <span className={styles.eyebrow}>Security Engineering & Platforms</span>
-              <h2>مهندسی پلتفرم‌های امنیتی برای پایداری، کارایی و بهره‌برداری مؤثر</h2>
+            <div className={`${styles.sectionHeading} ${styles.sectionHeadingSplit}`}>
+              <div>
+                <span className={styles.eyebrow}>Security Engineering & Platforms</span>
+                <h2>مهندسی پلتفرم‌های امنیتی برای پایداری، کارایی و بهره‌برداری مؤثر</h2>
+              </div>
               <p>ارزش یک پلتفرم امنیتی تنها به انتخاب فناوری وابسته نیست؛ معماری، استقرار، یکپارچه‌سازی، تنظیم و راهبری آن تعیین می‌کند فناوری تا چه اندازه در عملیات واقعی سازمان مؤثر باشد. هوش‌افزار این چرخه را از تأمین لایسنس تا پیاده‌سازی، بهینه‌سازی و پشتیبانی تخصصی پوشش می‌دهد.</p>
             </div>
             <div className={styles.engineeringGrid}>
@@ -184,9 +186,11 @@ export default function ServicesPage() {
 
         <section className={styles.engagementSection}>
           <div className="shell">
-            <div className={styles.sectionHeading}>
-              <span className={styles.eyebrow}>Engagement Models</span>
-              <h2>مدل همکاری متناسب با ماهیت خدمت و نیاز سازمان</h2>
+            <div className={`${styles.sectionHeading} ${styles.sectionHeadingSplit}`}>
+              <div>
+                <span className={styles.eyebrow}>Engagement Models</span>
+                <h2>مدل همکاری متناسب با ماهیت خدمت و نیاز سازمان</h2>
+              </div>
               <p>نوع همکاری بر اساس دامنه مسئولیت، تداوم خدمت و سطح درگیری موردنیاز سازمان تعریف می‌شود؛ از تأمین و استقرار فناوری تا پروژه تخصصی، خدمت مستمر یا رزرو ظرفیت کارشناسی.</p>
             </div>
             <div className={styles.engagementGrid}>
