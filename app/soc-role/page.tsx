@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageShell } from '../components';
 import styles from './soc-role.module.css';
+import SocAlertVisual from './SocAlertVisual';
 
 export const metadata: Metadata = {
   title: 'نقش MonoSuite در SOC | هوش‌افزار',
@@ -47,22 +48,7 @@ export default function SocRolePage() {
                 </div>
               </div>
 
-              <div className={styles.alertVisual} aria-label="نمونه جریان تحلیل هشدار">
-                <div className={styles.alertTop}>
-                  <div><span className={styles.alertDot}></span><b>Security Alert</b></div>
-                  <span className={styles.high}>HIGH</span>
-                </div>
-                <div className={styles.alertBody}>
-                  <code dir="ltr">host=APP-SRV-042<br/>event=Suspicious_Process<br/>severity=high</code>
-                </div>
-                <div className={styles.contextLine}><span>+</span><b>Asset Context</b></div>
-                <div className={styles.miniGrid}>
-                  <div><small>مالک / سرویس</small><strong>Payment Service</strong></div>
-                  <div><small>Risk Score</small><strong>۷۲٪</strong></div>
-                  <div><small>Protection</small><strong>۶۱٪</strong></div>
-                  <div><small>Recent Change</small><strong>Detected</strong></div>
-                </div>
-              </div>
+              <SocAlertVisual />
             </div>
           </div>
         </section>
