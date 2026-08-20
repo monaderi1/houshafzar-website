@@ -98,14 +98,17 @@ export default function SolutionsPage() {
               </div>
 
               <div className={styles.solutionMap} aria-label="نقشه راهکارهای امنیتی هوش‌افزار">
-                <div className={styles.mapHead}><span>Security Solution Map</span><b>مسئله → قابلیت → اقدام</b></div>
+                <div className={styles.mapHead}>
+                  <span>Security Solution Map</span>
+                  <b><span>مسئله</span><i>←</i><span>قابلیت</span><i>←</i><span>اقدام</span></b>
+                </div>
                 <div className={styles.mapBody}>
                   {challenges.map(([n, problem, solution]) => (
                     <div className={styles.mapRow} key={n}>
                       <span className={styles.mapNumber}>{n}</span>
                       <div><small>چالش</small><b>{problem}</b></div>
                       <span className={styles.mapArrow}>←</span>
-                      <div><small>جهت راهکار</small><strong>{solution}</strong></div>
+                      <div><small>راهکار</small><strong>{solution}</strong></div>
                     </div>
                   ))}
                 </div>
