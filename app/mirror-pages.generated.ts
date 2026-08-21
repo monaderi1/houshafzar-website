@@ -1,6 +1,5 @@
 import page1 from '../mirror-pages/blog/index.html?raw';
 import page2 from '../mirror-pages/comments/feed/index.html?raw';
-import page3 from '../mirror-pages/contcat/index.html?raw';
 import page4 from '../mirror-pages/cyber-risk-defense-index/index.html?raw';
 import page5 from '../mirror-pages/cybersecurity-asset-management/index.html?raw';
 import page6 from '../mirror-pages/datasheet/index.html?raw';
@@ -27,8 +26,6 @@ function localize(html: string) {
 export const mirroredPages: Record<string, string> = {
   "blog": localize(page1),
   "comments/feed": localize(page2),
-  "contcat": localize(page3),
-  "contact": localize(page3),
   "cyber-risk-defense-index": localize(page4),
   "cybersecurity-asset-management": localize(page5),
   "datasheet": localize(page6),
