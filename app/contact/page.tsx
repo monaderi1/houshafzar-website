@@ -12,9 +12,9 @@ export const metadata: Metadata = {
 const inquiries = [
   {
     number: '۰۱',
-    label: 'PRODUCT & POC',
-    title: 'MonoSuite و ارزیابی محصول',
-    text: 'برای آشنایی فنی با MonoSuite Asset Intelligence، بررسی سناریوی استقرار، اجرای پایلوت یا ارزیابی تناسب محصول با زیرساخت سازمان.',
+    label: 'PRODUCT CONSULTATION',
+    title: 'MonoSuite و بررسی فنی محصول',
+    text: 'برای آشنایی فنی با MonoSuite Asset Intelligence، بررسی سناریوی استقرار، مدل بهره‌برداری و ارزیابی تناسب محصول با نیاز و زیرساخت سازمان.',
     subject: 'درخواست جلسه درباره MonoSuite Asset Intelligence',
   },
   {
@@ -48,9 +48,9 @@ const firstMeetingOutcomes = [
 
 const engagementModels = [
   {
-    label: 'POC & EVALUATION',
-    title: 'ارزیابی و پایلوت',
-    text: 'برای زمانی که سازمان می‌خواهد پیش از تصمیم اصلی، یک محصول یا قابلیت را در شرایط واقعی زیرساخت خود ارزیابی کند.',
+    label: 'SOLUTION ASSESSMENT',
+    title: 'بررسی فنی و تعریف راهکار',
+    text: 'برای زمانی که سازمان می‌خواهد پیش از تصمیم اجرایی، نیاز، معماری موجود و تناسب راهکار را بررسی و مسیر مناسب پیاده‌سازی را مشخص کند.',
   },
   {
     label: 'PROJECT DELIVERY',
