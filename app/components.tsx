@@ -47,6 +47,7 @@ export function Footer() {
         <div className="footer-links">
           <h3>دسترسی سریع</h3>
           {nav.slice(1).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+          <Link href="/datasheet/">دریافت دیتاشیت مونوسوئیت</Link>
         </div>
         <div className="footer-contact">
           <h3>ارتباط با ما</h3>
