@@ -1,19 +1,3 @@
-import content from './content.json';
-
-export type Entry = {
-  slug: string;
-  path: string;
-  kind: 'page' | 'post';
-  date: string;
-  title: string;
-  excerpt: string;
-  body: string;
-};
-
-export const entries = content as Entry[];
-export const posts = entries.filter((entry) => entry.kind === 'post');
-export const pages = entries.filter((entry) => entry.kind === 'page');
-
 export const contact = {
   phone: '۰۲۱-۹۱۰۹۵۲۰۰',
   phoneHref: 'tel:+982191095200',
