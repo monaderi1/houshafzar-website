@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PageShell } from '../components';
 import styles from './about.module.css';
+import visual from './about-visual.module.css';
 
 export const metadata: Metadata = {
   title: 'درباره هوش‌افزار | شرکت تخصصی امنیت سایبری',
@@ -82,28 +83,46 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <div className={styles.model} aria-label="مدل فعالیت هوش‌افزار">
+              <div className={styles.model} aria-label="مدل یکپارچه فعالیت هوش‌افزار">
                 <div className={styles.modelHead}>
                   <span>HOUSH AFZAR</span>
                   <strong>Enterprise Cybersecurity</strong>
                 </div>
-                <div className={styles.modelCore}>
-                  <span>محصول</span>
-                  <span>مهندسی</span>
-                  <span>عملیات</span>
+
+                <div className={visual.constellation}>
+                  <span className={`${visual.connector} ${visual.productLine}`} aria-hidden="true" />
+                  <span className={`${visual.connector} ${visual.engineeringLine}`} aria-hidden="true" />
+                  <span className={`${visual.connector} ${visual.operationsLine}`} aria-hidden="true" />
+
+                  <div className={visual.hub}>
+                    <small>HOUSH AFZAR</small>
+                    <b>امنیت سایبری سازمانی</b>
+                    <em>Enterprise Cybersecurity</em>
+                  </div>
+
+                  <div className={`${visual.node} ${visual.product}`}>
+                    <span>01</span>
+                    <b>محصول</b>
+                    <small>Asset Intelligence</small>
+                  </div>
+
+                  <div className={`${visual.node} ${visual.engineering}`}>
+                    <span>02</span>
+                    <b>مهندسی</b>
+                    <small>Security Platforms</small>
+                  </div>
+
+                  <div className={`${visual.node} ${visual.operations}`}>
+                    <span>03</span>
+                    <b>عملیات</b>
+                    <small>Detection &amp; Response</small>
+                  </div>
                 </div>
-                <div className={styles.modelFlow}>
-                  <div><small>Product</small><b>Asset Intelligence</b></div>
-                  <i>←</i>
-                  <div><small>Engineering</small><b>Security Platforms</b></div>
-                  <i>←</i>
-                  <div><small>Operations</small><b>Detection & Response</b></div>
+
+                <div className={visual.capabilityStrip}>
+                  <span>فناوری</span><i>+</i><span>زمینه</span><i>+</i><span>اقدام</span>
                 </div>
-                <div className={styles.modelFoot}>
-                  <span>فناوری</span>
-                  <span>زمینه</span>
-                  <span>اقدام</span>
-                </div>
+                <div className={visual.caption}><strong>سه حوزه مکمل</strong> برای ساخت یک قابلیت امنیتی قابل استفاده در عملیات سازمان</div>
               </div>
             </div>
           </div>
