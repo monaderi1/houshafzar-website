@@ -33,6 +33,37 @@ const inquiries = [
   },
 ];
 
+const collaborationSteps = [
+  ['۰۱', 'شناخت نیاز', 'مسئله، هدف و شرایط فعلی سازمان را مرور می‌کنیم.'],
+  ['۰۲', 'گفت‌وگوی فنی', 'معماری، محدودیت‌ها و گزینه‌های قابل بررسی را روشن می‌کنیم.'],
+  ['۰۳', 'تعریف دامنه', 'مرز فنی کار، مسئولیت‌ها و مدل مناسب همکاری مشخص می‌شود.'],
+  ['۰۴', 'پیشنهاد اجرایی', 'گام بعدی به‌صورت یک مسیر فنی و اجرایی مشخص جمع‌بندی می‌شود.'],
+];
+
+const firstMeetingOutcomes = [
+  ['01', 'تصویر روشن‌تر از مسئله', 'مسئله از زاویه فنی و عملیاتی صورت‌بندی می‌شود تا بدانیم دقیقاً چه چیزی باید بررسی یا حل شود.'],
+  ['02', 'مسیر پیشنهادی برای بررسی', 'مشخص می‌شود ادامه مسیر به ارزیابی محصول، طراحی فنی، پروژه مهندسی یا ظرفیت عملیاتی نیاز دارد.'],
+  ['03', 'گام بعدی مشخص', 'اگر زمینه همکاری وجود داشته باشد، مرحله بعد، دامنه اولیه و افراد موردنیاز برای ادامه بررسی روشن می‌شوند.'],
+];
+
+const engagementModels = [
+  {
+    label: 'POC & EVALUATION',
+    title: 'ارزیابی و پایلوت',
+    text: 'برای زمانی که سازمان می‌خواهد پیش از تصمیم اصلی، یک محصول یا قابلیت را در شرایط واقعی زیرساخت خود ارزیابی کند.',
+  },
+  {
+    label: 'PROJECT DELIVERY',
+    title: 'پروژه تخصصی',
+    text: 'برای استقرار، مهندسی، ارزیابی یا اجرای یک دامنه مشخص با خروجی و مرز فنی روشن.',
+  },
+  {
+    label: 'MANAGED & RETAINER',
+    title: 'خدمت مستمر یا ظرفیت تخصصی',
+    text: 'برای نیازهایی که به همراهی عملیاتی، پشتیبانی مستمر یا دسترسی به ظرفیت کارشناسی در طول زمان نیاز دارند.',
+  },
+];
+
 function mailto(subject: string) {
   return `mailto:${contact.email}?subject=${encodeURIComponent(subject)}`;
 }
@@ -133,50 +164,62 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className={styles.incidentSection}>
+        <section className={styles.collaborationSection}>
           <div className="shell">
-            <div className={styles.incidentBox}>
-              <div className={styles.incidentTag}><span>IR</span><small>INCIDENT RESPONSE</small></div>
-              <div className={styles.incidentCopy}>
-                <span className={styles.darkEyebrow}>رخداد امنیتی فعال</span>
-                <h2>با یک رخداد سایبری در حال وقوع مواجه هستید؟</h2>
-                <p>اگر برای تحلیل، تعیین دامنه یا پاسخ تخصصی به رخداد نیاز به همراهی دارید، هنگام تماس یا ارسال ایمیل موضوع را با عبارت <strong>«رخداد امنیتی»</strong> مشخص کنید تا درخواست از سایر موارد مشاوره‌ای تفکیک شود.</p>
-                <div className={styles.incidentMeta}>
-                  <span>Threat Analysis</span><i>•</i><span>Scope</span><i>•</i><span>Containment</span><i>•</i><span>Response</span>
-                </div>
+            <div className={styles.collaborationBox}>
+              <div className={styles.collaborationIntro}>
+                <span className={styles.darkEyebrow}>HOW WE START</span>
+                <h2>از اولین تماس تا یک مسیر اجرایی روشن</h2>
+                <p>هدف جلسه نخست فروش یک راهکار از پیش‌تعیین‌شده نیست. ابتدا مسئله و شرایط واقعی سازمان را روشن می‌کنیم و سپس مشخص می‌شود چه نوع بررسی یا همکاری ارزش ادامه‌دادن دارد.</p>
               </div>
-              <a className={styles.incidentAction} href={mailto('رخداد امنیتی — درخواست بررسی و پاسخ تخصصی')}>ارسال ایمیل با موضوع رخداد امنیتی</a>
+              <div className={styles.collaborationSteps}>
+                {collaborationSteps.map(([number, title, text]) => (
+                  <article key={number}>
+                    <span>{number}</span>
+                    <div><h3>{title}</h3><p>{text}</p></div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
-        <section className={styles.privacySection}>
+        <section className={styles.outcomeSection}>
           <div className="shell">
-            <div className={styles.privacyBox}>
-              <div className={styles.privacyIcon}>◎</div>
+            <div className={styles.outcomeHead}>
+              <span className={styles.eyebrow}>First Meeting Outcome</span>
+              <h2>از گفت‌وگوی نخست چه چیزی باید به دست بیاید؟</h2>
+              <p>یک جلسه مفید باید ابهام را کمتر کند و مسیر تصمیم را روشن‌تر سازد؛ حتی اگر نتیجه این باشد که هنوز برای انتخاب راهکار زود است.</p>
+            </div>
+            <div className={styles.outcomeGrid}>
+              {firstMeetingOutcomes.map(([number, title, text]) => (
+                <article key={number}>
+                  <span>{number}</span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.engagementSection}>
+          <div className="shell">
+            <div className={styles.sectionHead}>
               <div>
-                <span className={styles.eyebrow}>Confidentiality</span>
-                <h2>محرمانگی در ارتباطات</h2>
-                <p>در گفت‌وگوهای فنی و بررسی نیازهای سازمان، الزامات محرمانگی و حساسیت اطلاعات از ابتدا مورد توجه تیم هوش‌افزار قرار می‌گیرد. برای شروع گفت‌وگو نیز نیازی به ارسال جزئیات حساس یا اطلاعاتی فراتر از حد لازم نیست.</p>
+                <span className={styles.eyebrow}>Engagement Models</span>
+                <h2>مدل همکاری را متناسب با ماهیت نیاز تعریف می‌کنیم</h2>
               </div>
+              <p>از ابتدا لازم نیست بدانید به کدام مدل قراردادی یا اجرایی نیاز دارید. نوع همکاری پس از روشن‌شدن مسئله، دامنه و سطح درگیری موردنیاز سازمان انتخاب می‌شود.</p>
             </div>
-          </div>
-        </section>
-
-        <section className={styles.contextSection}>
-          <div className="shell">
-            <div className={styles.contextBox}>
-              <div className={styles.contextTitle}>
-                <span className={styles.darkEyebrow}>A Better First Conversation</span>
-                <h2>برای جلسه نخست، چه اطلاعاتی مفید است؟</h2>
-                <p>لازم نیست از ابتدا مستندات کامل یا پاسخ همه پرسش‌ها را آماده داشته باشید. چند نکته پایه برای شکل‌گیری یک گفت‌وگوی فنی مؤثر کافی است.</p>
-              </div>
-              <div className={styles.contextList}>
-                <div><span>۰۱</span><p><strong>مسئله</strong> — چالش، نیاز یا ریسک اصلی سازمان چیست؟</p></div>
-                <div><span>۰۲</span><p><strong>زیرساخت</strong> — موضوع مربوط به چه فناوری یا بخش از معماری سازمان است؟</p></div>
-                <div><span>۰۳</span><p><strong>دامنه</strong> — پروژه یا نیاز موردنظر تقریباً چه محدوده‌ای را در بر می‌گیرد؟</p></div>
-                <div><span>۰۴</span><p><strong>نوع نیاز</strong> — محصول، مهندسی، عملیات امنیت یا رخداد فعال؟</p></div>
-              </div>
+            <div className={styles.engagementGrid}>
+              {engagementModels.map((item) => (
+                <article key={item.label}>
+                  <small>{item.label}</small>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
