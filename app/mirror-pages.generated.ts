@@ -1,4 +1,3 @@
-import page0 from '../mirror-pages/about/index.html?raw';
 import page1 from '../mirror-pages/blog/index.html?raw';
 import page2 from '../mirror-pages/comments/feed/index.html?raw';
 import page3 from '../mirror-pages/contcat/index.html?raw';
@@ -26,7 +25,6 @@ function localize(html: string) {
 }
 
 export const mirroredPages: Record<string, string> = {
-  "about": localize(page0),
   "blog": localize(page1),
   "comments/feed": localize(page2),
   "contcat": localize(page3),
