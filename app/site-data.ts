@@ -26,6 +26,5 @@ export const nav = [
   { href: '/monosuit/', label: 'محصول' },
   { href: '/services/', label: 'خدمات' },
   { href: '/solutions/', label: 'راهکارها' },
-  { href: '/blog/', label: 'دانش و بینش' },
   { href: '/about/', label: 'درباره ما' },
 ];
