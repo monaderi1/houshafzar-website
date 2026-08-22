@@ -44,11 +44,16 @@ export function Footer() {
           <Brand />
           <p>توسعه محصول و ارائه خدمات تخصصی برای شناخت دارایی‌ها، کاهش ریسک و ارتقای عملیات امنیت سازمانی.</p>
         </div>
-        <div className="footer-links">
+        <nav className="footer-links" aria-label="لینک‌های داخلی سایت">
           <h3>دسترسی سریع</h3>
-          {nav.slice(1).map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+          <Link href="/monosuit/">MonoSuite Asset Intelligence</Link>
+          <Link href="/soc-role/">نقش MonoSuite در SOC</Link>
           <Link href="/datasheet/">دریافت دیتاشیت مونوسوئیت</Link>
-        </div>
+          <Link href="/services/">خدمات امنیت سایبری</Link>
+          <Link href="/solutions/">راهکارهای امنیتی سازمانی</Link>
+          <Link href="/about/">درباره هوش‌افزار</Link>
+          <Link href="/contact/">تماس و درخواست مشاوره</Link>
+        </nav>
         <div className="footer-contact">
           <h3>ارتباط با ما</h3>
           <a href={contact.phoneHref}>{contact.phone}</a>
